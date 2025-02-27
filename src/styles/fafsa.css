@@ -1,0 +1,119 @@
+.form-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.section-header {
+  background-color: #808080;
+  padding: 8px;
+  margin-bottom: 0;
+}
+
+.section-header h1 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.info-box {
+  background-color: #c0c0c0;
+  padding: 8px;
+  margin-top: 0;
+  font-size: 14px;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid #000;
+}
+
+.section-box {
+  border: 1px solid #000;
+  margin: 16px;
+  padding: 16px;
+  position: relative;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* Custom checkbox styling */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #000;
+  margin-right: 8px;
+  position: relative;
+  cursor: pointer;
+  background-color: white;
+}
+
+input[type="checkbox"]:checked {
+  background-color: black;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+  position: absolute;
+  left: 1px;
+  top: -2px;
+  font-size: 10px;
+}
+
+/* Alien Registration grid */
+.alien-registration {
+  position: absolute;
+  top: 15px;
+  right: 16px;
+  width: 300px;
+}
+
+.alien-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 30px);
+  gap: 2px;
+  margin-top: 8px;
+}
+
+.alien-box {
+  border: 1px solid #000;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  background: white;
+}
+
+/* Parent education layout */
+.parent-education {
+  display: grid;
+  grid-template-columns: 300px 1fr 1fr;
+  gap: 20px;
+}
+
+.parent-question {
+  margin-bottom: 24px;
+}
+
+/* Marital status layout */
+.marital-status {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  margin-bottom: 16px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
