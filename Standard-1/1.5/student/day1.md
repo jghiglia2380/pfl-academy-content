@@ -1,3 +1,5 @@
+# 1.5 STUDENT CONTENT
+
 ## Day 1: Managing Your Income Effectively
 
 ### Learning Objectives
@@ -15,7 +17,7 @@ Managing your income effectively is one of the most important financial skills y
 
 ### Key Concepts
 
-#### Budgeting Basics
+### Budgeting Basics
 
 A budget is a plan that helps you track and manage your income and expenses. Creating a budget allows you to:
 
@@ -24,7 +26,7 @@ A budget is a plan that helps you track and manage your income and expenses. Cre
 - Save for important goals
 - Prepare for unexpected expenses
 
-#### The 50/30/20 Rule
+### The 50/30/20 Rule
 
 The 50/30/20 rule is a simple budgeting framework that divides your income into three categories:
 
@@ -32,14 +34,14 @@ The 50/30/20 rule is a simple budgeting framework that divides your income into 
 - 30% for wants (non-essential expenses like entertainment, dining out)
 - 20% for savings and debt repayment
 
-#### Needs vs. Wants
+### Needs vs. Wants
 
 Understanding the difference between needs and wants is crucial for effective budgeting:
 
 - **Needs**: Essential expenses required for basic living (housing, utilities, groceries, transportation, healthcare)
 - **Wants**: Non-essential expenses that enhance your life but aren't required for survival (entertainment subscriptions, dining out, vacations, luxury items)
 
-#### Emergency Funds
+### Emergency Funds
 
 An emergency fund is money set aside specifically for unexpected expenses or financial emergencies, such as:
 
@@ -48,9 +50,9 @@ An emergency fund is money set aside specifically for unexpected expenses or fin
 - Job loss
 - Home repairs
 
-Financial experts recommend saving 3–6 months of living expenses in your emergency fund.
+Financial experts recommend saving 3-6 months of living expenses in your emergency fund.
 
-#### Saving Strategies
+### Saving Strategies
 
 Effective saving requires:
 
@@ -59,7 +61,7 @@ Effective saving requires:
 - Tracking your progress
 - Adjusting your plan as needed
 
-#### Basic Investment Concepts
+### Basic Investment Concepts
 
 Investing is how you grow your wealth over time through:
 
@@ -69,7 +71,7 @@ Investing is how you grow your wealth over time through:
 
 ### Case Studies
 
-#### Casey's Proactive Approach
+### Casey's Proactive Approach
 
 Casey earns $3,000 per month and follows a proactive income management strategy:
 
@@ -77,9 +79,9 @@ Casey earns $3,000 per month and follows a proactive income management strategy:
 - Tracks all expenses through a budgeting app
 - Has built a 3-month emergency fund
 - Invests 10% of income in a low-risk mutual fund
-- **Result**: Financial stability and progress toward long-term goals
+- Result: Financial stability and progress toward long-term goals
 
-#### Taylor's Reactive Approach
+### Taylor's Reactive Approach
 
 Taylor also earns $3,000 per month but takes a reactive approach:
 
@@ -87,7 +89,7 @@ Taylor also earns $3,000 per month but takes a reactive approach:
 - Frequently overspends and uses credit cards to cover shortfalls
 - No emergency savings
 - No investment strategy
-- **Result**: Financial stress and uncertainty about the future
+- Result: Financial stress and uncertainty about the future
 
 ### Reflection Questions
 
@@ -97,9 +99,9 @@ Taylor also earns $3,000 per month but takes a reactive approach:
 
 ### Skill Builder: Personal Budget Creation
 
-Use the provided template to create a personal budget based on the 50/30/20 rule.
+Using the provided template, you'll create a personal budget based on the 50/30/20 rule. This activity will help you understand how to effectively manage income and expenses.
 
-#### Instructions
+### Instructions
 
 1. Open the interactive spreadsheet template
 2. Enter your monthly income (use the provided scenario or your actual income if applicable)
@@ -108,4 +110,44 @@ Use the provided template to create a personal budget based on the 50/30/20 rule
     - 30% for wants (entertainment, dining out, etc.)
     - 20% for savings and investments
 4. Review your budget to ensure it balances
-5. Adjust categories as needed to align with the 50/30/20
+5. Adjust categories as needed to align with the 50/30/20 guideline
+6. Be prepared to discuss your budgeting decisions
+
+## Day 2: Learning Lab - Practical Income Management
+
+### Learning Objectives
+
+By the end of today's Learning Lab, you will be able to:
+
+- Apply the 50/30/20 rule to real-world financial scenarios
+- Create a personalized action plan for managing your income
+- Analyze different financial approaches and their long-term impacts
+- Develop strategies for overcoming common budgeting challenges
+
+### Introduction
+
+Welcome to the Learning Lab! Today, we'll build on the budgeting skills you developed in our previous lesson. You'll have the opportunity to apply these concepts to different financial scenarios, troubleshoot common budgeting challenges, and create a personalized plan for managing your income effectively.
+
+### Key Activities
+
+### Income Management Simulator
+
+Apply your budgeting knowledge to different financial scenarios and see how your decisions impact long-term financial health.
+
+### Budget Challenge Workshop
+
+Identify and overcome common budgeting obstacles through collaborative problem-solving exercises.
+
+### Financial Goals Action Plan
+
+Develop a personalized strategy for achieving your short-term and long-term financial goals using the 50/30/20 framework.
+
+### Peer Budget Review
+
+Exchange budget strategies with classmates and provide constructive feedback to improve each other's financial plans.
+
+### Reflection
+
+Consider how the budgeting and income management strategies you've learned will help you achieve financial stability and work toward your goals. What specific actions will you take to implement these strategies in your own life?
+
+#
