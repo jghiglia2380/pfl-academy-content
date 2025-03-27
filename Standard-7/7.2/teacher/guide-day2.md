@@ -1,130 +1,123 @@
 # Choosing the Right Source of Credit: Learning Lab Teacher Guide
 
-## Learning Lab Overview
+## Learning Lab Overview (For Teacher Reference)
 
-This Learning Lab builds on Day 1 concepts by applying knowledge of credit sources to practical scenarios. Students will analyze borrowing situations, calculate loan costs, create decision frameworks, and develop strategies to avoid predatory lending.
+This 55-minute Learning Lab allows students to apply their knowledge about credit sources through interactive activities, calculations, and decision-making exercises. Students will create a personal framework for evaluating credit options and develop strategies to avoid predatory lending.
 
-## Learning Objectives
+## Preparation
 
-By the end of this Learning Lab, students will be able to:
-- Apply critical thinking to evaluate appropriate credit sources for different situations
-- Calculate and compare the total cost of various credit options
-- Create a decision-making framework for responsible borrowing
-- Develop strategies to avoid high-cost predatory lending
+- Review student responses from Day 1 to identify any misconceptions to address
+- Ensure the digital Learning Lab platform is accessible to all students
+- Prepare to guide students through credit cost calculations
+- Be ready to provide contextual examples for the predatory lending case study
 
-## Materials Needed
+## Materials
 
 - Student devices with internet access
-- Access to interactive Credit Cost Calculator
-- Digital worksheets for the Borrower's Decision Matrix
-- Case study materials on predatory lending
-- Template for Personal Credit Plan
+- Digital Learning Lab platform
+- Calculator (digital or physical)
+- Headphones for podcast review (optional)
 
-## Learning Lab Timeline
+## Learning Lab Flow and Timing
 
 | Activity | Duration | Description |
 |----------|----------|-------------|
-| Introduction & Review | 5 minutes | Brief review of Day 1 concepts and Learning Lab overview |
-| Credit Source Analysis Challenge | 15 minutes | Analyzing borrowing scenarios and making recommendations |
-| Credit Cost Calculator Activity | 10 minutes | Using the calculator to compare costs of different options |
-| Borrower's Decision Matrix | 10 minutes | Creating a personal framework for credit decisions |
-| Predatory Lending Case Study | 10 minutes | Examining predatory practices and developing alternatives |
-| Personal Credit Plan | 10 minutes | Developing a personalized approach to credit |
-| Wrap-up and Reflection | 5 minutes | Summarizing key insights and completing reflection |
+| Podcast Review | 10 minutes | Review key concepts from Day 1 with audio content |
+| Credit Source Analysis Challenge | 15 minutes | Analyze scenarios and recommend appropriate credit sources |
+| Credit Cost Calculator Activity | 10 minutes | Compare costs of different credit options |
+| Borrower's Decision Matrix | 8 minutes | Create personalized criteria for evaluating credit |
+| Predatory Lending Case Study | 7 minutes | Examine predatory practices and develop alternatives |
+| Personal Credit Plan and Wrap-Up | 5 minutes | Develop personalized approach to credit decisions |
 
 ## Detailed Facilitation Notes
 
-### Introduction & Review (5 minutes)
+### Podcast Review (10 minutes)
 
-- Welcome students to the Learning Lab
-- Briefly review key concepts from Day 1:
-  - Different sources of credit
-  - Factors to consider when comparing options
-  - The importance of understanding total cost
-- Provide an overview of today's activities and objectives
+- Students listen to pre-recorded podcast reviewing key concepts from Day 1
+- Key topics covered in podcast:
+  - Different sources of credit review
+  - Importance of APR in comparing options
+  - How to identify predatory lending practices
+  - Key factors when evaluating credit options
 
 ### Credit Source Analysis Challenge (15 minutes)
 
-- Direct students to the Credit Source Analysis Challenge
-- Explain that they will analyze real borrowing scenarios and make recommendations
-- Walk through an example scenario together:
-  - Identify appropriate credit sources based on the situation
-  - Calculate total costs
-  - Explain reasoning
-  - Consider alternatives
-- Have students work independently or in pairs to complete additional scenarios
-- Monitor progress and provide guidance as needed
+- Introduce the challenge and explain the expectations
+- Have students analyze 3-4 scenarios, identifying appropriate credit sources
+- Guide students in calculating total costs for different options
+- Encourage students to explain their reasoning and consider alternatives
+- Circulate to provide support and check understanding
 
 ### Credit Cost Calculator Activity (10 minutes)
 
-- Introduce the interactive Credit Cost Calculator
-- Demonstrate how to use the tool with a sample scenario
-- Guide students to input different loan variables:
-  - Principal amount
-  - Interest rate
-  - Loan term
-  - Fees
-- Challenge students to test how changing different variables affects the total cost
-- Discuss key observations and insights
+- Demonstrate how to use the calculator tool
+- Have students compare at least two different credit options
+- Point out how small differences in interest rates can lead to large differences in total cost
+- Challenge students to find the break-even point between two options with different terms
 
-### Borrower's Decision Matrix (10 minutes)
+### Borrower's Decision Matrix (8 minutes)
 
-- Explain the concept of a decision matrix for evaluating credit options
-- Guide students through creating their personal matrix considering:
-  - Financial situation
-  - Purpose of borrowing
-  - Available credit sources
-  - Financial goals
-  - Risk assessment
-- Encourage students to personalize their matrix based on their own priorities
-- Provide feedback as students develop their frameworks
+- Guide students in creating personalized criteria for evaluating credit options
+- Have them rank factors by importance based on their individual situation
+- Encourage students to consider both financial and non-financial factors
+- Discuss how this matrix can evolve as their financial situation changes
 
-### Predatory Lending Case Study (10 minutes)
+### Predatory Lending Case Study (7 minutes)
 
-- Present real examples of predatory lending practices
-- Facilitate a discussion on warning signs and characteristics
-- Have students identify alternatives to predatory loans:
-  - Other credit sources
-  - Emergency fund strategies
-  - Community resources
-  - Negotiation with creditors
-- Focus on practical solutions for people with limited options
+- Present a real-world example of predatory lending
+- Facilitate a brief discussion about warning signs
+- Have students identify alternative options for the borrower
+- Emphasize community resources and emergency fund strategies
 
-### Personal Credit Plan (10 minutes)
+### Personal Credit Plan and Wrap-Up (5 minutes)
 
-- Guide students in developing their Personal Credit Plan
-- Explain each component:
-  - Credit sources hierarchy
-  - Decision criteria
-  - Creditworthiness building strategies
-  - Emergency alternatives
-  - Long-term goals
-- Encourage students to make their plans realistic and actionable
-- Remind students this is a living document they can adjust as their situation changes
-
-### Wrap-up and Reflection (5 minutes)
-
-- Ask students to reflect on what they've learned
-- Invite volunteers to share key insights or "aha" moments
-- Summarize the main takeaways from the Learning Lab
-- Connect these concepts to future financial decisions
+- Students create their personalized approach to credit decisions
+- Prompt them to identify their preferred credit sources for different situations
+- Encourage reflection on long-term credit management goals
+- Summarize key takeaways from the two-day lesson
 
 ## Differentiation Strategies
 
-- For advanced students: Add more complex scenarios with multiple variables
-- For struggling students: Provide partially completed templates and additional guidance
-- Collaborative option: Arrange peer partnerships for students who benefit from discussion
-- Extension option: Have students research and present on a specific credit source
+### For Struggling Students
 
-## Assessment Opportunities
+- Provide additional guidance on using the calculator tool
+- Offer simplified scenarios with fewer variables to consider
+- Create a template for the decision matrix with pre-populated categories
+- Consider pairing students for collaborative work
 
-- Analyze the quality and thoroughness of scenario recommendations
-- Evaluate the personalization and practicality of decision matrices
-- Assess the completeness of Personal Credit Plans
-- Monitor participation in discussions and activities
+### For Advanced Students
 
-## Connections to Prior and Future Learning
+- Present more complex scenarios with multiple variables
+- Challenge them to consider economic factors that might affect interest rates
+- Have them research and incorporate additional credit sources not covered in class
+- Encourage them to create more sophisticated decision matrices with weighted factors
 
-- This Learning Lab builds on Day 1 concepts about credit sources
-- It connects to previous lessons about budgeting and financial planning
-- It prepares students for future lessons on credit scores and debt management
+## Teaching Notes
+
+### Facilitation Tips
+
+- Monitor the room during the calculator activity to ensure students understand how to use the tool
+- During discussions about predatory lending, maintain sensitivity to students' diverse backgrounds
+- When reviewing personal credit plans, avoid judgmental language about credit choices
+- Emphasize that there is no one-size-fits-all approach to credit decisions
+
+### Connections to Real Life
+
+- Encourage students to discuss how these concepts relate to financial decisions they or their families have made
+- Highlight how understanding credit sources now will benefit them in near-future decisions (college, first car, etc.)
+- When appropriate, share relevant personal examples of credit decisions (while maintaining privacy)
+- Connect to current events or recent news about credit markets or consumer protection
+
+## Assessment Strategies
+
+### Formative Assessment
+
+- Check student calculations for accuracy during the calculator activity
+- Listen for reasoning during scenario discussions
+- Review decision matrices for logical criteria and priorities
+
+### Summative Assessment
+
+- Evaluate the completeness and practicality of personal credit plans
+- Assess students' ability to identify predatory practices in the case study
+- Consider the sophistication of students' credit source analyses
