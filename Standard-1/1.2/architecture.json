@@ -1,21 +1,7 @@
 {
-  "standard": 1,
-  "chapter": 2,
   "title": "Paying for Post-Secondary Education",
-  "description": "This chapter examines various options for financing post-secondary education, including scholarships, grants, loans, and work-study programs.",
-  "learning_objectives": [
-    "Compare various financing options for post-secondary education",
-    "Evaluate the costs and benefits of different educational paths",
-    "Understand the process of applying for financial aid",
-    "Analyze the long-term impacts of student loans",
-    "Develop a personalized education financing strategy"
-  ],
-  "content_density": "complex",
   "template_format": "standard",
+  "content_density": "complex",
   "day1_day2_connection": "complementary",
-  "skill_builder": {
-    "id": "fafsa",
-    "title": "FAFSA Worksheet Skill Builder",
-    "description": "A guided simulation to help students understand and practice completing the Free Application for Federal Student Aid."
-  }
+  "skill_builder": "fafsa"
 }
