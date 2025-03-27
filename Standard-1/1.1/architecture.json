@@ -1,21 +1,7 @@
 {
-  "standard": 1,
-  "chapter": 1,
   "title": "Jobs vs. Careers",
-  "description": "This chapter explores the differences between jobs and careers, helping students understand the importance of career planning and development for long-term financial success.",
-  "learning_objectives": [
-    "Differentiate between jobs and careers",
-    "Identify personal interests, skills, and values in career development",
-    "Understand factors that influence career choices",
-    "Explore strategies for career advancement and planning",
-    "Create a personal career development plan"
-  ],
-  "content_density": "standard",
   "template_format": "project-based",
+  "content_density": "standard",
   "day1_day2_connection": "complementary",
-  "skill_builder": {
-    "id": "career_path",
-    "title": "Career Path Skill Builder",
-    "description": "An interactive tool for developing personal career goals across short-term, mid-term, and long-term timeframes."
-  }
+  "skill_builder": "career_path"
 }
