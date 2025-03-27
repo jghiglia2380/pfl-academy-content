@@ -1,21 +1,7 @@
 {
-  "standard": 1,
-  "chapter": 5,
   "title": "Managing Your Income Effectively",
-  "description": "This chapter teaches strategies for managing income through budgeting, saving, and making informed spending decisions.",
-  "learning_objectives": [
-    "Create a personal budget based on income and expenses",
-    "Implement strategies to track spending and reduce expenses",
-    "Prioritize savings within a budget",
-    "Evaluate needs versus wants in spending decisions",
-    "Apply technology tools for effective income management"
-  ],
-  "content_density": "standard",
   "template_format": "standard",
+  "content_density": "standard",
   "day1_day2_connection": "complementary",
-  "skill_builder": {
-    "id": "budget",
-    "title": "Budget Building Tool",
-    "description": "An interactive budgeting tool that helps students allocate their income across different categories of spending and saving."
-  }
+  "skill_builder": "budget"
 }
