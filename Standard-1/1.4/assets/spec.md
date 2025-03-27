@@ -1,190 +1,86 @@
-# 1.4 — ASSETS: Financial Goal Setting
+# Chapter 1.4: Financial Goal Setting - Asset Specifications
 
----
+## Required Assets for Day 1
 
-## Day 1: SMART Goals Worksheet Design Instructions
+### Visual Resources
+1. **SMART Goals Framework Graphic**
+   - Purpose: Illustrate the components of SMART goals
+   - Format: Infographic (PNG/SVG)
+   - Notes: Visually explain Specific, Measurable, Achievable, Relevant, Time-bound elements
 
-### Purpose
+2. **Financial Goal Timeline Visualization**
+   - Purpose: Show the relationship between short, medium, and long-term goals
+   - Format: Timeline graphic (PNG/SVG)
+   - Notes: Include example goals at each timeframe with cost estimates
 
-This worksheet guides students through creating both short-term and long-term financial goals using the SMART framework.
+3. **Goal Prioritization Matrix**
+   - Purpose: Help evaluate which goals to pursue first
+   - Format: Quadrant matrix (PNG/SVG)
+   - Notes: Axes for importance vs. urgency, with example goals in each quadrant
 
-### Format
+### Interactive Tools
+1. **SMART Goals Worksheet Skill Builder**
+   - Purpose: Guide students through creating SMART financial goals
+   - Format: Interactive form with analysis
+   - Notes: Include sections for each SMART criterion with feedback
 
-Digital-first worksheet with printable option, designed for both in-class completion and integration with Day 2 Learning Lab.
+2. **Goal Calculator**
+   - Purpose: Calculate required savings or payments for different goals
+   - Format: Interactive calculator
+   - Notes: Include options for education, major purchases, retirement, etc.
 
-### Design Instructions for Canva/Adobe
+## Required Assets for Day 2
 
-Create a two-page worksheet with the following elements:
+### Audio Resources
+1. **Financial Goal Setting Podcast**
+   - Purpose: Review SMART goal concepts from Day 1
+   - Format: MP3 audio file (5-7 minutes)
+   - Notes: Include real-world examples of effective financial goal setting
 
-#### Page 1: Instructions & Short-Term Goal
+### Interactive Tools
+1. **Goal Analysis Station**
+   - Purpose: Evaluate and improve financial goals
+   - Format: Interactive analysis tool
+   - Notes: Provides component-by-component evaluation and suggestions
 
-- **Header**: "SMART Financial Goals Worksheet"
-- **Subheader**: "Setting goals that you can achieve"
-- **Introduction**: Brief explanation of SMART goals and why they matter
-- **SMART Table**:
-    - *Specific*: What do you want to accomplish?  
-      Example: “Save $350 for the new iPhone model”
-    - *Measurable*: How will you track it?  
-      Example: “$350 total, saving $50 per month”
-    - *Achievable*: Is it realistic?  
-      Example: “Save $50 from part-time job earnings”
-    - *Relevant*: Why does it matter?  
-      Example: “I need a reliable phone for school/work”
-    - *Time-bound*: When will you reach it?  
-      Example: “Within 7 months, by June 1st”
-- **Short-Term Goal Section (within 1 year)**:
-    - S - Specific: [ ]
-    - M - Measurable: [ ]
-    - A - Achievable: [ ]
-    - R - Relevant: [ ]
-    - T - Time-bound: [ ]
-    - **Summary Box**: "My complete SMART short-term goal is:" [ ]
+2. **Financial Goal Timeline Builder**
+   - Purpose: Create a visual timeline of financial milestones
+   - Format: Interactive timeline creator
+   - Notes: Allow custom milestones with dependencies and connections
 
-#### Page 2: Long-Term Goal & Reflection
+3. **Obstacle Course Challenge**
+   - Purpose: Identify and plan for potential obstacles to financial goals
+   - Format: Interactive simulation
+   - Notes: Present common obstacles and prompt for mitigation strategies
 
-- **Long-Term Goal Section (beyond 1 year)**:
-    - S - Specific: [ ]
-    - M - Measurable: [ ]
-    - A - Achievable: [ ]
-    - R - Relevant: [ ]
-    - T - Time-bound: [ ]
-    - **Summary Box**: "My complete SMART long-term goal is:" [ ]
+4. **Accountability System Designer**
+   - Purpose: Create personal systems for tracking progress
+   - Format: Interactive tool builder
+   - Notes: Options for different tracking methods, reminders, and support networks
 
-- **Reflection Section: Goal Achievement Planning**
-    - "What specific actions will you take to achieve these goals?" [ ]
-    - "How will you track your progress?" [ ]
-    - "What obstacles might you face and how will you overcome them?" [ ]
+## Downloadable Resources
+1. **Financial Goal Tracking Templates**
+   - Purpose: Provide tracking tools for ongoing goal management
+   - Format: PDF and spreadsheet
+   - Notes: Different formats for different tracking preferences
 
-### Design Elements
+2. **Milestone Celebration Guide**
+   - Purpose: Encourage celebrating progress without derailing goals
+   - Format: PDF guide
+   - Notes: Include low-cost celebration ideas for different milestone types
 
-- Clean layout, modern fonts, ample white space
-- Icons for each SMART component
-- Color-coded sections: blue (short-term), green (long-term)
-- Thermometer or bar-style progress tracker
-- Footer note: "This worksheet continues in the Day 2 Learning Lab"
+3. **Goal Adjustment Worksheet**
+   - Purpose: Provide framework for modifying goals when needed
+   - Format: PDF worksheet
+   - Notes: Include reflection questions and decision-making framework
 
----
+## Additional Resources
+1. **Goal Setting Apps and Tools**
+   - Purpose: Provide digital resources for goal management
+   - Format: Curated list with descriptions
+   - Notes: Include free and paid options with features and use cases
 
-## Day 2: Learning Lab UI/UX Design Instructions for Bolt.new
-
-### Purpose
-
-Create an interactive digital environment for students to expand and apply their SMART financial goals from Day 1.
-
-### Overall Layout
-
-- Modern UI with four station panels and clear navigation
-- Progress tracker bar at the top
-- Auto-import of SMART goals from Day 1
-- Export option to generate a comprehensive Financial Goals Portfolio
-
----
-
-### Asset 1: Podcast Review Module
-
-**Purpose:** Recap key Day 1 concepts  
-**Inputs:** Audio file  
-**Outputs:** Reflection and summary notes  
-
-**Interaction Model:**
-
-- Audio playback with timeline
-- Notes field under player
-- 2–3 reflection prompts with text boxes
-
----
-
-### Asset 2: Goal Analysis Station
-
-**Purpose:** Evaluate and revise SMART goals  
-**Inputs:** SMART goals from Day 1  
-**Outputs:** Revised goals and rating per SMART component  
-
-**Interaction Model:**
-
-- Auto-filled SMART goals
-- 1–5 slider scale for each component
-- Revision text fields
-- Radar chart visualizing goal strength
-
-**Integration:** Pull from Day 1 worksheet
-
----
-
-### Asset 3: Financial Goal Timeline Builder
-
-**Purpose:** Build milestone timeline for goals  
-**Inputs:** Revised SMART goals  
-**Outputs:** Milestones, actions, and dates  
-
-**Interaction Model:**
-
-- Drag-and-drop timeline interface
-- Text fields for actions
-- Calendar date-picker
-- Checklists for tasks per milestone
-
-**Integration:** Link goal name, deadline from previous station
-
----
-
-### Asset 4: Obstacle Course Challenge
-
-**Purpose:** Identify obstacles and solutions  
-**Inputs:** SMART goal and timeline  
-**Outputs:** Obstacles list and strategies  
-
-**Interaction Model:**
-
-- Table with “Obstacle” and “Strategy”
-- Dropdown of obstacle types
-- Free-entry text for solutions
-- Impact rating: low/medium/high
-
-**Integration:** Pull milestone/task data
-
----
-
-### Asset 5: Accountability System Designer
-
-**Purpose:** Create personalized follow-through system  
-**Inputs:** All prior station data  
-**Outputs:** Custom accountability plan  
-
-**Interaction Model:**
-
-- Dropdowns to choose tracking tools
-- Text fields to add accountability partners
-- Calendar for review checkpoints
-- Select reward/motivation methods
-- Toggle for reminder setup
-
-**Integration:** Pull timeline and milestones
-
----
-
-### Asset 6: Portfolio Integration
-
-**Purpose:** Compile final financial plan  
-**Inputs:** All Learning Lab content  
-**Outputs:** Exportable Financial Goals Portfolio  
-
-**Interaction Model:**
-
-- Preview of compiled content
-- Section editing toggle
-- Export options: PDF, Print, Share Link
-- Optional reminder scheduling for future check-ins
-
-**Integration:** Combine outputs from all stations
-
----
-
-### Design Notes
-
-- Responsive UI for tablet and desktop
-- Save & resume later functionality
-- Tooltip guides for each station
-- Consistent color themes across all screens
-- Accessibility features for all interaction models
-- Motivational achievements (optional)
+2. **Financial Milestone Research**
+   - Purpose: Help students research common financial milestones
+   - Format: Research guide
+   - Notes: Include sources for cost estimates, planning considerations, and timelines
