@@ -1,7 +1,21 @@
 {
+  "standard": 2,
+  "chapter": 2,
   "title": "Understanding Tax Brackets and Tax Rates",
-  "template_format": "case-study",
-  "content_density": "complex",
+  "description": "This chapter explores how tax brackets work in a progressive tax system, the difference between marginal and effective tax rates, and the ethical considerations surrounding tax strategies.",
+  "learning_objectives": [
+    "Explain how progressive tax brackets work",
+    "Calculate marginal and effective tax rates",
+    "Differentiate between tax avoidance and tax evasion",
+    "Analyze how filing status affects tax liability",
+    "Evaluate ethical considerations in tax strategy"
+  ],
+  "content_density": "standard",
+  "template_format": "standard",
   "day1_day2_connection": "complementary",
-  "skill_builder": "tax_calculation"
+  "skill_builder": {
+    "id": "tax-evasion-vs-avoidance",
+    "title": "Tax Evasion vs. Avoidance Skill Builder",
+    "description": "An interactive activity that helps students understand the legal and ethical differences between tax evasion and tax avoidance through case studies and discussion."
+  }
 }
