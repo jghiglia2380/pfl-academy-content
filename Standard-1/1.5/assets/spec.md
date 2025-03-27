@@ -1,198 +1,86 @@
-## Day 1 - Budget Spreadsheet Template
+# Chapter 1.5: Managing Your Income Effectively - Asset Specifications
 
-### Purpose
+## Required Assets for Day 1
 
-To provide students with an interactive tool to practice creating a personal budget using the 50/30/20 rule.
+### Visual Resources
+1. **Income Management Framework**
+   - Purpose: Illustrate a comprehensive approach to income management
+   - Format: Infographic (PNG/SVG)
+   - Notes: Include elements like budgeting, saving, spending, and investing
 
----
+2. **Budget Category Breakdown**
+   - Purpose: Show recommended allocation of income across categories
+   - Format: Pie chart or proportional graphic (PNG/SVG)
+   - Notes: Include variations for different income levels and life situations
 
-### Design Specifications
+3. **Income Allocation Decision Tree**
+   - Purpose: Guide decision-making for incoming funds
+   - Format: Flowchart (PNG/SVG)
+   - Notes: Include decisions for emergency fund, debt, savings, and discretionary spending
 
-- Google Sheets template with conditional formatting
-- Each major category (Needs, Wants, Savings) uses a distinct color scheme:
-  - **Needs (50%)**: Blue color family
-  - **Wants (30%)**: Green color family
-  - **Savings (20%)**: Purple color family
-- Subcategories inherit the parent category's color with slight visual variation
-- Automatic calculations to show:
-  - Subtotals for each category
-  - Percentage of income allocated to each category
-  - Remaining funds or overages
+### Interactive Tools
+1. **Budget Building Tool**
+   - Purpose: Create a personalized budget based on income
+   - Format: Interactive calculator and allocation tool
+   - Notes: Include customizable categories, saving goals, and spending limits
 
----
+2. **Fixed vs. Variable Expenses Analyzer**
+   - Purpose: Identify and categorize expenses for better management
+   - Format: Interactive categorization tool
+   - Notes: Include common expenses with drag-and-drop interface for categorization
 
-### Structure
+## Required Assets for Day 2
 
-**1. Income Section (Top)**  
-- Input: Monthly income
+### Audio Resources
+1. **Income Management Podcast**
+   - Purpose: Review income management concepts from Day 1
+   - Format: MP3 audio file (5-7 minutes)
+   - Notes: Include practical tips for implementing budgeting and saving strategies
 
-**2. Expense Categories**
+### Interactive Tools
+1. **Income Allocation Simulator**
+   - Purpose: Test different allocation strategies and see outcomes
+   - Format: Interactive simulation
+   - Notes: Include financial scenarios that show consequences of different choices
 
-- **Needs (50%)**
-  - Housing
-  - Utilities
-  - Groceries
-  - Transportation
-  - Healthcare
-  - Minimum debt payments
+2. **Expense Tracking System Builder**
+   - Purpose: Create a personalized expense tracking approach
+   - Format: Interactive configuration tool
+   - Notes: Options for digital, paper, or hybrid tracking methods
 
-- **Wants (30%)**
-  - Dining out
-  - Entertainment
-  - Shopping
-  - Hobbies
-  - Subscriptions
-  - Travel
+3. **Financial Decision Evaluator**
+   - Purpose: Analyze spending decisions using set criteria
+   - Format: Interactive decision framework
+   - Notes: Include needs vs. wants analysis, opportunity cost, and alignment with goals
 
-- **Savings/Investments (20%)**
-  - Emergency fund
-  - Retirement
-  - Education
-  - Other savings goals
-  - Additional debt payments
+4. **Savings Accelerator Tool**
+   - Purpose: Identify potential areas to increase savings
+   - Format: Interactive savings finder
+   - Notes: Analyze common expense categories for potential reduction
 
-**3. Summary Section**
-- Total income
-- Total expenses
-- Remaining balance
-- Category percentage visualization (color-coded)
-- Warning indicators if allocation exceeds 50/30/20 guidelines
+## Downloadable Resources
+1. **Monthly Budget Template**
+   - Purpose: Provide structure for ongoing budget management
+   - Format: PDF and spreadsheet
+   - Notes: Include income, expense categories, saving goals, and variance tracking
 
-- ## Day 2 - Learning Lab UI/UX Design Instructions for Bolt.new
+2. **Expense Tracking Log**
+   - Purpose: Enable detailed tracking of daily expenses
+   - Format: PDF log and digital template
+   - Notes: Organized by category with summary calculations
 
----
+3. **Annual Financial Calendar**
+   - Purpose: Plan for irregular expenses throughout the year
+   - Format: Calendar template
+   - Notes: Include spaces for recurring bills, periodic expenses, and financial tasks
 
-### Page Layout
+## Additional Resources
+1. **Budgeting and Expense Tracking Apps**
+   - Purpose: Provide digital tools for income management
+   - Format: Curated list with descriptions
+   - Notes: Include free and paid options with feature comparisons
 
-Single-page application layout with four primary content blocks:
-
-1. Review Dashboard  
-2. Income Management Simulator  
-3. Budget Challenge Workshop  
-4. Financial Goals Action Plan
-
-Persistent top navigation with tab switching and save-progress functionality.
-
----
-
-### 1. Review Dashboard Section
-
-**Purpose:**  
-Allow students to review Day 1 concepts and budget.
-
-**Inputs:**  
-- Pre-recorded podcast audio  
-- Day 1 budget import
-
-**Outputs:**  
-- No output, review only
-
-**Interaction Model:**  
-- Audio player with playback controls  
-- Visual key concept highlights while playing  
-- Modal to open/view/edit Day 1 budget
-
-**Integration:**  
-- Import completed budget from Day 1
-
----
-
-### 2. Income Management Simulator
-
-**Purpose:**  
-Let students apply budgeting to simulated financial scenarios.
-
-**Inputs:**  
-- Scenario cards  
-- Student budget allocation decisions
-
-**Outputs:**  
-- Financial impact visualization  
-- Automated feedback
-
-**Interaction Model:**  
-- Scenario card grid  
-- Sliders/fields to reallocate budget  
-- Live charts showing results  
-- Optional multiple choice "response paths"
-
-**Integration:**  
-- Standalone section
-
----
-
-### 3. Budget Challenge Workshop
-
-**Purpose:**  
-Guide students through collaborative budgeting problem-solving.
-
-**Inputs:**  
-- Real-world financial challenges
-
-**Outputs:**  
-- Documented response plan  
-- Optional presentation content
-
-**Interaction Model:**  
-- Challenge cards with problem statements  
-- Text input for proposed solutions  
-- Live shared docs (optional)  
-- Slide/presenter mode interface
-
-**Integration:**  
-- None
-
----
-
-### 4. Financial Goals Action Plan
-
-**Purpose:**  
-Help students build realistic strategies for achieving goals using their budget.
-
-**Inputs:**  
-- Student-defined goals  
-- Budget data from Day 1  
-- Timeline and resource estimates  
-- Peer feedback
-
-**Outputs:**  
-- Downloadable Financial Goals Action Plan  
-- Completed peer review section
-
-**Interaction Model:**  
-- Form fields:
-  - Goal definitions (short- and long-term)
-  - Timeline selectors
-  - Resource sliders for allocation
-  - Action step fields
-- Peer review split-screen interface
-- Ratings/comments module for peer feedback
-
-**Integration:**  
-- Import budget breakdowns from Day 1
-
----
-
-### Design Elements
-
-**Visual Style:**
-- Financial color palette (blues, greens, neutrals)
-- Clean, modern UI with large touch targets
-- Minimalist, readable font (e.g., Inter, Roboto)
-
-**Navigation:**
-- Persistent header with progress tracker
-- Tabbed section nav
-- "Next" and "Back" buttons per module
-- Save/resume functionality
-
-**Accessibility:**
-- High-contrast toggle
-- Keyboard + screen reader support
-- Scalable fonts
-
-**Mobile Responsiveness:**
-- Fluid layout for phone/tablet
-- Collapse nav into hamburger menu
-- Touch-friendly slider controls
-
+2. **Income Optimization Strategies**
+   - Purpose: Provide guidance on maximizing income
+   - Format: PDF guide
+   - Notes: Include strategies for negotiation, side income, benefits utilization, etc.
