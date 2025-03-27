@@ -1,109 +1,123 @@
 # Choosing the Right Source of Credit: Teacher Guide
 
-## Lesson Overview
+## Lesson Overview (For Teacher Reference)
 
-This lesson introduces students to various sources of credit, how to compare them, and strategies for making informed borrowing decisions. Students will learn key borrowing concepts, analyze different credit options, and apply this knowledge to real-world scenarios.
+This 55-minute lesson introduces students to various credit sources and helps them develop critical thinking skills for making informed borrowing decisions. The lesson emphasizes comparing credit options based on APR, terms, and other factors to avoid high-cost debt and predatory lending practices.
 
-## Learning Objectives
+## Preparation
 
-By the end of this lesson, students will be able to:
-- Differentiate between various sources of credit such as banks, credit unions, and payday lenders
-- Compare the terms, interest rates, and fees associated with different credit options
-- Evaluate creditworthiness factors and determine appropriate credit sources
-- Analyze real-world scenarios to assess how borrowing decisions impact long-term financial health
+- Review the content on different credit sources
+- Prepare to explain the concept of APR and how it affects total loan cost
+- Be ready to present relatable examples that demonstrate the impact of borrowing decisions
+- Consider your students' backgrounds and sensitivity around financial topics
 
-## Materials Needed
+## Materials
 
-- Digital presentation with visual comparisons of credit sources
-- Student devices for accessing the Skill Builder activity
-- Printed or digital copies of borrowing scenarios
-- Calculator (physical or digital)
+- Digital presentation with key concepts and scenarios
+- Student access to digital worksheet for Skill Builder activity
+- Calculator or digital calculator access
 
-## Lesson Timeline
+## Suggested Lesson Flow and Timing
 
 | Activity | Duration | Description |
 |----------|----------|-------------|
-| Introduction | 5 minutes | Introduce the topic and assess prior knowledge |
-| Key Concepts Discussion | 10 minutes | Define important borrowing terms and concepts |
-| Credit Sources Exploration | 15 minutes | Present different sources of credit with pros and cons |
-| Comparing Credit Options | 8 minutes | Guide students through factors to consider when comparing |
-| Real-World Scenarios Analysis | 10 minutes | Analyze example borrowing situations |
-| Skill Builder Activity | 12 minutes | Students complete the Comparing Credit Sources activity |
-| Reflection and Conclusion | 5 minutes | Summarize key takeaways and preview Day 2 |
+| Introduction | 8 minutes | Define key terms and set context for the lesson |
+| Direct Instruction: Credit Sources Overview | 12 minutes | Present different credit sources and their characteristics |
+| Comparing Credit Options | 10 minutes | Explain factors for evaluating credit options |
+| Real-World Borrowing Scenarios | 10 minutes | Analyze example borrowing situations |
+| Skill Builder Activity | 10 minutes | Students complete the Comparing Credit Sources activity |
+| Reflection and Wrap-Up | 5 minutes | Summarize key learnings and preview Day 2 |
 
 ## Detailed Lesson Plan
 
-### Introduction (5 minutes)
+### Introduction (8 minutes)
 
-- Begin by asking students if they or anyone they know has ever borrowed money, and if so, from where
-- Discuss how credit is a tool that can be helpful or harmful depending on how it's used
-- Establish the importance of understanding different credit sources before borrowing
+- Begin by asking students if they've ever borrowed money (formally or informally) and what that experience was like
+- Introduce the concept of credit and why people borrow money
+- Explain the learning objectives for the day's lesson
+- Define key terms: APR, collateral, installment credit, non-installment credit, creditworthiness
 
-### Key Concepts Discussion (10 minutes)
+### Direct Instruction: Credit Sources Overview (12 minutes)
 
-- Introduce and define key terms:
-  - Annual Percentage Rate (APR)
-  - Collateral
-  - Installment vs. Non-Installment Credit
-  - Creditworthiness
-- Check for understanding by asking students to explain these terms in their own words
-
-### Credit Sources Exploration (15 minutes)
-
-- Present each credit source (Commercial Banks, Credit Unions, Consumer Finance Companies, etc.)
-- For each source, discuss:
-  - Key characteristics
-  - Typical interest rates and fees
+- Present and explain each credit source (commercial banks, credit unions, consumer finance companies, online lenders, peer-to-peer lending, payday lenders, retailer credit)
+- For each source, highlight:
+  - Typical interest rates
+  - Qualification requirements
   - Advantages and disadvantages
-  - Best use cases
-- Use visual aids to compare different sources side-by-side
+  - Who typically uses this source and why
 
-### Comparing Credit Options (8 minutes)
+### Comparing Credit Options (10 minutes)
 
-- Guide students through the 7 key factors to consider when comparing credit options
-- Provide examples of how these factors affect the total cost of borrowing
-- Emphasize the importance of looking beyond monthly payments to understand total cost
+- Walk through the factors for comparing credit sources
+- Emphasize that APR is the most important factor for cost comparison
+- Explain how loan terms affect total cost and monthly payments
+- Discuss how fees can significantly impact the true cost of borrowing
+- Touch on the importance of considering flexibility, customer service, and other non-cost factors
 
-### Real-World Scenarios Analysis (10 minutes)
+### Real-World Borrowing Scenarios (10 minutes)
 
-- Walk through the three borrowing scenarios in the student materials
-- For each scenario, ask students:
-  - "Which option would you choose and why?"
-  - "What factors are most important in this decision?"
-  - "How would the wrong choice affect this person financially?"
-- Encourage critical thinking about the short and long-term implications
+- Present each of the three scenarios
+- Guide students through analyzing the options
+- Calculate the total cost for at least one scenario to demonstrate how to compare options
+- Ask students which option they would choose and why
+- Point out that the "best" option sometimes depends on individual circumstances
 
-### Skill Builder Activity (12 minutes)
+### Skill Builder Activity (10 minutes)
 
-- Introduce the Comparing Credit Sources skill builder
-- Review the instructions and ensure students understand the task
-- Allow time for students to analyze the scenarios and complete the activity
-- Circulate to provide guidance and check understanding
+- Introduce the Comparing Credit Sources activity
+- Guide students through the chart of different lender types
+- Have students work independently to match scenarios with the most appropriate lender
+- Prompt students to reflect on why payday lenders exist despite high costs
 
-### Reflection and Conclusion (5 minutes)
+### Reflection and Wrap-Up (5 minutes)
 
-- Ask students to complete the reflection prompt
-- If time permits, have 2-3 students share their reflections
-- Summarize the key takeaways about choosing credit sources wisely
-- Preview the Learning Lab activities for Day 2
+- Direct students to complete the reflection prompt
+- Highlight key takeaways about responsible borrowing
+- Preview how Day 2 will build on these concepts with practical applications
+- Answer any remaining questions
 
 ## Differentiation Strategies
 
-- For advanced students: Challenge them to calculate and compare the total cost of loans with different terms
-- For struggling students: Provide a simplified comparison chart focusing on the most important factors
-- Visual learners: Use color-coded materials and diagrams to highlight key differences
-- Collaborative option: Allow students to work in pairs for the scenario analysis
+### For Struggling Students
 
-## Assessment Opportunities
+- Simplify the APR concept by providing concrete examples
+- Focus on the most common credit sources first before introducing more complex options
+- Provide a simple comparison chart that highlights just the key differences between sources
+- Consider pairing students for the activity to allow peer support
 
-- Formative: Monitor student participation in discussions and scenario analyses
-- Check for Understanding: Review responses to borrowing scenarios
-- Skill Builder: Evaluate student choices for credit sources in different scenarios
-- Reflection: Assess depth of understanding in written reflections
+### For Advanced Students
 
-## Common Misconceptions to Address
+- Challenge them to calculate the total cost of borrowing for various scenarios
+- Have them research additional credit sources not covered in the lesson
+- Ask them to analyze more complex scenarios with multiple variables
+- Encourage them to consider how different life circumstances might affect credit choices
 
-- "All credit is bad" - Clarify that credit can be a useful tool when used responsibly
-- "Interest rate is the only important factor" - Emphasize the importance of considering all terms and conditions
-- "Payday loans are a good option for quick cash" - Highlight the extremely high costs and potential debt cycle
-- "Only people with financial problems use credit" - Discuss strategic uses of credit even when cash is available
+## Common Misconceptions and Teaching Notes
+
+### Common Misconceptions
+
+- Students may think the lowest monthly payment is always the best option. Emphasize that total cost matters more than payment size.
+- Many students believe all credit is "bad." Clarify that responsible use of credit is an important financial tool.
+- Students might not understand how greatly interest rates can vary between sources. Use real numbers to show dramatic differences.
+- Some may think payday loans are a reasonable option. Ensure they understand the extreme costs involved.
+
+### Teaching Notes
+
+- Avoid making assumptions about students' family financial situations, as some may come from households that rely on alternative financial services
+- When discussing payday lenders, be factual about the high costs while acknowledging why people sometimes feel they have no other options
+- Connect concepts to students' lives by relating to purchases they might make (phones, cars, education)
+- Throughout the lesson, emphasize that borrowing is a tool that should be used strategically, not habitually
+
+## Assessment Strategies
+
+### Formative Assessment
+
+- Monitor student engagement during discussions of credit sources
+- Check for understanding through targeted questions during scenario analysis
+- Observe student work during the Skill Builder activity to identify misconceptions
+
+### Summative Assessment
+
+- Review student responses to the reflection prompt to gauge understanding
+- Evaluate students' scenario matching in the Skill Builder activity
+- Consider how well students can articulate the factors that make a credit source appropriate for specific situations
