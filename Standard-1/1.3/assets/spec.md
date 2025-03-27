@@ -1,159 +1,86 @@
-# 1.3: Income and Taxes – Assets
+# Chapter 1.3: Income and Taxes - Asset Specifications
 
-## Day 1 Assets
+## Required Assets for Day 1
 
-### 1. W-4 Simulation Worksheet
+### Visual Resources
+1. **Gross vs. Net Income Flow Chart**
+   - Purpose: Visualize how gross income is reduced by various deductions
+   - Format: Flow chart graphic (PNG/SVG)
+   - Notes: Use color coding to distinguish mandatory vs. optional deductions
 
-**Purpose:** Provide students with a realistic W-4 form experience that demonstrates how tax withholding decisions impact take-home pay.
+2. **Sample Pay Stub Breakdown**
+   - Purpose: Teach students how to read and understand a pay stub
+   - Format: Annotated pay stub image (PNG)
+   - Notes: Include callouts explaining each section and calculation
 
-**Design Instructions for Canva/Adobe:**
+3. **Tax Withholding Visualization**
+   - Purpose: Show the relationship between W-4 choices and take-home pay
+   - Format: Interactive graphic (SVG/JavaScript)
+   - Notes: Demonstrate how changing allowances affects withholding amounts
 
-- Simplified W-4 form reflecting the current IRS layout
-- Jordan Rivers scenario with age-appropriate visual styling
-- Digital form fields for each section
-- Explanation boxes for student reasoning
-- Supplementary section: paycheck impact visualization based on different withholding choices
+### Interactive Tools
+1. **W-4 Simulation Skill Builder**
+   - Purpose: Practice completing a W-4 form with different scenarios
+   - Format: Interactive form simulation
+   - Notes: Include scenario descriptions, form fields, and feedback on choices
 
-**Visual Elements:**
+2. **Take-Home Pay Calculator**
+   - Purpose: Calculate net pay based on salary and deduction inputs
+   - Format: Interactive calculator
+   - Notes: Include federal and state taxes, FICA, and customizable deductions
 
-- Blue and green professional aesthetic
-- Section icons (pencil, lightbulb, calculator)
-- Sample completed W-4 for reference
-- Graphical calculator elements for computation cues
+## Required Assets for Day 2
 
-### 2. Case Study Visualization
+### Audio Resources
+1. **Income and Taxes Podcast**
+   - Purpose: Review taxation concepts from Day 1
+   - Format: MP3 audio file (5-7 minutes)
+   - Notes: Explain progressive taxation, mandatory deductions, and income management
 
-**Purpose:** Visually represent Maria's paycheck breakdown to help students understand deductions.
+### Interactive Tools
+1. **Paycheck Analyzer**
+   - Purpose: Analyze take-home pay for different professions
+   - Format: Interactive tool with profession selection
+   - Notes: Include adjustable tax withholding and deduction options
 
-**Design Instructions for Canva/Adobe:**
+2. **Tax Withholding Strategy Builder**
+   - Purpose: Develop optimal withholding strategies
+   - Format: Interactive planning tool
+   - Notes: Connect withholding choices to financial goals
 
-- Pie chart of deduction categories
-- Flowchart: gross income ➝ deductions ➝ net income
-- Monthly vs. annual income comparison table
-- Color coding for mandatory vs. voluntary deductions
+3. **Net Income Budget Challenge**
+   - Purpose: Practice budget allocation with after-tax income
+   - Format: Interactive budget simulation
+   - Notes: Include sliders for different spending/saving categories
 
-**Visual Elements:**
+4. **Long-Term Impact Calculator**
+   - Purpose: Show how small increases in retirement contributions impact future savings
+   - Format: Interactive projection tool
+   - Notes: Visual graph showing growth over time with varying contribution levels
 
-- Professional pay stub template
-- Currency icons and financial graphics
-- Directional arrows for income flow
+## Downloadable Resources
+1. **Income Management Workbook**
+   - Purpose: Provide structure for income planning
+   - Format: PDF workbook
+   - Notes: Include monthly tracking pages, tax planning worksheets, and goal sheets
 
----
+2. **Tax Form Guide**
+   - Purpose: Explain common tax forms and their purpose
+   - Format: PDF guide
+   - Notes: Include W-2, W-4, 1040, and other common forms with explanations
 
-## Day 2 Assets (Learning Lab)
+3. **Deduction Tracking Template**
+   - Purpose: Help track deductions for tax purposes
+   - Format: Spreadsheet template
+   - Notes: Categories for common deductions with calculation formulas
 
-### 1. Paycheck Analyzer Interactive Tool
+## Additional Resources
+1. **Tax Resources**
+   - Purpose: Provide trusted tax information sources
+   - Format: Curated list with descriptions
+   - Notes: Include IRS resources, tax calculators, and educational materials
 
-**Purpose:** Allow students to explore deduction impacts across professions and pay levels.
-
-**Inputs:** Sample paycheck data from multiple roles
-
-**Outputs:** Deduction % breakdown and analysis notes
-
-**Interaction Model:**
-
-- Drag/drop for profession selection
-- Calculator with toggles for deductions
-- Dropdowns for tax scenario changes
-- Text fields for student analysis
-
-**UI/UX Instructions for Bolt.new:**
-
-- Dashboard-style layout:
-  - Left: profession selector
-  - Center: paycheck visual
-  - Right: % breakdown calculator
-  - Bottom: analysis fields
-- Responsive UI, clean financial dashboard aesthetic
-
-### 2. Tax Withholding Strategy Builder
-
-**Purpose:** Help students build personalized withholding strategies based on goals.
-
-**Inputs:** Data from Day 1 W-4 Simulation (if available)
-
-**Outputs:** Strategy summary with justification and projections
-
-**Interaction Model:**
-
-- Sliders to adjust withholding
-- Scenario testing buttons
-- Free text strategy field
-
-**UI/UX Instructions for Bolt.new:**
-
-- Top: imported or default W-4 data
-- Middle: interactive withholding controls
-- Split-view: monthly vs. year-end impacts
-- Bottom: guided strategy section
-- Visual trade-off indicators
-- Finance app-style layout with clean projections
-
-### 3. Net Income Budget Challenge
-
-**Purpose:** Practice building monthly budgets using realistic net income figures.
-
-**Inputs:** Provided net income scenarios
-
-**Outputs:** Balanced budget with feedback
-
-**Interaction Model:**
-
-- Drag/drop for budget allocation
-- Real-time updating pie chart
-- Sliders for categories
-- Warnings for unsustainable choices
-
-**UI/UX Instructions for Bolt.new:**
-
-- Header: net income scenario
-- Main: interactive budget workspace
-- Real-time feedback and sustainability meter
-- Clean banking app aesthetic
-
-### 4. Long-Term Impact Calculator
-
-**Purpose:** Show how small paycheck changes affect long-term finances (e.g., retirement savings).
-
-**Inputs:** Contribution %, tax-advantaged savings choices
-
-**Outputs:** 25–40 year projections
-
-**Interaction Model:**
-
-- Timeline visualizer
-- Contribution sliders
-- Scenario toggles
-- Side-by-side comparisons
-
-**UI/UX Instructions for Bolt.new:**
-
-- Left: input controls
-- Center: growth projection timeline
-- Right: comparison view
-- Bottom: insights/takeaways
-- Compound interest animations
-- Long-term planning aesthetic
-
-### 5. Reflection and Planning Tool
-
-**Purpose:** Synthesize Learning Lab takeaways into a personal action plan.
-
-**Inputs:** Insights from activities
-
-**Outputs:** Saved reflection + personal plan
-
-**Interaction Model:**
-
-- Free text + checkboxes
-- Goal-setting framework
-- Save-to-portfolio button
-
-**UI/UX Instructions for Bolt.new:**
-
-- Top: summary of key learning
-- Middle: guided questions with expandable fields
-- Bottom: goal-setting template
-- Side: reference sidebar with key terms
-- Progress tracker + "Save to Portfolio" confirmation
-- Journal/planner style visual design
+2. **Income Growth Strategies**
+   - Purpose: Provide guidance on increasing income over time
+   - Format: PDF guide
+   - Notes: Include education, skill development, promotion strategies, and side income
