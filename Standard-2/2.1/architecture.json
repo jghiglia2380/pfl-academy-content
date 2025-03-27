@@ -1,21 +1,7 @@
 {
-  "standard": 2,
-  "chapter": 1,
   "title": "Understanding Federal and State Taxes",
-  "description": "An exploration of how federal and state taxes impact income and budgeting, including different types of taxes, tax brackets, and tax planning strategies.",
-  "learning_objectives": [
-    "Distinguish between federal and state taxes",
-    "Explain how tax brackets work in a progressive tax system",
-    "Identify payroll taxes and their purpose",
-    "Compare tax structures across different states",
-    "Calculate take-home pay after taxes"
-  ],
-  "content_density": "standard",
   "template_format": "standard",
+  "content_density": "standard",
   "day1_day2_connection": "complementary",
-  "skill_builder": {
-    "id": "tax-system-analysis",
-    "title": "Tax System Analysis Activity",
-    "description": "An interactive activity where students analyze different tax systems and their impact on various income levels"
-  }
+  "skill_builder": "tax_calculation"
 }
