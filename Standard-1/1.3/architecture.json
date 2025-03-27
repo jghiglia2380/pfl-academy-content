@@ -1,21 +1,7 @@
 {
-  "standard": 1,
-  "chapter": 3,
   "title": "Income and Taxes",
-  "description": "This chapter explores how income is taxed, the differences between gross and net income, and strategies for managing income effectively.",
-  "learning_objectives": [
-    "Distinguish between gross and net income",
-    "Understand various types of taxes and withholdings",
-    "Analyze a pay stub and identify deductions",
-    "Complete basic tax forms like the W-4",
-    "Calculate take-home pay and plan accordingly"
-  ],
-  "content_density": "standard",
   "template_format": "case-study",
+  "content_density": "standard",
   "day1_day2_connection": "complementary",
-  "skill_builder": {
-    "id": "w4",
-    "title": "W-4 Simulation",
-    "description": "An interactive simulation that helps students understand how to complete a W-4 form and how different withholding choices affect take-home pay."
-  }
+  "skill_builder": "w4"
 }
