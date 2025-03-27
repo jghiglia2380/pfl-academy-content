@@ -1,0 +1,21 @@
+{
+  "standard": 1,
+  "chapter": 4,
+  "title": "Financial Goal Setting",
+  "description": "This chapter focuses on establishing meaningful financial goals and developing strategies to achieve them through effective planning and monitoring.",
+  "learning_objectives": [
+    "Define SMART financial goals",
+    "Differentiate between short-term, medium-term, and long-term goals",
+    "Identify strategies for prioritizing financial goals",
+    "Develop action plans to achieve financial goals",
+    "Create systems for tracking progress and adjusting financial plans"
+  ],
+  "content_density": "standard",
+  "template_format": "project-based",
+  "day1_day2_connection": "extension",
+  "skill_builder": {
+    "id": "smart_goals",
+    "title": "SMART Goals Worksheet",
+    "description": "A structured worksheet that guides students through creating Specific, Measurable, Achievable, Relevant, and Time-bound financial goals."
+  }
+}
