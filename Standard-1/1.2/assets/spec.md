@@ -1,168 +1,86 @@
-## Day 2 Learning Lab Assets
+# Chapter 1.2: Paying for Post-Secondary Education - Asset Specifications
 
-### For Bolt.new UI/UX Design
+## Required Assets for Day 1
 
----
+### Visual Resources
+1. **Education Financing Options Comparison**
+   - Purpose: Illustrate the different ways to finance higher education
+   - Format: Infographic (PNG/SVG)
+   - Notes: Include scholarships, grants, loans, work-study with pros/cons for each
 
-### 1. Education Funding Calculator
+2. **Financial Aid Priority Pyramid**
+   - Purpose: Show the recommended order for pursuing financial aid
+   - Format: Pyramid graphic (PNG/SVG)
+   - Notes: Use color coding to indicate free money vs. borrowed funds
 
-**Purpose:** Helps students explore different combinations of funding sources to cover educational expenses.
+3. **Student Loan Types Comparison**
+   - Purpose: Explain differences between federal and private loans
+   - Format: Comparison chart (PNG)
+   - Notes: Include interest rates, eligibility, repayment terms, forgiveness options
 
-**Inputs:**
-- Estimated annual tuition costs (dropdown for ranges)
-- Room and board costs (dropdown for ranges)
-- Books and supplies (text field)
-- Expected family contribution (from FAFSA practice)
-- Potential scholarship amounts (multiple text fields)
-- Potential grant amounts (multiple text fields)
-- Work study/employment income (text field)
-- Student loan consideration (slider for different amounts)
+### Interactive Tools
+1. **FAFSA Worksheet Skill Builder**
+   - Purpose: Familiarize students with the FAFSA application process
+   - Format: Interactive simulation
+   - Notes: Include form fields, tooltips for clarification, and scenario-based practice
 
-**Expected Outputs:**
-- Visual breakdown of funding sources (pie chart)
-- Calculation of funding gap or surplus
-- Estimated monthly loan repayment after graduation
-- Percentage of funding from non-repayable sources
+2. **College Cost Calculator**
+   - Purpose: Help students estimate true cost of various educational paths
+   - Format: Interactive calculator with inputs for different expenses
+   - Notes: Include tuition, room & board, books, fees, transportation, personal expenses
 
-**Interaction Model:**
-- Interactive sliders and text fields
-- Real-time updates to the funding breakdown as values change
-- Toggle between different school cost scenarios
+## Required Assets for Day 2
 
-**Integration Needs:**
-- Should use information from Day 1 reflection if student completed it
+### Audio Resources
+1. **Financial Aid Podcast**
+   - Purpose: Review key financing concepts from Day 1
+   - Format: MP3 audio file (5-7 minutes)
+   - Notes: Include explanations of FAFSA, scholarship search, and loan options
 
----
+### Interactive Tools
+1. **Education Funding Calculator**
+   - Purpose: Create a comprehensive funding plan for education
+   - Format: Interactive JavaScript calculator
+   - Notes: Visual pie chart showing funding sources and gaps
 
-### 2. Personal Education Financing Plan Template
+2. **Loan Repayment Simulator**
+   - Purpose: Project student loan payments and total cost
+   - Format: Interactive calculator
+   - Notes: Include sliders for loan amounts, interest rates, and repayment plans
 
-**Purpose:** Guides students in creating a strategic plan for financing their education.
+3. **Financial Aid Application Timeline**
+   - Purpose: Create a personalized timeline for financial aid tasks
+   - Format: Interactive timeline builder
+   - Notes: Include deadline notifications and task descriptions
 
-**Inputs:**
-- Target schools and estimated costs
-- Scholarship opportunities and deadlines
-- Grant eligibility notes
-- Loan considerations and limits
-- Employment possibilities during school
-- Summer earning potential
-- Application timeline checkpoints
+4. **Scholarship Search Strategy Builder**
+   - Purpose: Develop a personalized scholarship search approach
+   - Format: Interactive form with suggestion engine
+   - Notes: Match personal attributes to scholarship categories
 
-**Expected Outputs:**
-- Comprehensive financing strategy document
-- Action item checklist with deadlines
-- Visual timeline of application deadlines
+## Downloadable Resources
+1. **Financial Aid Glossary**
+   - Purpose: Define key financial aid terms
+   - Format: PDF
+   - Notes: Alphabetical with examples and explanations
 
-**Interaction Model:**
-- Guided form with expandable sections
-- Ability to add multiple schools for comparison
-- Drag-and-drop prioritization of funding sources
-- Calendar view option for deadlines
+2. **Scholarship Essay Templates**
+   - Purpose: Guide students in writing effective scholarship essays
+   - Format: Word document
+   - Notes: Include prompts, structures, and examples
 
-**Integration Needs:**
-- Should import data from Education Funding Calculator
-- Should reference student reflections from Day 1
+3. **Education Financing Comparison Worksheet**
+   - Purpose: Help evaluate different financing options
+   - Format: PDF worksheet
+   - Notes: Include cost calculations, pros/cons, and reflection questions
 
----
+## Additional Resources
+1. **Financial Aid Websites**
+   - Purpose: Provide trusted resources for financial aid
+   - Format: Curated list with descriptions
+   - Notes: Include FAFSA.gov, scholarship search engines, loan calculators
 
-### 3. Loan Repayment Simulator
-
-**Purpose:** Illustrates the long-term implications of student loan borrowing decisions.
-
-**Inputs:**
-- Total loan amount (slider)
-- Interest rate (slider)
-- Repayment term (10, 15, 20, or 25 years)
-- Expected starting salary (dropdown ranges)
-
-**Expected Outputs:**
-- Monthly payment calculation
-- Total interest paid over loan term
-- Percentage of monthly income going toward student loans
-- Comparison of different repayment plans
-- Visualization of payment schedule over time
-
-**Interaction Model:**
-- Interactive sliders with real-time result updates
-- Toggle between different repayment plans
-- Side-by-side comparison view for different scenarios
-
-**Integration Needs:**
-- Should use loan amount from Education Funding Calculator if completed
-
----
-
-### 4. Scholarship Search Strategy Builder
-
-**Purpose:** Helps students develop a systematic approach to finding and applying for scholarships.
-
-**Inputs:**
-- Student strengths and interests
-- Academic achievements
-- Extracurricular activities
-- Community involvement
-- Special circumstances or eligibility factors
-- Time available for applications weekly
-
-**Expected Outputs:**
-- Personalized scholarship category recommendations
-- Application calendar template
-- Personal statement starter prompts
-- Recommendation letter request template
-- Scholarship search resource list
-
-**Interaction Model:**
-- Guided questionnaire format
-- Calendar view for planning application timelines
-- Ability to save and print search strategy
-
-**Integration Needs:**
-- No specific integration needed with Day 1
-
----
-
-### 5. Reflection and Goal Setting Form
-
-**Purpose:** Helps students synthesize what they've learned and develop action steps.
-
-**Inputs:**
-- Reflection on most valuable insights gained
-- Identification of next steps (checklist and free text)
-- Timeline for completing key financial aid tasks
-- Questions for further exploration
-
-**Expected Outputs:**
-- Personal action plan for education financing
-- List of resources needed
-- Family conversation starter prompts
-
-**Interaction Model:**
-- Multiple choice, checkboxes, and free text fields
-- Ability to email completed plan to self or parents
-
-**Integration Needs:**
-- Should reference insights from all previous Learning Lab activities
-
----
-
-### Design Specifications for Bolt.new
-
-1. Cohesive Learning Lab experience with:
-    - Navigation sidebar for all five activities
-    - Progress tracking indicators
-    - Save-as-you-go between tools
-
-2. Dashboard layout:
-    - Activity cards with completion status
-    - Estimated time for each tool
-
-3. Fully responsive across devices
-
-4. Save/resume functionality for multi-session completion
-
-5. Export options to student portfolios
-
-6. Engaging, interactive visuals to maintain student interest
-
-7. Help tooltips for financial terms
-
-8. Success messages after completing each tool
+2. **Institution-Specific Resources**
+   - Purpose: Guide students to school-specific financial aid
+   - Format: Resource guide
+   - Notes: Include instructions for finding and applying for school-based aid
