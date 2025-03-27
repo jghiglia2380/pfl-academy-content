@@ -1,52 +1,40 @@
-## 2.1: Understanding Federal and State Taxes – Day 2 Learning Lab
+# Understanding Federal and State Taxes - Day 2 Learning Lab
 
-### OVERVIEW
+## OVERVIEW
 
-Today you’ll apply your knowledge of taxes by creating a take-home pay calculator, analyzing tax structures across states, and developing a personal tax planning strategy.
+In today's Learning Lab, you'll apply what you learned about taxes by creating a take-home pay calculator, analyzing tax impacts across states, and developing strategies for tax planning.
 
----
+## WARM-UP: PODCAST RECAP
 
-### WARM-UP: PODCAST RECAP
+Listen to the podcast recap of key concepts from yesterday's lesson on federal and state taxes.
 
-Listen to the podcast recap of yesterday’s key concepts.
+## TAX IMPACT CALCULATOR
 
----
+Use the interactive calculator to determine how different tax scenarios affect take-home pay. Enter various income levels and state choices to see the resulting differences in net income.
 
-### TAX IMPACT CALCULATOR
-
-Use the interactive calculator to explore how different tax scenarios affect take-home pay. Adjust income and select states to compare differences in net income.
-
----
-
-### STATE TAX COMPARISON PROJECT
+## STATE TAX COMPARISON PROJECT
 
 Choose three states to research and compare:
 
-- One with **no state income tax**  
-- One with a **flat tax rate**  
-- One with **progressive tax brackets**
+- One with no state income tax
+- One with a flat tax rate
+- One with progressive tax brackets
 
-Compare the full tax picture: income, sales, and property taxes.
+For each state, analyze the complete tax picture including income, sales, and property taxes.
 
----
+## TAX PLANNING SCENARIO
 
-### TAX PLANNING SCENARIO
+You've been offered the same job in two different states with significantly different tax structures. Using the data from your research, determine which location would be more financially advantageous based on your projected income and spending habits.
 
-You’ve been offered the same job in two states with different tax systems. Use your research to decide which location would offer better financial outcomes based on your lifestyle and career goals.
+## PORTFOLIO BUILDING: MY TAX STRATEGY
 
----
+Based on your research and the tax impact calculator results, develop a personal tax strategy that considers:
 
-### PORTFOLIO BUILDING: MY TAX STRATEGY
+- Your career goals and projected income path
+- Geographic preferences for where you might want to live
+- Tax planning strategies to maximize your take-home pay
+- How you'll account for taxes in your monthly and annual budget
 
-Based on your analysis, develop a personal tax strategy:
+## REFLECTION
 
-- Your career goals and projected income  
-- Preferred places to live  
-- How to plan ahead to maximize take-home pay  
-- How to build taxes into your monthly and annual budget
-
----
-
-### REFLECTION
-
-Reflect on how your understanding of taxes has changed and how this knowledge will shape your future financial decisions.
+Reflect on how your understanding of taxes has evolved and how this knowledge will influence your financial decisions moving forward.
