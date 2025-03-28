@@ -1,329 +1,148 @@
-# Assets
-
-## 1.1 TEACHER GUIDE FOR DAY 1
-
-### Overview (Total time: 55 minutes)
-
-This lesson introduces students to the fundamental differences between jobs and careers, focusing on how this understanding impacts financial planning and future opportunities. The lesson combines discussion, case study analysis, and a career mapping activity to help students begin thinking about their personal career journeys.
-
-### Pre-Class Setup
-
-- Prepare digital copies of the Career Path Mapping worksheet
-- Arrange classroom for both full-class discussion and small group work
-- Queue real-world examples and discussion prompts
-
-### Lesson Timeline
-
-- Introduction & Key Concepts (12 minutes)
-- Deeper Exploration (15 minutes)
-- Real-World Examples Discussion (10 minutes)
-- Career Path Mapping Activity (10 minutes)
-- Reflection and Wrap-up (8 minutes)
-
-### Detailed Guidance for Each Section
-
-**Introduction & Key Concepts (12 minutes)**
-
-- Begin with an icebreaker question: "Who has had a job or knows someone who has? What was it like?" (3 minutes)
-- Present the key definitions and differences between jobs and careers using relatable examples (5 minutes)
-- Facilitate a brief whole-class discussion on why this distinction matters for students now (4 minutes)
-
-**Deeper Exploration (15 minutes)**
-
-- Introduce the concept of human capital using accessible language (3 minutes)
-- Break students into small groups to discuss how different jobs build different skills (5 minutes)
-- Reconvene for a guided discussion on financial implications, using the whiteboard to create a comparison chart of job vs. career financial outcomes (7 minutes)
-
-**Real-World Examples Discussion (10 minutes)**
-
-- Present Alex and Taylor scenarios (3 minutes)
-- Pose discussion questions about their different approaches (4 minutes)
-- Have students predict future outcomes for both individuals (3 minutes)
-
-**Career Path Mapping Activity (10 minutes)**
-
-- Explain the activity structure and objectives (2 minutes)
-- Guide students through completing their individual career roadmaps (7 minutes)
-- Confirm students have saved their work for Day 2 (1 minute)
-
-**Reflection and Wrap-up (8 minutes)**
-
-- Individual reflection time for students (3 minutes)
-- Invite volunteers to share insights from their reflections (4 minutes)
-- Preview Day 2 Learning Lab (1 minute)
-
-### Discussion Prompts
-
-**For Introduction:**
-
-- "Why might someone choose a job over a career, or vice versa?"
-- "How do your current interests and skills align with potential jobs or careers?"
-
-**For Deeper Exploration:**
-
-- "What skills from a fast-food job might transfer to a corporate setting?"
-- "How does education impact the job vs. career distinction?"
-- "What financial trade-offs might someone make when pursuing a career rather than focusing on immediate job income?"
-
-**For Real-World Examples:**
-
-- "What specific actions could Alex take to become more career-focused?"
-- "What advantages does Taylor have by taking a career-oriented approach to a retail job?"
-- "How might their respective financial situations differ in 5-10 years?"
-
-### In-Class Activity Facilitation
-
-**Career Path Mapping Activity Guidance:**
-
-- Emphasize that this is a first draft that will be refined over time
-- Encourage students to be realistic but ambitious in their selections
-- Remind students that the short, mid, and long-term goals should connect logically
-- Circulate during the activity to provide individualized guidance
-- Ensure students understand they'll continue working with these maps on Day 2
-
-**Sample Options for Dropdown Menus:**
-
-1. Further Education: high school courses, certificate programs, associate degree, bachelor's degree, advanced degree, industry certifications, etc.
-2. Work Experience: volunteer work, part-time job, internship, apprenticeship, entry-level position, etc.
-3. Networking: join student clubs, attend industry events, connect with professionals on LinkedIn, find a mentor, participate in online forums, etc.
-4. Skill Development: technical skills, communication skills, leadership skills, language skills, digital literacy, etc.
-5. Other: create a portfolio, develop a personal brand, start a side project, join professional organizations, etc.
-
-### Knowledge Check Strategies
-
-- Use thumbs up/down polling for quick concept checks
-- Have students explain the difference between jobs and careers in their own words
-- Ask students to identify elements of their career map that represent "job thinking" versus "career thinking"
-- Observe group discussions for misconceptions to address
-
-## 1.1 TEACHER GUIDE FOR DAY 2
-
-### Pre-Class Setup
-
-- Ensure all student Career Path Maps from Day 1 are accessible
-- Prepare podcast audio for review session
-- Set up digital access to career research resources
-- Prepare sample career implementation portfolios as examples
-
-### Lesson Timeline
-
-- Review of Day 1 Concepts (Podcast and Discussion) (10 minutes)
-- Career Pathway Research Activity (15 minutes)
-- Obstacle Analysis & Strategy Development (12 minutes)
-- Human Capital Investment Planning (10 minutes)
-- Implementation Portfolio Completion (8 minutes)
-
-### Facilitation Tips
-
-**Review Session (10 minutes)**
-
-- Play the podcast reviewing key concepts from Day 1 (5 minutes)
-- Facilitate brief discussion to address any questions (5 minutes)
-
-**Career Pathway Research (15 minutes)**
-
-- Guide students to appropriate research resources for their specific career interests (2 minutes)
-- Model how to evaluate the credibility of career information (3 minutes)
-- Circulate to provide individualized guidance as students conduct research (10 minutes)
-
-**Obstacle Analysis & Strategy Development (12 minutes)**
-
-- Introduce the concept of anticipating obstacles as part of strategic planning (2 minutes)
-- Share examples of common obstacles and potential strategies (3 minutes)
-- Facilitate peer discussions where students can share potential obstacles and brainstorm solutions together (7 minutes)
-
-**Human Capital Investment Planning (10 minutes)**
-
-- Review the concept of human capital from Day 1 (2 minutes)
-- Guide students through creating their investment plans, emphasizing the connection between investments and future returns (8 minutes)
-
-**Implementation Portfolio Completion (8 minutes)**
-
-- Provide structure for students to organize their work into a cohesive portfolio (3 minutes)
-- Allow time for students to identify concrete first steps (5 minutes)
-
-### Assessment Strategies
-
-**Formative Assessment Options:**
-
-- Observe student research approaches and provide guidance
-- Use quick progress checks throughout the learning lab
-- Employ peer feedback sessions for obstacle analysis
-
-**Portfolio Assessment Criteria:**
-
-- Thoroughness of career research
-- Realism and specificity of obstacle analysis
-- Strategic thinking in the human capital investment plan
-- Alignment between short, mid, and long-term goals
-- Concrete and actionable first steps
-
-**Extension Opportunities:**
-
-- For students who finish early, suggest researching a related alternative career path to compare
-- Encourage advanced students to create a basic financial projection based on their career research
-
-**Follow-up Activities:**
-
-- Schedule brief 1:1 check-ins with students about their plans in subsequent classes
-- Connect career planning to future lessons on budgeting, investing, and financial planning
-
-### Page Structure
-
-**Page Title:** Career Investment Portfolio - Learning Lab
-
-**Main Components:**
-
-1. Introduction Panel
-2. Human Capital Assessment
-3. ROI Calculator
-4. Career Pathway Visualization
-5. Skills Gap Analysis
-6. Professional Development Plan
-7. Summary & Integration
-
-### Component Details
-
-### 1. Introduction Panel
-
-**Purpose:** Orient students to the Learning Lab activities and connect to Day 1 concepts
-**Design:** Video player with welcome message and brief introduction
-**Interaction:** Play button, progress tracker
-
-### 2. Human Capital Assessment
-
-**Purpose:** Help students inventory their current skills, knowledge, and experiences
-**Inputs:** Automatically imports career goals from Day 1 activity
-**Expected Outputs:** Digital skills inventory with ratings for various competencies
-**Interaction Model:**
-
-- Slider scales (1-5) for rating current proficiency in various skills
-- Checkboxes for experiences and qualifications
-- Free text areas for listing strengths and development areas
-**Integration Needs:** Pull career target from Day 1 activity
-
-### 3. ROI Calculator
-
-**Purpose:** Allow students to compare educational pathways and their financial impacts
-**Inputs:** User selections of educational options and career paths
-**Expected Outputs:** Graph comparing lifetime earnings with different education levels
-**Interaction Model:**
-
-- Dropdown menus for selecting education levels
-- Slider for adjusting years in workforce
-- Interactive graph showing earnings over time
-- Toggles for comparing different scenarios
-**Integration Needs:** None - standalone component
-
-### 4. Career Pathway Visualization
-
-**Purpose:** Create visual timeline showing progression from current status to career goals
-**Inputs:** Career path mapping selections from Day 1
-**Expected Outputs:** Interactive timeline with key decision points and milestones
-**Interaction Model:**
-
-- Draggable timeline elements
-- Clickable milestone markers with pop-up information
-- Ability to add, edit, or remove steps in the pathway
-**Integration Needs:** Import all selections from Day 1 Career Path Mapping activity
-
-### 5. Skills Gap Analysis
-
-**Purpose:** Identify the difference between current skills and those needed for target career
-**Inputs:** Human Capital Assessment data and career goal information
-**Expected Outputs:** Visual representation of skills gaps with priority rankings
-**Interaction Model:**
-
-- Split-screen comparison of current vs. required skills
-- Drag-and-drop prioritization of skills to develop
-- Progress indicators for skills currently being developed
-**Integration Needs:** Pull data from Human Capital Assessment component
-
-### 6. Professional Development Plan
-
-**Purpose:** Create actionable plan for addressing skills gaps and advancing career goals
-**Inputs:**
-
-## Content from spec.md
-
-# Chapter 1.1: Jobs vs. Careers - Asset Specifications
-
-## Required Assets for Day 1
-
-### Visual Resources
-1. **Job vs. Career Comparison Chart**
-   - Purpose: Illustrate key differences between jobs and careers
-   - Format: Infographic (PNG/SVG)
-   - Notes: Use contrasting colors, include elements like education requirements, income potential, advancement opportunities
-
-2. **Career Path Flowchart**
-   - Purpose: Visualize potential progression along career paths
-   - Format: Interactive flowchart (SVG)
-   - Notes: Include decision points, educational requirements, and timeline indicators
-
-3. **Personal Interests and Skills Assessment**
-   - Purpose: Help students identify their strengths and interests
-   - Format: PDF worksheet
-   - Notes: Include categories for skills, interests, values, and career connections
-
-### Interactive Tools
-1. **Career Path Skill Builder**
-   - Purpose: Enable students to plot their career development across timeframes
-   - Format: Interactive HTML/JavaScript form
-   - Notes: Sections for short-term, mid-term, and long-term goals across multiple categories
-
-2. **Career Research Database**
-   - Purpose: Provide structured information about various careers
-   - Format: Searchable database with filtering
-   - Notes: Include salary data, education requirements, growth projections, and geographic demand
-
-## Required Assets for Day 2
-
-### Audio Resources
-1. **Career Development Podcast**
-   - Purpose: Review key concepts from Day 1 and introduce Day 2 activities
-   - Format: MP3 audio file (5-7 minutes)
-   - Notes: Professional narration with clear explanations of career development concepts
-
-### Interactive Tools
-1. **Educational Timeline Builder**
-   - Purpose: Create a visual timeline of educational milestones
-   - Format: Interactive JavaScript tool
-   - Notes: Allow placement of educational goals across short/mid/long-term timeframes
-
-2. **Salary Progression Visualization**
-   - Purpose: Project potential salary growth based on career choices
-   - Format: Interactive chart generator
-   - Notes: Include fields for education level, experience, industry, and location
-
-3. **Skills Inventory and Gap Analysis**
-   - Purpose: Identify current skills and needed skills for career goals
-   - Format: Interactive assessment tool
-   - Notes: Include technical skills, soft skills, and certifications with visual gap analysis
-
-4. **Obstacle Analysis Matrix**
-   - Purpose: Help students identify and plan for career obstacles
-   - Format: Interactive matrix with solution planning
-   - Notes: Categories for financial, educational, personal, and time constraints
+# Asset Specifications for Chapter 1.1: Jobs vs. Careers
+
+## Day 1 Assets
+
+1. **Career vs. Job Comparison Infographic**
+   - **Purpose:** Visual representation of the key differences between jobs and careers
+   - **Format/Inputs:** Vector graphic (SVG or PNG), responsive design for all screen sizes
+   - **Expected Outputs:** Static image with clear typography and engaging visuals
+   - **Interaction Model:** None (static graphic)
+   - **Design Notes:** Use a side-by-side comparison table with icons representing key differences like growth potential, education requirements, compensation trajectory, and long-term stability. Use the PFL Academy color scheme with blue representing careers and orange representing jobs.
+
+2. **Career Capital Building Blocks Interactive Diagram**
+   - **Purpose:** Interactive visualization of different types of career capital
+   - **Format/Inputs:** Interactive HTML5/JavaScript component
+   - **Expected Outputs:** Visual representation that responds to user clicks
+   - **Interaction Model:** Users click on different building blocks to reveal explanations and examples of each type of career capital
+   - **Design Notes:** Use a foundation and building block metaphor. Categories should include: Technical Skills, Soft Skills, Education/Certifications, Experience, and Professional Network. Each block should expand to show examples and how they contribute to career advancement.
+
+3. **Career Progression Timeline Examples**
+   - **Purpose:** Show real-world examples of career progression in different fields
+   - **Format/Inputs:** Interactive horizontal timeline (HTML5/JavaScript)
+   - **Expected Outputs:** Visual career progressions with salary information and skill development milestones
+   - **Interaction Model:** Users can select from 5 different career fields to view typical progression paths
+   - **Design Notes:** Include timelines for careers in technology, healthcare, skilled trades, business, and education. Show entry points, advancement positions, salary ranges at each level, typical timeframes, and key skills needed for advancement. Use consistent design language across all examples.
+
+4. **Career Financial Impact Calculator Preview**
+   - **Purpose:** Simplified preview of the Day 2 calculator tool to illustrate financial differences
+   - **Format/Inputs:** Static graphic with sample data
+   - **Expected Outputs:** Visual comparison of lifetime earnings between job-hopping vs. career progression
+   - **Interaction Model:** None (static graphic)
+   - **Design Notes:** Create an appealing graph showing the financial trajectory differences. Include annotations highlighting key points like education investment periods, advancement moments, and cumulative earnings differences. Use the same visual style as the full calculator tool that will be used on Day 2.
+
+5. **Maya and Carlos Case Study Cards**
+   - **Purpose:** Illustrate the real-world examples in a visually engaging format
+   - **Format/Inputs:** Digital card design (PNG or SVG)
+   - **Expected Outputs:** Visual storytelling of the case studies from the content
+   - **Interaction Model:** None (static graphic)
+   - **Design Notes:** Create visual journey maps for both Maya and Carlos with character illustrations, key decision points, and financial outcomes. Use a comic-strip style format with 4-5 panels per character. Include actual salary figures and financial milestones to make the examples concrete.
+
+## Day 2 Assets
+
+1. **Career Path Planner Tool**
+   - **Purpose:** Interactive tool for students to map their own career paths
+   - **Format/Inputs:** Web application with form inputs and visualization components
+   - **Expected Outputs:** Personalized career path map with education, skills, and financial projections
+   - **Interaction Model:** Multi-step form with progressive disclosure of options based on selections
+   - **Design Notes:** 
+     - Step 1: Career interest selection (dropdown with popular careers and custom option)
+     - Step 2: Education/training pathway selection
+     - Step 3: Timeline builder with drag-and-drop milestones
+     - Step 4: Skill development planner
+     - Step 5: Visual output of complete career path
+     - The tool should auto-save progress and allow exporting to PDF for portfolio inclusion
+     - Include tooltips with guidance throughout the experience
+
+2. **Career Scenario Cards**
+   - **Purpose:** Provide structured scenarios for the Career Path Exploration activity
+   - **Format/Inputs:** Digital card designs (printable PDF also available)
+   - **Expected Outputs:** 8-10 different career scenarios with decision points and outcomes
+   - **Interaction Model:** None (content for group discussion)
+   - **Design Notes:** Each card should include:
+     - Character name and initial situation/interests
+     - 3-4 key decision points in their career journey
+     - Financial outcomes at each stage
+     - Final situation after 10-15 years
+     - Discussion questions for analysis
+     - Create diverse scenarios across different industries, education levels, and circumstances
+
+3. **Financial Impact Calculator**
+   - **Purpose:** Tool for analyzing how career choices impact financial goals
+   - **Format/Inputs:** Interactive web calculator with form inputs and visualizations
+   - **Expected Outputs:** Personalized financial projections based on career path inputs
+   - **Interaction Model:** Form with input fields, sliders, and dynamic visualization
+   - **Design Notes:** 
+     - Inputs: Starting salary, expected raises/promotions, education costs
+     - Financial goals: Student loan repayment, emergency fund, home purchase, retirement
+     - Visualization: Timeline showing when each goal could be achieved
+     - Comparison feature: Allow students to try different scenarios and see outcomes side-by-side
+     - Include option to adjust for inflation and different investment return assumptions
+     - Export functionality for portfolio inclusion
+
+4. **Career Research Resource Database**
+   - **Purpose:** Curated collection of reliable career information resources
+   - **Format/Inputs:** Searchable database with categorized links
+   - **Expected Outputs:** Filtered resource lists based on student interests
+   - **Interaction Model:** Search box and filter options by industry, information type, etc.
+   - **Design Notes:** 
+     - Categories: Salary Information, Education Requirements, Industry Outlooks, Interview Advice
+     - Include brief descriptions of each resource
+     - Tag resources by career field for easy filtering
+     - Ensure all external links open in new tabs
+     - Include a mix of government resources (BLS, O*NET) and industry-specific sources
+
+5. **Career Path Portfolio Template**
+   - **Purpose:** Structured template for students to compile their Learning Lab work
+   - **Format/Inputs:** Digital document template (also available as printable PDF)
+   - **Expected Outputs:** Completed portfolio with all required sections
+   - **Interaction Model:** Fillable template with clear sections and guidance
+   - **Design Notes:** 
+     - Professional design with PFL Academy branding
+     - Structured sections for each Learning Lab activity
+     - Clear instructions for completing each section
+     - Space for reflections and insights
+     - Forward-looking section for continued career exploration
+     - Digital version should allow embedding of calculator results and planner outputs
+
+## Skill Builder Assets
+
+1. **Career Path Planner Skill Builder**
+   - **Purpose:** Guided application of career planning concepts with financial focus
+   - **Format/Inputs:** Multi-part interactive activity with guided instructions
+   - **Expected Outputs:** Completed preliminary career plan with financial considerations
+   - **Interaction Model:** Step-by-step guided experience with input sections and visualization
+   - **Design Notes:** 
+     - Three main sections: Career Exploration, Timeline Planning, Financial Impact
+     - Research component with integrated career database
+     - Timeline builder with short-term, mid-term, and long-term sections
+     - Financial consideration prompts throughout
+     - Summary view that synthesizes all inputs into a cohesive plan
+     - Export/save functionality for later reference
+     - Progress tracking with completion indicators
 
 ## Downloadable Resources
-1. **Career Development Plan Template**
-   - Purpose: Provide structure for long-term career planning
-   - Format: PDF/Word document
-   - Notes: Include sections for all timeframes and categories
 
-2. **Industry Research Guide**
-   - Purpose: Guide students in researching career options
-   - Format: PDF
-   - Notes: Include key questions, trusted resources, and evaluation criteria
+1. **Career Research Guide**
+   - **Purpose:** Support student research with structured approach
+   - **Format:** PDF document with embedded links
+   - **Content:** Step-by-step guide to researching careers, including reliable sources, questions to investigate, and organization templates
 
-3. **Informational Interview Template**
-   - Purpose: Help students conduct career research interviews
-   - Format: PDF
-   - Notes: Include sample questions and note-taking space
+2. **Career Path Planning Worksheet**
+   - **Purpose:** Printable version of the digital planning tool for students without reliable technology access
+   - **Format:** PDF worksheet with fillable fields
+   - **Content:** Structured sections matching the digital tool, with guidance text and examples
 
-## Additional Resources
-1. **Career Websites and Tools**
-   - Purpose: Provide trusted resources for further exploration
-   - Format: Curated list with descriptions
-   - Notes: Include government resources, industry associations, and educational tools
+3. **Career vs. Job Comparison Reference Sheet**
+   - **Purpose:** Take-home reference summarizing key concepts
+   - **Format:** Single-page PDF
+   - **Content:** Definitions, comparisons, and examples of jobs vs. careers, plus career capital categories
+
+4. **Financial Milestone Planning Guide**
+   - **Purpose:** Connect career planning to financial goal setting
+   - **Format:** PDF guide with worksheets
+   - **Content:** Common financial milestones, planning considerations, and worksheets for mapping goals to career stages
+
+5. **Career Decision Points Analysis Framework**
+   - **Purpose:** Analytical tool for evaluating career options
+   - **Format:** PDF worksheet
+   - **Content:** Decision matrix template, evaluation criteria explanations, and example analyses
