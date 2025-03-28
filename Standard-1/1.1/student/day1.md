@@ -1,180 +1,68 @@
-# 1.1 Jobs vs CareersI
+# Chapter 1.1: Jobs vs. Careers
 
-### Learning Objectives
+> **Implementation Note:**
+> Use the standardized header template (templates/student-header-template.html) for consistent styling.
+> This includes:
+> - Purple header with navigation menu (Home, Curriculum, Resources, Profile)
+> - Left navigation with blue vertical indicators for active items and green checkmarks for completed items
+> - Content styling using the standard component classes
 
-By the end of this lesson, you will be able to:
+## Learning Objectives
+- Differentiate between a job and a career
+- Identify how career paths affect long-term financial outcomes
+- Evaluate personal interests and skills in relation to potential career paths
+- Develop preliminary career path strategies for financial success
 
-- Differentiate between a job and a career with specific examples
-- Identify how skills from entry-level jobs can transfer to long-term career paths
-- Analyze how different approaches to work can impact your financial future
-- Create a preliminary career pathway plan that aligns with your personal goals
+## Introduction
+In today's fast-paced economy, understanding the difference between simply having a job and building a career is crucial to your financial future. The choices you make now about your education and work path can affect your earning potential for decades to come. While jobs provide immediate income, careers offer pathways to growth, advancement, and long-term financial stability.
 
-### Introduction
+Many high school students focus only on getting any job that pays, without considering how their choices fit into a larger career trajectory. However, those who strategically approach their work life tend to experience greater financial security and job satisfaction over time. The decisions you make about your education, skills development, and early work experiences establish the foundation for your financial independence.
 
-What's the difference between a job and a career? While both provide income, they serve different purposes in your life journey. Today, we'll explore how understanding this distinction can help you make more strategic decisions about your education, work experience, and long-term financial well-being.
+## Key Concepts
+- **Job**: A position of employment that provides immediate income but may have limited growth potential; typically viewed as a means to an end
+- **Career**: A sequence of related jobs in a particular field that provides growth, advancement, and increasing compensation over time
+- **Career Path**: A strategic progression of jobs, education, and skill acquisition that leads toward specific professional goals
+- **Career Capital**: The accumulated skills, experiences, knowledge, and connections that increase your value in the workplace
 
-### Key Concepts
+## Deeper Exploration
+The distinction between jobs and careers goes far beyond semantics. A job primarily functions as a way to earn money to meet immediate financial needs. Jobs often require less specialized education or training, may be more temporary in nature, and typically offer limited opportunities for advancement within the organization. Examples include retail positions, food service roles, or seasonal work. While jobs are valuable for generating income, they generally don't build toward a larger professional goal.
 
-**Jobs**
+Careers, by contrast, represent a series of connected positions within a field or industry that build upon each other over time. Careers typically require more specialized education, training, or skill development. They offer advancement opportunities, increasing responsibilities, and generally higher compensation as you progress. Examples include becoming a nurse, software developer, electrician, or financial analyst. Careers involve intentional planning, continuous learning, and strategic decisions about when to advance to new positions.
 
-- Provide immediate income to meet basic needs
-- Often require minimal specialized training or education
-- May be temporary or transitional
-- Examples: Retail associate, food service worker, ride-share driver
+The financial implications of pursuing a job versus a career are significant. While a job might provide immediate income, careers tend to offer higher earning potential over time. According to Bureau of Labor Statistics data, workers with career-focused education and training earn substantially more over their lifetimes than those who move between unrelated jobs. Additionally, careers often provide better benefits packages, including retirement plans, health insurance, and paid time off, all of which contribute to long-term financial security.
 
-**Careers**
+### Building Career Capital
+One of the most valuable aspects of career development is the accumulation of career capital—the skills, experiences, connections, and reputation you build throughout your professional life. This capital makes you increasingly valuable to employers and opens doors to better opportunities. Unlike a job, which may provide limited transferable skills, careers allow you to build specialized expertise that can be leveraged for advancement.
 
-- Long-term professional paths with advancement opportunities
-- Usually require specialized education, training, or credentials
-- Offer growth in responsibility, skills, and compensation over time
-- Examples: Nurse, software developer, financial analyst, electrician
+Career capital can include technical skills specific to your field, soft skills like communication and leadership, professional certifications, and a network of industry contacts. The more career capital you accumulate, the more options you'll have and the higher earning potential you can command.
 
-**The Relationship Between Jobs and Careers**
+### Implications & Importance
+Understanding the difference between jobs and careers is foundational to financial literacy because your career path will likely be your primary income source throughout your life. The career choices you make will determine not just your annual salary, but your ability to save for emergencies, invest for retirement, qualify for loans, and achieve major financial milestones like homeownership.
 
-- Jobs can serve as stepping stones toward careers
-- Skills developed in entry-level jobs often transfer to career settings
-- A strategic approach to job selection can accelerate career development
+Career decisions also impact your work-life balance, job satisfaction, and overall well-being—all factors that contribute to financial decision-making. Those with stable, growing careers often make different financial choices than those with unpredictable income from changing jobs.
 
-### Deeper Exploration
+In today's dynamic economy, even traditional career paths are evolving. Many workers now experience multiple careers throughout their lifetime, making strategic career planning and adaptability even more important skills for financial success. Understanding how to transition between careers, when to invest in additional education, and how to leverage transferable skills are crucial financial planning considerations.
 
-**Human Capital Development**
-Your skills, knowledge, and experience form your "human capital" - an asset that increases in value over time with strategic investments. Both jobs and careers can build your human capital, but in different ways:
+## Real-World Examples
 
-**Through Jobs:**
+### Maya's Fast Food Job vs. Healthcare Career
+Maya worked at a fast-food restaurant during high school, making minimum wage with irregular hours. While this job provided some spending money, it offered no benefits, limited skill development, and no clear path to advancement. After graduation, Maya enrolled in a community college nursing program. Although she earned less during her education than she could have working full-time at the restaurant, within five years she had become a registered nurse earning more than three times her previous hourly wage, with excellent benefits, regular hours, and clear opportunities for specialization and advancement. By investing in a career path rather than continuing in a series of jobs, Maya significantly improved her long-term financial outlook.
 
-- Developing interpersonal communication skills
-- Learning time management and reliability
-- Building customer service experience
-- Understanding workplace expectations
+### Carlos's Strategic Career Path
+Carlos began working at an entry-level position at a technology company after completing a coding bootcamp. Rather than viewing this as just a job, he approached it as the first step in a career path. He volunteered for challenging projects to build his skills, sought mentorship from senior developers, and invested time in learning new programming languages. When he changed companies two years later, he received a 30% salary increase. After five years in the industry and multiple strategic moves, his income had more than doubled from his starting salary, and he had built enough career capital to negotiate flexible working arrangements and additional benefits. By treating his work as a career rather than just a job, Carlos was able to accelerate his financial progress and create more options for himself.
 
-**Through Careers:**
+## Summary
+The distinction between jobs and careers represents one of the most consequential financial decisions you'll make. While jobs provide immediate income, careers offer pathways to growth, advancement, and significantly higher lifetime earnings. By understanding this difference and making intentional choices about education, skill development, and professional growth, you can establish a stronger foundation for financial success.
 
-- Acquiring specialized technical skills
-- Building professional networks
-- Developing industry expertise
-- Gaining leadership experience
+Career planning isn't just about choosing what you'll do for work—it's about strategically positioning yourself for financial stability and growth. The career capital you build, including specialized skills, knowledge, and professional relationships, becomes one of your most valuable financial assets, opening doors to opportunities and providing security in an ever-changing economy.
 
-**Financial Implications**
-The job vs. career distinction has significant financial consequences:
+## Reflection Prompt
+Consider your own interests, skills, and values. What careers might align with these aspects of yourself while also providing the financial future you envision? What steps could you take now to begin building career capital in that direction?
 
-**Job-Focused Approach:**
+## Skill Builder Activity
+In this activity, you'll create a preliminary Career Path Plan that outlines potential paths from your current position to your long-term career goals.
 
-- Provides immediate income
-- May limit future earning potential
-- Offers less financial stability long-term
-- Typically has limited benefits (healthcare, retirement)
-
-**Career-Focused Approach:**
-
-- May require initial investment (education/training)
-- Offers higher long-term earning potential
-- Provides greater financial stability
-- Often includes comprehensive benefits
-
-### Real-World Examples
-
-**Alex's Approach (Job-Oriented)**
-Alex works part-time at a local electronics store, focusing primarily on earning enough to cover immediate expenses and weekend activities. While the job provides steady income now, Alex hasn't considered how the experience might contribute to future goals or sought opportunities to develop transferable skills that could lead to advancement.
-
-**Taylor's Approach (Career-Oriented)**
-Taylor works at the same electronics store but takes a different approach. Taylor volunteers for training in multiple departments, researches industry trends, builds relationships with managers, and is taking online courses in business management. Taylor sees the retail position as an opportunity to develop skills for a future career in technology sales or management.
-
-**Discussion Point:** Five years from now, how might Alex and Taylor's financial situations differ based on their approaches?
-
-### Summary
-
-Jobs and careers both have important roles in your financial journey. Jobs provide immediate income and can be stepping stones to careers if approached strategically. Careers offer long-term financial benefits and growth but require intentional planning and investment in your human capital. The choices you make now about education, skill development, and work experience will significantly impact your financial future.
-
-### Reflection
-
-Think about your current or future work opportunities:
-
-- What skills could you develop that would transfer to your long-term goals?
-- How might your approach to a part-time job change if you viewed it through a career development lens?
-- What additional training or education might help you bridge the gap between jobs and a career path?
-
-### Day 1 In-Class Activity: Career Path Mapping
-
-You will create a personalized career development roadmap by mapping out goals across three timeframes:
-
-- Short-term (1 year)
-- Mid-term (2-4 years)
-- Long-term (5-10 years)
-
-For each timeframe, you'll select development activities from five categories:
-
-1. Further Education
-2. Work Experience
-3. Networking
-4. Skill Development
-5. Other Professional Development
-
-This activity will help you visualize how choices in each area connect to form a cohesive career pathway and identify the specific investments in your human capital needed at each stage.
-
-## 1.1 LEARNING LAB
-
-### Career Path Implementation Workshop
-
-**Introduction**
-Welcome to Day 2 of Jobs vs. Careers! Today we'll transform your career path map from yesterday into an actionable implementation plan. You'll conduct focused research on your selected path, identify potential obstacles, and develop strategies to overcome them.
-
-**Learning Lab Activities**
-
-**Part 1: Career Pathway Research**
-Using your career path map from Day 1, you'll research specific details about your chosen career pathway:
-
-- Educational requirements and timelines
-- Entry-level positions that align with your goals
-- Salary progression possibilities
-- In-demand skills in your chosen field
-- Professional organizations and networking opportunities
-
-**Part 2: Obstacle Analysis & Strategy Development**
-Identify potential challenges in your career path and develop strategies to overcome them:
-
-- Financial limitations (education costs, living expenses during training)
-- Skill gaps and how to address them
-- Geographic considerations
-- Time management concerns
-- Competitive job market realities
-
-**Part 3: Human Capital Investment Plan**
-Create a specific plan to build your human capital over time:
-
-- Skills to develop and how you'll acquire them
-- Timeline for education and training
-- Ways to gain relevant experience while still in school
-- Networks to build and how you'll connect with them
-- Financial resources needed and potential sources
-
-**Final Deliverable: Career Implementation Portfolio**
-Your portfolio will include:
-
-1. Refined career path map with specific career goals
-
-1. Research findings on education, training, and skill requirements
-2. Obstacle analysis with mitigation strategies
-3. Human capital investment timeline
-4. First steps action plan (what you'll do in the next 30 days)
-
-### Materials/Resources Needed
-
-- Career path map from Day 1
-- Digital research template
-- Online access for career research
-- Career comparison tools (links provided)
-- Human capital investment planning worksheet
-
-### Expected Outcomes
-
-By the end of this Learning Lab, you will have:
-
-- A research-informed career pathway plan
-- Concrete strategies for overcoming potential obstacles
-- A clear understanding of the human capital investments required
-- Specific next steps to begin implementing your plan
-- A foundation for future financial planning based on your career choices
-
-cd /Users/justin/pfl-academy
-
-cd /Users/justin/pfl-academy
+**Instructions:**
+1. Identify 2-3 career fields that interest you and research the typical career progression, educational requirements, and salary ranges.
+2. Create a timeline with short-term (1-2 years), mid-term (3-5 years), and long-term (10+ years) career goals.
+3. For each time frame, identify specific steps for education, skill development, work experience, and networking that will help you advance along your chosen path.
