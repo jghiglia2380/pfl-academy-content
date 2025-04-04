@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFL Academy - Chapter 1.1: Jobs vs. Careers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Core component styles */
+        .learning-objectives {
+            background-color: #e6f3ff;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .discussion-prompt {
+            background-color: #e6f0ff;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .real-world-example {
+            background-color: #f0f9ff;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #0ea5e9;
+        }
+        
+        .skill-builder {
+            background-color: #f3e8ff;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .practical-application {
+            background-color: #ecfdf5;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #10b981;
+        }
+        
+        .important-note {
+            background-color: #fffbeb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .key-concept {
+            background-color: #eef2ff;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #6366f1;
+        }
+        
+        .activity-timer {
+            background-color: #FFFBEB;
+            border-left: 4px solid #F59E0B;
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+        
+        .audio-player {
+            background-color: #f4f4f5;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .progress-bar {
+            background-color: #e0e7ff;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .ai-feedback {
+            background-color: #fff7ed;
+            padding: 1.5rem;
+            border-left: 4px solid #f59e0b;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-indigo-600 text-white p-4 shadow-md fixed top-0 left-0 right-0 z-40">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">PFL Academy</h1>
+            <nav>
+                <a href="#" class="text-white px-3">Home</a>
+                <a href="#" class="text-white px-3">Curriculum</a>
+                <a href="#" class="text-white px-3">Resources</a>
+                <a href="#" class="text-white px-3">Profile</a>
+            </nav>
+        </div>
+    </header>
+    <div class="h-16"></div>
+
+    <div class="container mx-auto px-4 py-8 grid lg:grid-cols-10 gap-8">
+        <!-- Sidebar Navigation -->
+        <div class="lg:col-span-3 bg-white rounded-lg shadow p-6 sticky top-16 h-screen overflow-y-auto">
+            <div id="standard-info">
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">Standard 1: Careers</h2>
+                <p class="text-gray-600 mb-4">Understanding career paths, income planning, and effective financial management.</p>
+            </div>
+            
+            <ul class="space-y-2" id="chapter-navigation">
+                <!-- Current Chapter -->
+                <li>
+                    <div class="flex items-center bg-indigo-50 p-2 rounded">
+                        <span class="border-l-4 border-indigo-700 pl-2 text-indigo-700 font-medium">1.1: Jobs vs. Careers</span>
+                    </div>
+                    <!-- Section Navigation for Current Chapter -->
+                    <ul class="ml-6 mt-2 space-y-1" id="section-navigation">
+                        <li>
+                            <a href="#intro" class="text-indigo-700 font-medium flex items-center">
+                                <span class="mr-2">•</span> Introduction
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#learning-objectives" class="text-gray-700 hover:text-indigo-700 flex items-center">
+                                <span class="mr-2">•</span> Learning Objectives
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#key-concepts" class="text-gray-700 hover:text-indigo-700 flex items-center">
+                                <span class="mr-2">•</span> Key Concepts
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#deeper-exploration" class="text-gray-700 hover:text-indigo-700 flex items-center">
+                                <span class="mr-2">•</span> Deeper Exploration
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#real-world-examples" class="text-gray-700 hover:text-indigo-700 flex items-center">
+                                <span class="mr-2">•</span> Real-World Examples
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#reflection" class="text-gray-700 hover:text-indigo-700 flex items-center">
+                                <span class="mr-2">•</span> Reflection
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#skill-builder" class="text-gray-700 hover:text-indigo-700 flex items-center">
+                                <span class="mr-2">•</span> Skill Builder
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#summary" class="text-gray-700 hover:text-indigo-700 flex items-center">
+                                <span class="mr-2">•</span> Summary
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <!-- Next Chapters (Upcoming) -->
+                <li>
+                    <div class="flex items-center">
+                        <a href="#" class="text-gray-700 hover:text-indigo-700">1.2: Paying for Post-Secondary Education</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <a href="#" class="text-gray-700 hover:text-indigo-700">1.3: Income and Taxes</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <a href="#" class="text-gray-700 hover:text-indigo-700">1.4: Financial Goal Setting</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <a href="#" class="text-gray-700 hover:text-indigo-700">1.5: Managing Your Income Effectively</a>
+                    </div>
+                </li>
+            </ul>
+            
+            <!-- Progress Tracker -->
+            <div class="mt-8 bg-gradient-to-r from-indigo-100 to-indigo-200 rounded-lg p-4">
+                <h3 class="text-lg font-semibold text-indigo-800 mb-2">Your Progress</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
+                    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 25%"></div>
+                </div>
+                <p class="text-sm text-indigo-800">Completed: <span class="font-medium">2/8 activities</span></p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="lg:col-span-7 bg-white rounded-lg shadow p-6">
+            <!-- Chapter Title and Info -->
+            <h1 id="intro" class="text-3xl font-bold text-gray-900 mb-2">Chapter 1.1: Jobs vs. Careers</h1>
+            <p class="text-xl text-gray-600 mb-6">Understanding the financial impact of career choices</p>
+            
+            
+            <!-- Learning Objectives Section -->
+            <div id="learning-objectives" class="learning-objectives">
+                <h2 class="text-xl font-semibold text-gray-900 mb-3">Learning Objectives</h2>
+                <p class="mb-2">By the end of this lesson, you will be able to:</p>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>Differentiate between a job and a career</li>
+                    <li>Identify how career paths affect long-term financial outcomes</li>
+                    <li>Evaluate personal interests and skills in relation to potential career paths</li>
+                    <li>Develop preliminary career path strategies for financial success</li>
+                </ul>
+            </div>
+            
+            <!-- Introduction Section -->
+            <section>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Introduction</h2>
+                <p class="text-gray-700 mb-4">In today's fast-paced economy, understanding the difference between simply having a job and building a career is crucial to your financial future. The choices you make now about your education and work path can affect your earning potential for decades to come. While jobs provide immediate income, careers offer pathways to growth, advancement, and long-term financial stability.</p>
+                <p class="text-gray-700 mb-4">Many high school students focus only on getting any job that pays, without considering how their choices fit into a larger career trajectory. However, those who strategically approach their work life tend to experience greater financial security and job satisfaction over time. The decisions you make about your education, skills development, and early work experiences establish the foundation for your financial independence.</p>
+            </section>
+            
+            <!-- Key Concepts Section -->
+            <section id="key-concepts" class="pt-4">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Key Concepts</h2>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="key-concept">
+                        <h3 class="font-bold text-gray-900 mb-2">Job</h3>
+                        <p class="text-gray-700">A position of employment that provides immediate income but may have limited growth potential; typically viewed as a means to an end</p>
+                    </div>
+                    <div class="key-concept">
+                        <h3 class="font-bold text-gray-900 mb-2">Career</h3>
+                        <p class="text-gray-700">A sequence of related jobs in a particular field that provides growth, advancement, and increasing compensation over time</p>
+                    </div>
+                    <div class="key-concept">
+                        <h3 class="font-bold text-gray-900 mb-2">Career Path</h3>
+                        <p class="text-gray-700">A strategic progression of jobs, education, and skill acquisition that leads toward specific professional goals</p>
+                    </div>
+                    <div class="key-concept">
+                        <h3 class="font-bold text-gray-900 mb-2">Career Capital</h3>
+                        <p class="text-gray-700">The accumulated skills, experiences, knowledge, and connections that increase your value in the workplace</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Deeper Exploration Section -->
+            <section id="deeper-exploration" class="pt-4">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Deeper Exploration</h2>
+                
+                <p class="text-gray-700 mb-4">The distinction between jobs and careers goes far beyond semantics. A job primarily functions as a way to earn money to meet immediate financial needs. Jobs often require less specialized education or training, may be more temporary in nature, and typically offer limited opportunities for advancement within the organization. Examples include retail positions, food service roles, or seasonal work. While jobs are valuable for generating income, they generally don't build toward a larger professional goal.</p>
+                
+                <p class="text-gray-700 mb-4">Careers, by contrast, represent a series of connected positions within a field or industry that build upon each other over time. Careers typically require more specialized education, training, or skill development. They offer advancement opportunities, increasing responsibilities, and generally higher compensation as you progress. Examples include becoming a nurse, software developer, electrician, or financial analyst. Careers involve intentional planning, continuous learning, and strategic decisions about when to advance to new positions.</p>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Building Career Capital</h3>
+                <p class="text-gray-700 mb-4">One of the most valuable aspects of career development is the accumulation of career capital—the skills, experiences, connections, and reputation you build throughout your professional life. This capital makes you increasingly valuable to employers and opens doors to better opportunities. Unlike a job, which may provide limited transferable skills, careers allow you to build specialized expertise that can be leveraged for advancement.</p>
+                
+                <p class="text-gray-700 mb-4">Career capital can include technical skills specific to your field, soft skills like communication and leadership, professional certifications, and a network of industry contacts. The more career capital you accumulate, the more options you'll have and the higher earning potential you can command.</p>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Implications & Importance</h3>
+                <p class="text-gray-700 mb-4">Understanding the difference between jobs and careers is foundational to financial literacy because your career path will likely be your primary income source throughout your life. The career choices you make will determine not just your annual salary, but your ability to save for emergencies, invest for retirement, qualify for loans, and achieve major financial milestones like homeownership.</p>
+                
+                <p class="text-gray-700 mb-4">Career decisions also impact your work-life balance, job satisfaction, and overall well-being—all factors that contribute to financial decision-making. Those with stable, growing careers often make different financial choices than those with unpredictable income from changing jobs.</p>
+                
+                <p class="text-gray-700 mb-4">In today's dynamic economy, even traditional career paths are evolving. Many workers now experience multiple careers throughout their lifetime, making strategic career planning and adaptability even more important skills for financial success. Understanding how to transition between careers, when to invest in additional education, and how to leverage transferable skills are crucial financial planning considerations.</p>
+                
+                <div class="discussion-prompt">
+                    <h3 class="font-semibold text-lg mb-2">Discussion Questions</h3>
+                    <ol class="list-decimal ml-6 mb-0">
+                        <li class="mb-2">How does this topic connect to your personal financial goals?</li>
+                        <li class="mb-2">What challenges might you face when applying these concepts?</li>
+                        <li>How can understanding this topic help you make better financial decisions?</li>
+                    </ol>
+                </div>
+            </section>
+            
+            <!-- Real-World Examples Section -->
+            <section id="real-world-examples" class="pt-4">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Real-World Examples</h2>
+                
+                <div class="real-world-example">
+                    <h3 class="text-lg font-semibold mb-2">Maya's Fast Food Job vs. Healthcare Career</h3>
+                    <p class="text-gray-700">Maya worked at a fast-food restaurant during high school, making minimum wage with irregular hours. While this job provided some spending money, it offered no benefits, limited skill development, and no clear path to advancement. After graduation, Maya enrolled in a community college nursing program. Although she earned less during her education than she could have working full-time at the restaurant, within five years she had become a registered nurse earning more than three times her previous hourly wage, with excellent benefits, regular hours, and clear opportunities for specialization and advancement. By investing in a career path rather than continuing in a series of jobs, Maya significantly improved her long-term financial outlook.</p>
+                </div>
+                
+                <div class="real-world-example">
+                    <h3 class="text-lg font-semibold mb-2">Carlos's Strategic Career Path</h3>
+                    <p class="text-gray-700">Carlos began working at an entry-level position at a technology company after completing a coding bootcamp. Rather than viewing this as just a job, he approached it as the first step in a career path. He volunteered for challenging projects to build his skills, sought mentorship from senior developers, and invested time in learning new programming languages. When he changed companies two years later, he received a 30% salary increase. After five years in the industry and multiple strategic moves, his income had more than doubled from his starting salary, and he had built enough career capital to negotiate flexible working arrangements and additional benefits. By treating his work as a career rather than just a job, Carlos was able to accelerate his financial progress and create more options for himself.</p>
+                </div>
+            </section>
+            
+            <!-- Reflection Section -->
+            <section id="reflection" class="pt-4 mt-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Reflection Questions</h2>
+                
+                <div class="discussion-prompt">
+                    <p class="mb-4">Take a few minutes to reflect on what you've learned in this chapter.</p>
+                    <ol class="list-decimal ml-6 mb-4">
+                        <li class="mb-3">
+                            <p class="font-medium text-gray-800">Consider your own interests, skills, and values. What careers might align with these aspects of yourself while also providing the financial future you envision?</p>
+                            <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md" rows="2" data-ai-check="true" data-assessment-weight="3" placeholder="Type your response here..."></textarea>
+                            <div class="feedback-container hidden mt-2 text-sm text-indigo-700 bg-indigo-50 p-2 rounded-md"></div>
+                        </li>
+                        <li class="mb-3">
+                            <p class="font-medium text-gray-800">How might investing in a career path rather than working a series of unrelated jobs affect your long-term financial outcomes?</p>
+                            <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md" rows="2" data-ai-check="true" data-assessment-weight="3" placeholder="Type your response here..."></textarea>
+                            <div class="feedback-container hidden mt-2 text-sm text-indigo-700 bg-indigo-50 p-2 rounded-md"></div>
+                        </li>
+                        <li>
+                            <p class="font-medium text-gray-800">What steps could you take now to begin building career capital in a direction that interests you?</p>
+                            <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md" rows="2" data-ai-check="true" data-assessment-weight="2" placeholder="Type your response here..."></textarea>
+                            <div class="feedback-container hidden mt-2 text-sm text-indigo-700 bg-indigo-50 p-2 rounded-md"></div>
+                        </li>
+                    </ol>
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg">
+                        Submit Reflections
+                    </button>
+                </div>
+            </section>
+            
+            <!-- Skill Builder Section -->
+            <section id="skill-builder" class="pt-4">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Skill Builder Activity</h2>
+                
+                <div class="skill-builder">
+                    <h3 class="text-xl font-semibold mb-3">Career Path Planner</h3>
+                    <p class="mb-4">In this activity, you'll create a personalized career path map that outlines your career goals and the steps needed to achieve them.</p>
+                    
+                    <div class="activity-timer mb-4">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-yellow-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Activity Time: 15-20 minutes</span>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-semibold mb-2">Instructions:</h4>
+                    <ol class="list-decimal ml-6 mb-4">
+                        <li class="mb-2">Think about your interests, skills, and values</li>
+                        <li class="mb-2">For each time frame, select one option from each category that aligns with your goals</li>
+                        <li class="mb-2">Ensure your selections create a logical progression from short-term to long-term goals</li>
+                        <li>Consider how each goal contributes to your overall career development</li>
+                    </ol>
+                    
+                    <!-- Career Path Skill Builder Component (from async-30) -->
+                    <div class="bg-white p-6 border border-purple-200 rounded-lg" id="career-path-builder">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                                Career Path Planner
+                            </h3>
+                            <p class="text-gray-600">In this activity, you'll create a personalized career path map that outlines your career goals and the steps needed to achieve them.</p>
+                        </div>
+
+                        <!-- Step Progress Bar -->
+                        <div class="mb-8">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">
+                                    Step 1 of 3
+                                </span>
+                                <span class="text-sm text-gray-500">
+                                    33% Complete
+                                </span>
+                            </div>
+                            
+                            <div class="relative">
+                                <div class="w-full h-2 bg-gray-200 rounded-full">
+                                    <div class="h-2 bg-indigo-600 rounded-full transition-all duration-300" style="width: 33%"></div>
+                                </div>
+                                
+                                <div class="absolute top-4 left-0 w-full flex justify-between">
+                                    <div class="text-xs text-indigo-600">Short-Term Goals</div>
+                                    <div class="text-xs text-gray-400">Mid-Term Goals</div>
+                                    <div class="text-xs text-gray-400">Long-Term Goals</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                            <h4 class="text-lg font-semibold text-gray-900 mb-6">
+                                Short-Term Goals (1-2 years)
+                            </h4>
+
+                            <div class="space-y-6">
+                                <!-- Education Category -->
+                                <div class="relative">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                                        Further Education
+                                    </label>
+                                    <select class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <option value="">Select a goal...</option>
+                                        <option value="Take specific high school courses related to my interests">Take specific high school courses related to my interests</option>
+                                        <option value="Enroll in a certificate program">Enroll in a certificate program</option>
+                                        <option value="Start associate degree coursework">Start associate degree coursework</option>
+                                        <option value="Begin bachelor's degree program">Begin bachelor's degree program</option>
+                                        <option value="Complete industry certifications">Complete industry certifications</option>
+                                        <option value="Take online courses in my field of interest">Take online courses in my field of interest</option>
+                                        <option value="Attend workshops and seminars">Attend workshops and seminars</option>
+                                        <option value="Join specialized training programs">Join specialized training programs</option>
+                                    </select>
+                                </div>
+
+                                <!-- Work Experience Category -->
+                                <div class="relative">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                                        Work Experience
+                                    </label>
+                                    <select class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <option value="">Select a goal...</option>
+                                        <option value="Find part-time job related to my interests">Find part-time job related to my interests</option>
+                                        <option value="Secure an internship in my field">Secure an internship in my field</option>
+                                        <option value="Volunteer for relevant organizations">Volunteer for relevant organizations</option>
+                                        <option value="Job shadow professionals in my target career">Job shadow professionals in my target career</option>
+                                        <option value="Start entry-level position in my industry">Start entry-level position in my industry</option>
+                                        <option value="Begin apprenticeship program">Begin apprenticeship program</option>
+                                        <option value="Work in customer service to build transferable skills">Work in customer service to build transferable skills</option>
+                                        <option value="Create independent projects to build portfolio">Create independent projects to build portfolio</option>
+                                    </select>
+                                </div>
+
+                                <!-- Networking Category -->
+                                <div class="relative">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                                        Networking
+                                    </label>
+                                    <select class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <option value="">Select a goal...</option>
+                                        <option value="Join student clubs related to my interests">Join student clubs related to my interests</option>
+                                        <option value="Attend industry events and conferences">Attend industry events and conferences</option>
+                                        <option value="Connect with professionals on LinkedIn">Connect with professionals on LinkedIn</option>
+                                        <option value="Find a mentor in my field of interest">Find a mentor in my field of interest</option>
+                                        <option value="Participate in online forums and communities">Participate in online forums and communities</option>
+                                        <option value="Attend career fairs">Attend career fairs</option>
+                                        <option value="Join professional organizations as a student member">Join professional organizations as a student member</option>
+                                        <option value="Network with teachers and professors">Network with teachers and professors</option>
+                                    </select>
+                                </div>
+
+                                <!-- Skill Development Category -->
+                                <div class="relative">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                                        Skill Development
+                                    </label>
+                                    <select class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <option value="">Select a goal...</option>
+                                        <option value="Develop technical skills specific to my field">Develop technical skills specific to my field</option>
+                                        <option value="Improve communication skills">Improve communication skills</option>
+                                        <option value="Build leadership experience">Build leadership experience</option>
+                                        <option value="Learn a relevant second language">Learn a relevant second language</option>
+                                        <option value="Enhance digital literacy skills">Enhance digital literacy skills</option>
+                                        <option value="Develop problem-solving abilities">Develop problem-solving abilities</option>
+                                        <option value="Strengthen time management skills">Strengthen time management skills</option>
+                                        <option value="Build teamwork and collaboration skills">Build teamwork and collaboration skills</option>
+                                    </select>
+                                </div>
+
+                                <!-- Other Goals Category -->
+                                <div class="relative">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                                        Other Goals
+                                    </label>
+                                    <select class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <option value="">Select a goal...</option>
+                                        <option value="Create a personal website or portfolio">Create a personal website or portfolio</option>
+                                        <option value="Develop my personal brand">Develop my personal brand</option>
+                                        <option value="Start a side project related to my interests">Start a side project related to my interests</option>
+                                        <option value="Research different career paths in my field">Research different career paths in my field</option>
+                                        <option value="Establish a financial plan for education costs">Establish a financial plan for education costs</option>
+                                        <option value="Explore scholarship and grant opportunities">Explore scholarship and grant opportunities</option>
+                                        <option value="Define clearer career objectives">Define clearer career objectives</option>
+                                        <option value="Develop a plan to balance work and education">Develop a plan to balance work and education</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end">
+                            <button class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                                Next Step
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Summary Section -->
+            <section id="summary" class="pt-4 mt-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Summary</h2>
+                <div class="bg-gray-50 p-5 rounded-lg">
+                    <p class="text-gray-700 mb-4">The distinction between jobs and careers represents one of the most consequential financial decisions you'll make. While jobs provide immediate income, careers offer pathways to growth, advancement, and significantly higher lifetime earnings. By understanding this difference and making intentional choices about education, skill development, and professional growth, you can establish a stronger foundation for financial success.</p>
+                    <p class="text-gray-700">Career planning isn't just about choosing what you'll do for work—it's about strategically positioning yourself for financial stability and growth. The career capital you build, including specialized skills, knowledge, and professional relationships, becomes one of your most valuable financial assets, opening doors to opportunities and providing security in an ever-changing economy.</p>
+                </div>
+            </section>
+            
+            <div class="flex justify-end mt-8">
+                <a href="day2.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-3 rounded-lg text-lg shadow transition duration-200">Continue to Day 2 Learning Lab</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">PFL Academy</h3>
+                    <p class="text-gray-400">Empowering students with financial literacy skills for life.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Curriculum</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Help Center</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-400">If you need assistance, please contact your instructor or email support.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 PFL Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Highlight active section in navigation based on scroll position
+        window.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('#section-navigation a');
+            
+            function updateActiveSection() {
+                const scrollPosition = window.scrollY;
+                
+                sections.forEach((section, index) => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        // Remove active class from all links
+                        navLinks.forEach(link => {
+                            link.classList.remove('text-indigo-700', 'font-medium');
+                            link.classList.add('text-gray-700');
+                        });
+                        
+                        // Add active class to corresponding link
+                        const correspondingLink = document.querySelector(`#section-navigation a[href="#${section.id}"]`);
+                        if (correspondingLink) {
+                            correspondingLink.classList.remove('text-gray-700');
+                            correspondingLink.classList.add('text-indigo-700', 'font-medium');
+                        }
+                    }
+                });
+            }
+            
+            // Update active section when scrolling
+            window.addEventListener('scroll', updateActiveSection);
+            
+            // Update active section on page load
+            updateActiveSection();
+        });
+        
+        // AI feedback system (simplified for demo)
+        document.querySelectorAll('[data-ai-check="true"]').forEach(element => {
+            element.addEventListener('blur', function() {
+                if (this.value.length > 10) {
+                    const feedback = this.nextElementSibling;
+                    if (feedback && feedback.classList.contains('feedback-container')) {
+                        feedback.textContent = "Thank you for your thoughtful response! Your answer shows good understanding of the concepts.";
+                        feedback.classList.remove('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Submit button functionality
+        document.querySelectorAll('button[type="submit"]').forEach(button => {
+            button.addEventListener('click', function() {
+                // In a real implementation, this would save to an API/database
+                alert('Your answers have been submitted successfully!');
+            });
+        });
+
+        // Career Path Builder Navigation
+        document.querySelector('#career-path-builder button').addEventListener('click', function() {
+            alert('In the full implementation, this would progress to the next step of the skill builder. For this example, we're showing just the first step.');
+        });
+    </script>
+</body>
+</html>
