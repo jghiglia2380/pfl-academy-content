@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFL Academy - {{CHAPTER_TITLE}}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Core component styles */
+        .learning-objectives {
+            background-color: #e6f3ff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .learning-objectives:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .discussion-prompt {
+            background-color: #e6f0ff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #3b82f6;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .discussion-prompt:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .real-world-example {
+            background-color: #f0f9ff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #0ea5e9;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .real-world-example:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-builder {
+            background-color: #eef2ff; /* Light indigo background */
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-builder:hover {
+            background-image: linear-gradient(to bottom right, rgba(79, 70, 229, 0.05), rgba(124, 58, 237, 0.05));
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .practical-application {
+            background-color: #ecfdf5;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #10b981;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .important-note {
+            background-color: #fffbeb;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #f59e0b;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .key-concept {
+            background-color: #eef2ff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #6366f1;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .key-concept:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .activity-timer {
+            background-color: #e0f2fe; /* Light blue background */
+            border-left: 4px solid #0369a1; /* Blue border */
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            font-weight: 500;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .activity-timer:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .audio-player {
+            background-color: #f4f4f5;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        
+        .progress-bar {
+            background-color: #e0e7ff;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        
+        .ai-feedback {
+            background-color: #fff7ed;
+            padding: 1.5rem;
+            border-left: 4px solid #f59e0b;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Button styles */
+        .pfl-button {
+            background: linear-gradient(to right, #4f46e5, #6366f1);
+            color: white;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .pfl-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            filter: brightness(110%);
+        }
+
+        /* Feature card for skill builder elements */
+        .feature-card {
+            transition: all 0.3s ease;
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            background-image: linear-gradient(to bottom right, rgba(79, 70, 229, 0.05), rgba(124, 58, 237, 0.05));
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Navigation hover effects */
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #4f46e5;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Section headers with decorative elements */
+        .section-title {
+            position: relative;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #4f46e5, #8b5cf6);
+            border-radius: 3px;
+        }
+
+        /* Grid pattern overlay for decorative elements */
+        .grid-pattern {
+            background-image: linear-gradient(to right, rgba(147, 51, 234, 0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(147, 51, 234, 0.2) 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.5;
+        }
+        
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-gradient-to-r from-indigo-700 to-purple-700 text-white p-4 shadow-md fixed top-0 left-0 right-0 z-40">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="flex justify-center items-center h-10 w-10 rounded bg-white/20 text-white font-bold">
+                    PFL
+                </div>
+                <span class="ml-3 text-xl font-bold">PFL Academy</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors nav-link">Home</a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors nav-link">Curriculum</a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors nav-link">Resources</a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors nav-link">Profile</a>
+            </nav>
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+    <div class="h-20"></div>
+
+    <div class="container mx-auto px-4 py-8 grid lg:grid-cols-10 gap-8">
+        <!-- Sidebar Navigation -->
+        <div class="lg:col-span-3 bg-white rounded-xl shadow-xl p-6 sticky top-20 h-screen overflow-y-auto border border-gray-200">
+            <div id="standard-info">
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">{{STANDARD_TITLE}}</h2>
+                <p class="text-gray-600 mb-4">{{STANDARD_DESCRIPTION}}</p>
+            </div>
+            
+            <ul class="space-y-2" id="chapter-navigation">
+                <!-- Current Chapter -->
+                <li>
+                    <div class="flex items-center bg-indigo-50 p-2 rounded-lg">
+                        <span class="border-l-4 border-indigo-700 pl-2 text-indigo-700 font-medium">{{CURRENT_CHAPTER_NUMBER}}: {{CURRENT_CHAPTER_TITLE}}</span>
+                    </div>
+                    <!-- Section Navigation for Current Chapter -->
+                    <ul class="ml-6 mt-2 space-y-1" id="section-navigation">
+                        <!-- SECTION_NAVIGATION_ITEMS -->
+                        {{SECTION_NAVIGATION_ITEMS}}
+                    </ul>
+                </li>
+                
+                <!-- Other Chapters -->
+                {{OTHER_CHAPTERS}}
+            </ul>
+            
+            <!-- Progress Tracker -->
+            <div class="mt-8 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-xl p-4 shadow-lg">
+                <h3 class="text-lg font-semibold text-indigo-800 mb-2">Your Progress</h3>
+                <div class="w-full bg-white/50 rounded-full h-2.5 mb-4">
+                    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 h-2.5 rounded-full" style="width: {{PROGRESS_PERCENTAGE}}%"></div>
+                </div>
+                <p class="text-sm text-indigo-800">Completed: <span class="font-medium">{{COMPLETED_ACTIVITIES}}/{{TOTAL_ACTIVITIES}} activities</span></p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="lg:col-span-7 bg-white rounded-xl shadow-xl p-6 border border-gray-200">
+            <!-- Chapter Title and Info -->
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">{{CHAPTER_FULL_TITLE}}</h1>
+            <p class="text-xl text-gray-600 mb-6">{{CHAPTER_DESCRIPTION}}</p>
+            
+            <!-- Learning Objectives Section -->
+            <div id="learning-objectives" class="learning-objectives">
+                <h2 class="text-xl font-semibold text-gray-900 mb-3">Learning Objectives</h2>
+                <p class="mb-2">By the end of this lesson, you will be able to:</p>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    {{LEARNING_OBJECTIVES}}
+                </ul>
+            </div>
+            
+            <!-- Content Sections -->
+            {{MAIN_CONTENT}}
+            
+            <div class="flex justify-end mt-8">
+                <a href="{{NEXT_DAY_URL}}" class="pfl-button text-white font-medium px-6 py-3 rounded-lg text-lg shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center">
+                    Continue to Day 2 Learning Lab
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="bg-gradient-to-r from-indigo-900 to-purple-900 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="flex justify-center items-center h-10 w-10 rounded bg-white/20 text-white font-bold">
+                            PFL
+                        </div>
+                        <span class="ml-3 text-xl font-bold">PFL Academy</span>
+                    </div>
+                    <p class="text-indigo-200">Empowering students with financial literacy skills for life.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-indigo-200 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white transition-colors">Curriculum</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white transition-colors">Resources</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white transition-colors">Help Center</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-indigo-200">If you need assistance, please contact your instructor or email support.</p>
+                </div>
+            </div>
+            <div class="border-t border-indigo-800 mt-8 pt-6 text-center text-indigo-200">
+                <p>&copy; {{CURRENT_YEAR}} PFL Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Highlight active section in navigation based on scroll position
+        window.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const objectives = document.querySelector('#learning-objectives');
+            const navLinks = document.querySelectorAll('#section-navigation a');
+            
+            function updateActiveSection() {
+                const scrollPosition = window.scrollY;
+                
+                // Check if Learning Objectives section is in view
+                const objectivesTop = objectives.offsetTop - 100;
+                const objectivesBottom = objectivesTop + objectives.offsetHeight;
+                
+                // First reset all links
+                navLinks.forEach(link => {
+                    link.classList.remove('text-indigo-700', 'font-medium');
+                    link.classList.add('text-gray-700');
+                });
+                
+                // Check Learning Objectives first
+                if (scrollPosition >= objectivesTop && scrollPosition < objectivesBottom) {
+                    const objectivesLink = document.querySelector('#section-navigation a[href="#learning-objectives"]');
+                    if (objectivesLink) {
+                        objectivesLink.classList.remove('text-gray-700');
+                        objectivesLink.classList.add('text-indigo-700', 'font-medium');
+                    }
+                    return;
+                }
+                
+                // Then check all other sections
+                sections.forEach((section, index) => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        // Add active class to corresponding link
+                        const correspondingLink = document.querySelector(`#section-navigation a[href="#${section.id}"]`);
+                        if (correspondingLink) {
+                            correspondingLink.classList.remove('text-gray-700');
+                            correspondingLink.classList.add('text-indigo-700', 'font-medium');
+                        }
+                    }
+                });
+            }
+            
+            // Update active section when scrolling
+            window.addEventListener('scroll', updateActiveSection);
+            
+            // Update active section on page load
+            updateActiveSection();
+        });
+        
+        // AI feedback system (simplified for demo)
+        document.querySelectorAll('[data-ai-check="true"]').forEach(element => {
+            element.addEventListener('blur', function() {
+                if (this.value.length > 10) {
+                    const feedback = this.nextElementSibling;
+                    if (feedback && feedback.classList.contains('feedback-container')) {
+                        feedback.textContent = "Thank you for your thoughtful response! Your answer shows good understanding of the concepts.";
+                        feedback.classList.remove('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Submit button functionality
+        document.querySelectorAll('button[type="submit"]').forEach(button => {
+            button.addEventListener('click', function() {
+                // In a real implementation, this would save to an API/database
+                alert('Your answers have been submitted successfully!');
+            });
+        });
+
+        // Add any custom script required for specific chapter functionality
+        {{CUSTOM_SCRIPTS}}
+    </script>
+</body>
+</html>
