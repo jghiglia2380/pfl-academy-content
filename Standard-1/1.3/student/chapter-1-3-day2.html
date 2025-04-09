@@ -1,0 +1,2211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1.3: Income and Taxes - Day 2 Learning Lab | PFL Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Core component styles */
+        .learning-objectives {
+            background-color: #e6f3ff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .learning-objectives:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .discussion-prompt {
+            background-color: #e6f0ff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #3b82f6;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .discussion-prompt:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .audio-player {
+            background-color: #f4f4f5;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        
+        /* Custom styles for specific components */
+        .activity-timer {
+            background: linear-gradient(to right, #eef2ff, #ede9fe);
+            border-left: 4px solid #4f46e5;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+        }
+        
+        .learning-station {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .learning-station:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            background-image: linear-gradient(to bottom right, rgba(79, 70, 229, 0.02), rgba(124, 58, 237, 0.02));
+        }
+        
+        .learning-station h3 {
+            color: #4f46e5;
+            margin-bottom: 0.75rem;
+        }
+        
+        .station-number {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            text-align: center;
+            line-height: 2rem;
+            background: linear-gradient(to right, #4f46e5, #6366f1);
+            color: white;
+            border-radius: 9999px;
+            margin-right: 0.5rem;
+            box-shadow: 0 2px 4px -1px rgba(79, 70, 229, 0.3);
+        }
+        
+        .important-note {
+            background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .important-note:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        /* Section headers with decorative elements */
+        .section-title {
+            position: relative;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #4f46e5, #8b5cf6);
+            border-radius: 3px;
+        }
+        
+        /* Station indicators */
+        .station-indicators {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .station-indicator {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background-color: #e5e7eb;
+            margin: 0 0.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        .station-indicator.active {
+            background: linear-gradient(to right, #4f46e5, #6366f1);
+            transform: scale(1.2);
+        }
+        
+        /* Toast notifications */
+        .toast-notification {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #4f46e5;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(150%);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 50;
+        }
+        
+        .toast-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Button styles */
+        .pfl-button {
+            background: linear-gradient(to right, #4f46e5, #6366f1);
+            color: white;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .pfl-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            filter: brightness(110%);
+        }
+        
+        /* Original styles preserved */
+        .activity-section {
+            background-color: #f0f9ff;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #0ea5e9;
+        }
+        
+        .reflection-section {
+            background-color: #f3e8ff;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #8b5cf6;
+        }
+        
+        .input-field {
+            background-color: white;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            width: 100%;
+        }
+        
+        .tool-container {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <header class="bg-gradient-to-r from-indigo-700 to-purple-700 text-white p-4 shadow-md fixed top-0 left-0 right-0 z-40">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="flex justify-center items-center h-10 w-10 rounded bg-white/20 text-white font-bold">
+                    PFL
+                </div>
+                <span class="ml-3 text-xl font-bold">PFL Academy</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors nav-link">Home</a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors nav-link">Curriculum</a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors nav-link">Resources</a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors nav-link">Profile</a>
+            </nav>
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+    <div class="h-20"></div>
+
+    <div class="container mx-auto px-4 py-8 grid lg:grid-cols-10 gap-8">
+        <!-- Sidebar Navigation -->
+        <div class="lg:col-span-3 bg-white rounded-xl shadow-xl p-6 sticky top-20 h-screen overflow-y-auto border border-gray-200">
+            <div id="standard-info">
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">Standard 1: Personal Finance Foundations</h2>
+                <p class="text-gray-600 mb-4">Explore the foundations of personal finance including career planning, education financing, and income management.</p>
+            </div>
+            
+            <!-- Chapter Navigation Title -->
+            <div class="mb-4 font-semibold text-gray-500 text-sm px-1">
+                CHAPTER NAVIGATION
+            </div>
+            
+            <ul class="space-y-2" id="chapter-navigation">
+                <!-- Chapter 1.1 -->
+                <li>
+                    <a href="/chapter-1-1-day2-refined.html" class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-lg bg-green-50 text-green-700">
+                        <span class="mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </span>
+                        <span class="text-left">1.1: Jobs vs. Careers</span>
+                    </a>
+                </li>
+                
+                <!-- Chapter 1.2 -->
+                <li>
+                    <a href="/chapter-1-2-day2.html" class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-lg bg-green-50 text-green-700">
+                        <span class="mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </span>
+                        <span class="text-left">1.2: Paying for Post-Secondary Education</span>
+                    </a>
+                </li>
+                
+                <!-- Chapter 1.3 header -->
+                <li class="mb-1">
+                    <div class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-t-lg bg-indigo-50 text-indigo-700">
+                        <span class="mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                        </span>
+                        <span class="text-left">1.3: Income and Taxes</span>
+                    </div>
+                </li>
+                
+                <!-- Chapter 1.3 Day 1 (collapsed) -->
+                <li class="ml-6 mb-1">
+                    <a href="chapter-1-3-day1.html" class="w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-700 hover:bg-gray-50 hover:text-indigo-700 transition-colors">
+                        <span class="mr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </span>
+                        <span>Day 1: Content Guide</span>
+                    </a>
+                </li>
+                
+                <!-- Chapter 1.3 Day 2 (expanded, current) -->
+                <li class="ml-6">
+                    <div class="w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-indigo-50 text-indigo-700 border-l-4 border-indigo-700">
+                        <span class="mr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span>
+                        <span>Day 2: Learning Lab</span>
+                    </div>
+                    
+                    <!-- Section Navigation for Current Chapter -->
+                    <ul class="ml-6 mt-2 space-y-1" id="section-navigation">
+                        <li>
+                            <a href="#learning-objectives" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> Learning Objectives
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#intro" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> Introduction
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#activity1" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> Activity 1: Paycheck Analyzer
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#activity2" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> Activity 2: Tax Withholding Strategy
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#activity3" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> Activity 3: Budget Challenge
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#activity4" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> Activity 4: Long-Term Impact Calculator
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#reflection" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> Reflection
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <!-- Next Chapters (Upcoming) -->
+                <li>
+                    <a href="#" class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                        <span class="mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                        </span>
+                        <span class="text-left">1.4: Financial Goal Setting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                        <span class="mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                        </span>
+                        <span class="text-left">1.5: Managing Your Income Effectively</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Progress Tracker -->
+            <div class="mt-8 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-xl p-4 shadow-lg">
+                <h3 class="text-lg font-semibold text-indigo-800 mb-2">Your Progress</h3>
+                <div class="w-full bg-white/50 rounded-full h-2.5 mb-4">
+                    <div id="progress-bar" class="bg-gradient-to-r from-indigo-600 to-purple-600 h-2.5 rounded-full" style="width: 0%"></div>
+                </div>
+                <p class="text-sm text-indigo-800">Completed: <span id="progress-text" class="font-medium">0/4 stations</span></p>
+                
+                <!-- Station Indicators -->
+                <div class="station-indicators mt-3">
+                    <div class="station-indicator" data-station="1"></div>
+                    <div class="station-indicator" data-station="2"></div>
+                    <div class="station-indicator" data-station="3"></div>
+                    <div class="station-indicator" data-station="4"></div>
+                </div>
+            </div>
+            
+            <!-- Chapter Progress -->
+            <div class="mt-6 bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <h4 class="text-sm font-medium text-gray-700 mb-2">Chapter Progress</h4>
+                <div class="flex items-center space-x-2 text-xs text-gray-600">
+                    <span class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        Day 1
+                    </span>
+                    <span class="font-medium">→</span>
+                    <span class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-500 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                        </svg>
+                        Day 2
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="lg:col-span-7 bg-white rounded-xl shadow-xl p-6 border border-gray-200">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Chapter 1.3: Income and Taxes - Day 2 Learning Lab</h1>
+            <p class="text-xl text-gray-600 mb-6">Apply your knowledge of income and taxes to real-world financial situations</p>
+            
+            <!-- Learning Objectives Section -->
+            <div id="learning-objectives" class="learning-objectives">
+                <h2 class="text-xl font-semibold text-gray-900 mb-3">Learning Objectives</h2>
+                <p class="mb-2">By the end of this Learning Lab, you will be able to:</p>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>Analyze how different deductions affect take-home pay across various professions</li>
+                    <li>Create a personalized tax withholding strategy</li>
+                    <li>Develop a budget based on net income rather than gross income</li>
+                    <li>Calculate the long-term impact of paycheck decisions on financial outcomes</li>
+                    <li>Formulate a personal plan for managing income and taxes effectively</li>
+                </ul>
+            </div>
+            
+            <!-- Introduction Section -->
+            <section id="intro">
+                <h2 class="text-2xl font-bold text-gray-900 section-title">Introduction</h2>
+                
+                
+                <p class="text-gray-700 mb-4">Welcome to the Learning Lab! Today, we'll build on what you learned about income, taxes, and deductions by applying these concepts to real-world situations. We'll explore how tax withholding impacts your finances and develop strategies for managing your income effectively.</p>
+                
+                <!-- Important Note -->
+                <div class="important-note">
+                    <h3 class="font-semibold text-yellow-800">Important Note</h3>
+                    <p class="text-gray-700">This Learning Lab focuses on practical application rather than theory. Your goal is to create a personalized approach to managing your income and taxes that aligns with your financial goals. There are no right or wrong answers, but your strategies should be realistic and well-reasoned.</p>
+                </div>
+                
+                <!-- Day 1 Connection -->
+                <div class="mt-4 bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
+                    <h3 class="text-lg font-semibold text-indigo-800 mb-2">Connection to Day 1</h3>
+                    <p class="text-gray-700 mb-3">Today's activities build directly on the concepts you learned in Day 1:</p>
+                    <ul class="list-disc list-inside text-gray-700 ml-2">
+                        <li>The difference between gross and net income</li>
+                        <li>Mandatory and voluntary deductions</li>
+                        <li>How a W-4 form affects your tax withholding</li>
+                        <li>Why understanding net income is essential for budgeting</li>
+                    </ul>
+                </div>
+                
+                <!-- Podcast Review Section -->
+                <div class="bg-indigo-50 p-5 rounded-lg my-5">
+                    <h3 class="font-bold text-gray-900 mb-2">Podcast Review: Income and Taxes</h3>
+                    <p class="text-gray-700 mb-4">Listen to this podcast to review key concepts from Day 1 before you begin today's activities.</p>
+                    
+                    <div class="bg-white rounded-lg p-4">
+                        <audio controls class="w-full mb-2">
+                            <source src="/Users/justin/pfl-academy/finished LM recordings/1.3 - Income and Taxes.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="text-sm text-gray-500">
+                            <p>Topics covered: Understanding gross vs. net income, tax withholding strategies, paycheck deductions, and effective income management.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-gray-700 my-4">In this Learning Lab, you'll work with interactive tools that will help you apply these concepts to practical financial situations. Each activity builds upon the knowledge you gained in yesterday's lesson and helps you develop skills for managing your income and taxes effectively.</p>
+            </section>
+            
+            <!-- Activity 1: Paycheck Analyzer -->
+            <div id="activity1" class="learning-station">
+                <div class="flex items-center mb-3">
+                    <span class="station-number">1</span>
+                    <h2 class="text-2xl font-bold text-gray-900">Paycheck Analyzer</h2>
+                </div>
+                
+                <div class="activity-timer mb-4">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="font-medium text-indigo-700">Estimated time: 15 minutes</span>
+                    </div>
+                </div>
+                
+                <p class="text-gray-700 mb-4">Examine sample paychecks from different professions and income levels to see how deductions vary. Analyze how changing variables like retirement contributions or tax withholding affects take-home pay.</p>
+                
+                <div class="tool-container">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="profession">
+                            Select a Profession:
+                        </label>
+                        <select id="profession" class="input-field" onchange="calculate()">
+                            <option value="teacher">Teacher ($45,000/year)</option>
+                            <option value="nurse">Nurse ($65,000/year)</option>
+                            <option value="software">Software Developer ($85,000/year)</option>
+                            <option value="retail">Retail Manager ($40,000/year)</option>
+                            <option value="electrician">Electrician ($55,000/year)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <h3 class="font-bold text-gray-900 mb-2">Adjust Deductions:</h3>
+                            
+                            <div class="mb-2">
+                                <label class="block text-gray-700 text-sm mb-1" for="retirement">
+                                    Retirement Contribution: <span id="retirement-value">5</span>%
+                                </label>
+                                <input id="retirement" type="range" min="0" max="15" value="5" class="w-full" oninput="document.getElementById('retirement-value').textContent = this.value; calculate();">
+                            </div>
+                            
+                            <div class="mb-2">
+                                <label class="block text-gray-700 text-sm mb-1" for="health">
+                                    Health Insurance: $<span id="health-value">180</span>
+                                </label>
+                                <input id="health" type="range" min="0" max="400" value="180" step="10" class="w-full" oninput="document.getElementById('health-value').textContent = this.value; calculate();">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm mb-1" for="tax">
+                                    Additional Tax Withholding: $<span id="tax-value">0</span>
+                                </label>
+                                <input id="tax" type="range" min="0" max="200" value="0" step="10" class="w-full" oninput="document.getElementById('tax-value').textContent = this.value; calculate();">
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-gray-900 mb-2">Paycheck Summary:</h3>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span>Gross Monthly Income:</span>
+                                    <span class="font-medium" id="gross">$3,750.00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Federal Income Tax:</span>
+                                    <span id="federal">$487.50</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>State Income Tax:</span>
+                                    <span id="state">$150.00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Social Security (6.2%):</span>
+                                    <span id="ss">$232.50</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Medicare (1.45%):</span>
+                                    <span id="medicare">$54.38</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Retirement Contribution:</span>
+                                    <span id="retirement-amount">$187.50</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Health Insurance:</span>
+                                    <span id="health-amount">$180.00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Additional Withholding:</span>
+                                    <span id="additional-tax">$0.00</span>
+                                </div>
+                                <div class="flex justify-between border-t border-gray-300 pt-2 font-medium">
+                                    <span>Total Deductions:</span>
+                                    <span id="total-deductions">$1,291.88</span>
+                                </div>
+                                <div class="flex justify-between border-t border-gray-300 pt-2 font-medium">
+                                    <span>Net Monthly Income:</span>
+                                    <span id="net">$2,458.12</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4 flex justify-center">
+                        <div style="width: 240px; height: 240px;">
+                            <canvas id="paycheck-chart" width="240" height="240"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Analysis Questions:</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-gray-700 text-sm mb-1">1. What percentage of the gross income is actually taken home as net income?</label>
+                                <input type="text" class="input-field" placeholder="Enter your answer..." data-ai-check="true" data-assessment-weight="2">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm mb-1">2. How would increasing retirement contributions by 3% affect take-home pay? Is this a worthwhile trade-off?</label>
+                                <textarea class="input-field" rows="2" placeholder="Enter your answer..." data-ai-check="true" data-assessment-weight="3"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm mb-1">3. Compare this profession's deduction profile with another profession. What differences do you notice?</label>
+                                <textarea class="input-field" rows="3" placeholder="Enter your answer..." data-ai-check="true" data-assessment-weight="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-right">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded transition duration-200" onclick="saveAnalysis()">
+                            Save Analysis
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activity 2: Tax Withholding Strategy Builder -->
+            <div id="activity2" class="learning-station">
+                <div class="flex items-center mb-3">
+                    <span class="station-number">2</span>
+                    <h2 class="text-2xl font-bold text-gray-900">Tax Withholding Strategy Builder</h2>
+                </div>
+                
+                <div class="activity-timer mb-4">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="font-medium text-indigo-700">Estimated time: 12 minutes</span>
+                    </div>
+                </div>
+                
+                <p class="text-gray-700 mb-4">Building on yesterday's W-4 simulation, you'll create a personalized tax withholding strategy. Explore different scenarios and determine the best approach for your financial goals.</p>
+                
+                <div class="tool-container">
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h3 class="font-bold text-blue-800 mb-2">Your W-4 Choices from Day 1:</h3>
+                        <p class="text-gray-700">Information from your W-4 simulation for Jordan Rivers would appear here. You can adjust your strategy based on what you learned.</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Financial Goals:</h3>
+                        <p class="text-gray-700 mb-2">Select your primary financial goal to guide your withholding strategy:</p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center">
+                                <input id="goal-1" type="radio" name="financial-goal" class="mr-2" checked onchange="updateWithholdingStrategy()">
+                                <label for="goal-1" class="text-gray-700">Maximize monthly take-home pay (less withholding)</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="goal-2" type="radio" name="financial-goal" class="mr-2" onchange="updateWithholdingStrategy()">
+                                <label for="goal-2" class="text-gray-700">Ensure a tax refund at year-end (more withholding)</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="goal-3" type="radio" name="financial-goal" class="mr-2" onchange="updateWithholdingStrategy()">
+                                <label for="goal-3" class="text-gray-700">Balance take-home pay with minimal year-end tax liability</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <h3 class="font-bold text-gray-900 mb-2">Adjust Your Strategy:</h3>
+                            
+                            <div class="mb-3">
+                                <label class="block text-gray-700 text-sm mb-1" for="withholding-allowances">
+                                    Withholding Allowances: <span id="allowances-value">1</span>
+                                </label>
+                                <input id="withholding-allowances" type="range" min="0" max="4" value="1" class="w-full" oninput="updateWithholdingAllowances(this.value)">
+                                <p class="text-xs text-gray-500 mt-1">Higher number = less tax withheld now, potential taxes owed later</p>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="block text-gray-700 text-sm mb-1" for="additional-withholding">
+                                    Additional Withholding: $<span id="additional-value">0</span>
+                                </label>
+                                <input id="additional-withholding" type="range" min="0" max="100" value="0" step="5" class="w-full" oninput="updateAdditionalWithholding(this.value)">
+                                <p class="text-xs text-gray-500 mt-1">Extra amount withheld from each paycheck</p>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="block text-gray-700 text-sm mb-1" for="tax-credits">
+                                    Anticipated Tax Credits: $<span id="credits-value">0</span>
+                                </label>
+                                <input id="tax-credits" type="range" min="0" max="2000" value="0" step="100" class="w-full" oninput="updateTaxCredits(this.value)">
+                                <p class="text-xs text-gray-500 mt-1">Estimated credits that will reduce your tax bill</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-gray-900 mb-2">Strategy Projection:</h3>
+                            
+                            <div class="mb-4">
+                                <h4 class="text-sm font-medium text-gray-700 mb-2">Monthly Impact:</h4>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>Expected Monthly Take-Home:</span>
+                                        <span class="font-medium" id="expected-takehome">$850.32</span>
+                                    </div>
+                                    <div class="flex justify-between text-sm">
+                                        <span>vs. Baseline Withholding:</span>
+                                        <span class="font-medium text-green-600" id="takehome-diff">+$22.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-700 mb-2">Annual Tax Impact:</h4>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>Estimated Tax Due at Filing:</span>
+                                        <span class="font-medium" id="tax-due">$126.00</span>
+                                    </div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>Estimated Refund:</span>
+                                        <span class="font-medium text-red-600" id="tax-refund">-$0.00</span>
+                                    </div>
+                                    <div class="flex justify-between text-sm">
+                                        <span>Tax Liability Risk:</span>
+                                        <span class="font-medium" id="tax-risk" class="font-medium text-yellow-600">Medium</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Your Tax Withholding Strategy:</h3>
+                        <textarea class="input-field" rows="4" placeholder="Based on my analysis, my tax withholding strategy is to..." data-ai-check="true" data-assessment-weight="4"></textarea>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Strategy Justification:</h3>
+                        <textarea class="input-field" rows="3" placeholder="I've chosen this strategy because..." data-ai-check="true" data-assessment-weight="3"></textarea>
+                    </div>
+                    
+                    <div class="text-right">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded transition duration-200" onclick="saveWithholdingStrategy()">
+                            Save Strategy
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activity 3: Net Income Budget Challenge -->
+            <div id="activity3" class="learning-station">
+                <div class="flex items-center mb-3">
+                    <span class="station-number">3</span>
+                    <h2 class="text-2xl font-bold text-gray-900">Net Income Budget Challenge</h2>
+                </div>
+                
+                <div class="activity-timer mb-4">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="font-medium text-indigo-700">Estimated time: 15 minutes</span>
+                    </div>
+                </div>
+                
+                <p class="text-gray-700 mb-4">Using the net income from sample scenarios, create a monthly budget that allocates money toward essential expenses, savings goals, and discretionary spending.</p>
+                
+                <div class="tool-container">
+                    <div class="bg-green-50 p-4 rounded-lg mb-4">
+                        <h3 class="font-bold text-green-800 mb-2">Scenario: First Job After Graduation</h3>
+                        <p class="text-gray-700 mb-1">You've just graduated and started your first full-time job with a monthly net income of <span class="font-bold">$2,800</span>.</p>
+                        <p class="text-gray-700">Create a realistic monthly budget that covers all necessary expenses while also saving for future goals.</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <h3 class="font-bold text-gray-900 mb-3">Budget Categories:</h3>
+                            
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="flex justify-between text-gray-700 text-sm mb-1">
+                                        <span>Housing (rent/mortgage):</span>
+                                        <span id="housing-percent">30%</span>
+                                    </label>
+                                    <input id="housing" type="range" min="0" max="60" value="30" class="w-full" data-category="housing" oninput="updateBudgetCategory('housing', this.value)">
+                                    <div class="flex justify-between">
+                                        <span class="text-xs text-gray-500">$0</span>
+                                        <span id="housing-amount" class="text-xs font-medium">$840</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="flex justify-between text-gray-700 text-sm mb-1">
+                                        <span>Food:</span>
+                                        <span id="food-percent">15%</span>
+                                    </label>
+                                    <input id="food" type="range" min="0" max="30" value="15" class="w-full" data-category="food" oninput="updateBudgetCategory('food', this.value)">
+                                    <div class="flex justify-between">
+                                        <span class="text-xs text-gray-500">$0</span>
+                                        <span id="food-amount" class="text-xs font-medium">$420</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="flex justify-between text-gray-700 text-sm mb-1">
+                                        <span>Transportation:</span>
+                                        <span id="transportation-percent">10%</span>
+                                    </label>
+                                    <input id="transportation" type="range" min="0" max="25" value="10" class="w-full" data-category="transportation" oninput="updateBudgetCategory('transportation', this.value)">
+                                    <div class="flex justify-between">
+                                        <span class="text-xs text-gray-500">$0</span>
+                                        <span id="transportation-amount" class="text-xs font-medium">$280</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="flex justify-between text-gray-700 text-sm mb-1">
+                                        <span>Utilities:</span>
+                                        <span id="utilities-percent">8%</span>
+                                    </label>
+                                    <input id="utilities" type="range" min="0" max="15" value="8" class="w-full" data-category="utilities" oninput="updateBudgetCategory('utilities', this.value)">
+                                    <div class="flex justify-between">
+                                        <span class="text-xs text-gray-500">$0</span>
+                                        <span id="utilities-amount" class="text-xs font-medium">$224</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="flex justify-between text-gray-700 text-sm mb-1">
+                                        <span>Savings:</span>
+                                        <span id="savings-percent">15%</span>
+                                    </label>
+                                    <input id="savings" type="range" min="0" max="30" value="15" class="w-full" data-category="savings" oninput="updateBudgetCategory('savings', this.value)">
+                                    <div class="flex justify-between">
+                                        <span class="text-xs text-gray-500">$0</span>
+                                        <span id="savings-amount" class="text-xs font-medium">$420</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="flex justify-between text-gray-700 text-sm mb-1">
+                                        <span>Entertainment:</span>
+                                        <span id="entertainment-percent">7%</span>
+                                    </label>
+                                    <input id="entertainment" type="range" min="0" max="20" value="7" class="w-full" data-category="entertainment" oninput="updateBudgetCategory('entertainment', this.value)">
+                                    <div class="flex justify-between">
+                                        <span class="text-xs text-gray-500">$0</span>
+                                        <span id="entertainment-amount" class="text-xs font-medium">$196</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="flex justify-between text-gray-700 text-sm mb-1">
+                                        <span>Other:</span>
+                                        <span id="other-percent">15%</span>
+                                    </label>
+                                    <input id="other" type="range" min="0" max="30" value="15" class="w-full" data-category="other" oninput="updateBudgetCategory('other', this.value)">
+                                    <div class="flex justify-between">
+                                        <span class="text-xs text-gray-500">$0</span>
+                                        <span id="other-amount" class="text-xs font-medium">$420</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col">
+                            <div class="mb-3">
+                                <canvas id="budget-chart" width="300" height="300"></canvas>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg mt-auto">
+                                <h3 class="font-bold text-gray-900 mb-2">Budget Summary:</h3>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span>Total Net Income:</span>
+                                    <span class="font-medium">$2,800.00</span>
+                                </div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span>Total Allocated:</span>
+                                    <span class="font-medium" id="total-allocated">$2,800.00</span>
+                                </div>
+                                <div class="flex justify-between text-sm" id="balance-row">
+                                    <span>Remaining:</span>
+                                    <span class="font-medium text-green-600" id="balance">$0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex items-center">
+                            <h3 class="font-bold text-gray-900">Budget Sustainability Score: </h3>
+                            <div class="ml-2 px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 font-medium" id="sustainability-score">
+                                7/10
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-700 mt-1" id="sustainability-feedback">
+                            Your budget allocation is generally realistic, but you may want to consider increasing your savings rate for emergencies.
+                        </p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Budget Reflection:</h3>
+                        <textarea class="input-field" rows="4" placeholder="What challenges did you face in creating this budget based on net income? How does this impact your financial planning?" data-ai-check="true" data-assessment-weight="4"></textarea>
+                    </div>
+                    
+                    <div class="text-right">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded transition duration-200" onclick="saveBudget()">
+                            Save Budget
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activity 4: Long-Term Impact Calculator -->
+            <div id="activity4" class="learning-station">
+                <div class="flex items-center mb-3">
+                    <span class="station-number">4</span>
+                    <h2 class="text-2xl font-bold text-gray-900">Long-Term Impact Calculator</h2>
+                </div>
+                
+                <div class="activity-timer mb-4">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="font-medium text-indigo-700">Estimated time: 10 minutes</span>
+                    </div>
+                </div>
+                
+                <p class="text-gray-700 mb-4">Explore how small changes in your paycheck deductions can have significant long-term effects on your financial future, especially regarding retirement savings.</p>
+                
+                <div class="tool-container">
+                    <div class="mb-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Starting Parameters:</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 text-sm mb-1" for="starting-salary">
+                                    Starting Annual Salary:
+                                </label>
+                                <input id="starting-salary" type="number" value="45000" min="20000" max="150000" step="1000" class="input-field">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 text-sm mb-1" for="retirement-percent">
+                                    Retirement Contribution:
+                                </label>
+                                <div class="flex items-center">
+                                    <input id="retirement-percent" type="number" value="5" min="0" max="20" class="input-field mr-2">
+                                    <span class="text-gray-700">%</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 text-sm mb-1" for="employer-match">
+                                    Employer Match:
+                                </label>
+                                <div class="flex items-center">
+                                    <input id="employer-match" type="number" value="3" min="0" max="10" class="input-field mr-2">
+                                    <span class="text-gray-700">%</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 text-sm mb-1" for="annual-raise">
+                                    Expected Annual Raise:
+                                </label>
+                                <div class="flex items-center">
+                                    <input id="annual-raise" type="number" value="3" min="0" max="10" step="0.5" class="input-field mr-2">
+                                    <span class="text-gray-700">%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Comparison Scenarios:</h3>
+                        
+                        <div class="grid md:grid-cols-3 gap-4 mb-3">
+                            <div class="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                                <h4 class="text-blue-800 font-medium mb-2">Baseline</h4>
+                                <p class="text-sm text-gray-700">5% contribution with 3% employer match</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-3 rounded-lg border border-green-200">
+                                <h4 class="text-green-800 font-medium mb-2">Increased Savings</h4>
+                                <p class="text-sm text-gray-700">10% contribution with 3% employer match</p>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-3 rounded-lg border border-purple-200">
+                                <h4 class="text-purple-800 font-medium mb-2">Maximum Match</h4>
+                                <p class="text-sm text-gray-700">6% contribution with 6% employer match</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <canvas id="growth-chart" width="400" height="200"></canvas>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 mb-4">
+                        <div class="bg-white p-3 rounded border border-gray-200">
+                            <h4 class="text-sm font-medium text-gray-700 mb-2">Baseline Scenario:</h4>
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-sm">
+                                    <span>After 10 years:</span>
+                                    <span class="font-medium">$72,433</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span>After 20 years:</span>
+                                    <span class="font-medium">$210,462</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span>After 30 years:</span>
+                                    <span class="font-medium">$476,215</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-3 rounded border border-gray-200">
+                            <h4 class="text-sm font-medium text-gray-700 mb-2">Increased Savings:</h4>
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-sm">
+                                    <span>After 10 years:</span>
+                                    <span class="font-medium">$96,578</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span>After 20 years:</span>
+                                    <span class="font-medium">$280,616</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span>After 30 years:</span>
+                                    <span class="font-medium">$634,953</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-3 rounded border border-gray-200">
+                            <h4 class="text-sm font-medium text-gray-700 mb-2">Maximum Match:</h4>
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-sm">
+                                    <span>After 10 years:</span>
+                                    <span class="font-medium">$86,920</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span>After 20 years:</span>
+                                    <span class="font-medium">$252,554</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span>After 30 years:</span>
+                                    <span class="font-medium">$571,458</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                        <h3 class="font-bold text-yellow-800 mb-2">Monthly Paycheck Impact:</h3>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div>
+                                <p class="text-sm text-gray-700 mb-1">Baseline (5%):</p>
+                                <p class="font-medium">-$187.50/month</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-700 mb-1">Increased (10%):</p>
+                                <p class="font-medium">-$375.00/month</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-700 mb-1">Max Match (6%):</p>
+                                <p class="font-medium">-$225.00/month</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Long-Term Impact Analysis:</h3>
+                        <textarea class="input-field" rows="4" placeholder="Based on these projections, what conclusions can you draw about the long-term impact of retirement contribution decisions? Which scenario would you choose and why?" data-ai-check="true" data-assessment-weight="4"></textarea>
+                    </div>
+                    
+                    <div class="text-right">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded transition duration-200" onclick="completeActivity(4)">
+                            Save Analysis
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Reflection and Planning -->
+            <section id="portfolio" class="mt-12">
+                <h2 class="text-2xl font-bold text-gray-900 section-title">Portfolio Integration</h2>
+                <p class="text-gray-700 mb-4">Now that you've completed all the learning stations, it's time to integrate your work into a comprehensive portfolio.</p>
+                
+                <div class="bg-indigo-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-indigo-900 mb-4">Income and Tax Management Portfolio</h3>
+                    <p class="text-gray-700 mb-4">Your portfolio combines all elements from today's Learning Lab into a cohesive financial management plan:</p>
+                    
+                    <ul class="list-disc list-inside mb-4 text-gray-700">
+                        <li>Paycheck Analysis from Station 1</li>
+                        <li>Tax Withholding Strategy from Station 2</li>
+                        <li>Net Income Budget from Station 3</li>
+                        <li>Long-Term Savings Plan from Station 4</li>
+                    </ul>
+                    
+                    <p class="text-gray-700 mb-4">Review each section to ensure alignment across your entire plan.</p>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Portfolio Summary (How will you manage income and taxes effectively?)</label>
+                        <textarea class="w-full p-2 border border-gray-300 rounded-md" rows="4" data-ai-check="true" data-assessment-weight="4" placeholder="Summarize your key strategies for managing income and taxes..."></textarea>
+                        <div class="mt-2 hidden feedback-container text-green-600 text-sm"></div>
+                    </div>
+                    
+                    <button class="pfl-button px-6 py-2 rounded-lg mt-2 transition duration-200 hover:shadow-xl hover:-translate-y-1">Complete Portfolio</button>
+                </div>
+            </section>
+            
+            <div id="reflection" class="discussion-prompt mt-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Reflection and Planning</h2>
+                <p class="text-gray-700 mb-4">Now that you've completed all the Learning Lab activities, take some time to reflect on the key concepts and create a personal plan for managing your income effectively.</p>
+                
+                <div class="tool-container">
+                    <div class="mb-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Key Takeaways:</h3>
+                        <textarea class="input-field" rows="3" placeholder="What are the 3 most important things you learned about income and taxes from these activities?" data-ai-check="true" data-assessment-weight="3"></textarea>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="font-bold text-gray-900 mb-2">Your Income Management Plan:</h3>
+                        <p class="text-gray-700 mb-2">Create a personal plan for how you will manage your income and taxes in the future:</p>
+                        
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1">Tax Withholding Strategy:</label>
+                                <input type="text" class="input-field" placeholder="My approach to tax withholding will be..." data-ai-check="true" data-assessment-weight="2">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1">Budgeting Approach:</label>
+                                <input type="text" class="input-field" placeholder="When budgeting my net income, I will prioritize..." data-ai-check="true" data-assessment-weight="2">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1">Retirement Planning:</label>
+                                <input type="text" class="input-field" placeholder="For retirement contributions, my strategy will be to..." data-ai-check="true" data-assessment-weight="2">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1">Financial Goals:</label>
+                                <textarea class="input-field" rows="2" placeholder="My financial goals related to income management are..." data-ai-check="true" data-assessment-weight="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-right">
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded transition duration-200" id="save-to-portfolio">
+                            Save to My Portfolio
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <a href="#" class="pfl-button px-4 py-2 inline-flex items-center font-medium hover:shadow-xl hover:-translate-y-1">
+                    Continue to Chapter 1.4: Financial Goal Setting
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div id="toast" class="toast-notification">
+        <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span id="toast-message">Your progress has been saved!</span>
+        </div>
+    </div>
+    
+    <footer class="bg-gradient-to-r from-indigo-900 to-purple-900 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">PFL Academy</h3>
+                    <p class="text-gray-400">Empowering students with financial literacy skills for life.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Curriculum</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Help Center</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-400">If you need assistance, please contact your instructor or email support.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 PFL Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Add a small script tag specifically for interactive features -->
+    <script>
+        // ==========================================
+        // ACTIVITY 1: PAYCHECK ANALYZER
+        // ==========================================
+        
+        // Data for professions
+        const professions = {
+            teacher: { 
+                salary: 45000,
+                federalTax: 13,
+                stateTax: 4
+            },
+            nurse: { 
+                salary: 65000,
+                federalTax: 15,
+                stateTax: 5
+            },
+            software: { 
+                salary: 85000,
+                federalTax: 18,
+                stateTax: 6
+            },
+            retail: { 
+                salary: 40000,
+                federalTax: 12,
+                stateTax: 3.5
+            },
+            electrician: { 
+                salary: 55000,
+                federalTax: 14,
+                stateTax: 4.5
+            }
+        };
+        
+        let paychartChart = null;
+        
+        // Function to initialize the chart
+        function initializeChart() {
+            console.log("Initializing chart...");
+            const canvas = document.getElementById('paycheck-chart');
+            if (!canvas) {
+                console.error("Chart canvas not found!");
+                return null;
+            }
+            
+            const ctx = canvas.getContext('2d');
+            
+            // If a chart already exists, destroy it
+            if (paychartChart) {
+                paychartChart.destroy();
+            }
+            
+            // Create new chart
+            paychartChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Federal Tax', 'State Tax', 'FICA', 'Retirement', 'Health Insurance', 'Net Income'],
+                    datasets: [{
+                        data: [13, 4, 7.65, 5, 4.8, 65.55], // Default values
+                        backgroundColor: [
+                            '#ef4444', // red - Federal Tax
+                            '#f97316', // orange - State Tax
+                            '#f59e0b', // amber - FICA
+                            '#10b981', // green - Retirement
+                            '#0ea5e9', // sky - Health Insurance
+                            '#6366f1'  // indigo - Net Income
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                font: {
+                                    size: 10
+                                },
+                                boxWidth: 12
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Paycheck Breakdown (%)',
+                            font: {
+                                size: 12
+                            }
+                        }
+                    }
+                }
+            });
+            
+            console.log("Chart initialized");
+            return paychartChart;
+        }
+        
+        // Main calculation function
+        function calculate() {
+            // Get input values
+            const selectedProfession = document.getElementById('profession').value;
+            const retirementPercent = parseInt(document.getElementById('retirement').value);
+            const healthAmount = parseInt(document.getElementById('health').value);
+            const additionalTax = parseInt(document.getElementById('tax').value);
+            
+            // Get profession data
+            const prof = professions[selectedProfession];
+            const annualSalary = prof.salary;
+            const monthlySalary = annualSalary / 12;
+            
+            // Calculate taxes and deductions
+            const federalTax = (monthlySalary * prof.federalTax / 100) + additionalTax;
+            const stateTax = monthlySalary * prof.stateTax / 100;
+            const ssTax = monthlySalary * 0.062;  // 6.2%
+            const medicareTax = monthlySalary * 0.0145;  // 1.45%
+            const ficaTax = ssTax + medicareTax;
+            const retirementAmount = monthlySalary * retirementPercent / 100;
+            
+            // Calculate totals
+            const totalDeductions = federalTax + stateTax + ficaTax + retirementAmount + healthAmount;
+            const netIncome = monthlySalary - totalDeductions;
+            
+            // Update summary display
+            document.getElementById('gross').textContent = '$' + monthlySalary.toFixed(2);
+            document.getElementById('federal').textContent = '$' + federalTax.toFixed(2);
+            document.getElementById('state').textContent = '$' + stateTax.toFixed(2);
+            document.getElementById('ss').textContent = '$' + ssTax.toFixed(2);
+            document.getElementById('medicare').textContent = '$' + medicareTax.toFixed(2);
+            document.getElementById('retirement-amount').textContent = '$' + retirementAmount.toFixed(2);
+            document.getElementById('health-amount').textContent = '$' + healthAmount.toFixed(2);
+            document.getElementById('additional-tax').textContent = '$' + additionalTax.toFixed(2);
+            document.getElementById('total-deductions').textContent = '$' + totalDeductions.toFixed(2);
+            document.getElementById('net').textContent = '$' + netIncome.toFixed(2);
+            
+            // Calculate and update percentages
+            const federalTaxPercent = (federalTax / monthlySalary) * 100;
+            const stateTaxPercent = (stateTax / monthlySalary) * 100;
+            const ficaPercent = (ficaTax / monthlySalary) * 100;
+            const retirementPercent = (retirementAmount / monthlySalary) * 100;
+            const healthPercent = (healthAmount / monthlySalary) * 100;
+            const netIncomePercent = (netIncome / monthlySalary) * 100;
+            
+            // Update chart
+            if (paychartChart) {
+                paychartChart.data.datasets[0].data = [
+                    federalTaxPercent,
+                    stateTaxPercent,
+                    ficaPercent,
+                    retirementPercent,
+                    healthPercent,
+                    netIncomePercent
+                ];
+                paychartChart.update();
+            }
+        }
+        
+        // Initialize when page loads
+        window.onload = function() {
+            console.log("Page loaded");
+            
+            // Initialize paycheck analyzer (Activity 1)
+            paychartChart = initializeChart();
+            calculate();
+            
+            // Initialize tax withholding strategy builder (Activity 2)
+            updateWithholdingStrategy();
+            
+            // Initialize budget challenge (Activity 3)
+            try {
+                // Initialize chart if it exists
+                const budgetChartElement = document.getElementById('budget-chart');
+                if (budgetChartElement) {
+                    const budgetChart = new Chart(budgetChartElement.getContext('2d'), {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Housing', 'Food', 'Transportation', 'Utilities', 'Savings', 'Entertainment', 'Other'],
+                            datasets: [{
+                                data: [30, 15, 10, 8, 15, 7, 15], // Initial values
+                                backgroundColor: [
+                                    '#f87171', // red - Housing
+                                    '#fb923c', // orange - Food
+                                    '#fbbf24', // amber - Transportation
+                                    '#34d399', // emerald - Utilities
+                                    '#22d3ee', // cyan - Savings
+                                    '#818cf8', // indigo - Entertainment
+                                    '#c084fc', // purple - Other
+                                ]
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                }
+                            }
+                        }
+                    });
+                }
+                
+                // Initialize budget calculations
+                updateBudgetTotals();
+                updateSustainabilityScore();
+            } catch (error) {
+                console.log("Budget chart initialization skipped: " + error.message);
+            }
+        };
+        
+        // Handle save analysis for paycheck analyzer
+        function saveAnalysis() {
+            // Get all textarea values
+            const answers = document.querySelectorAll('.question textarea');
+            let allFilled = true;
+            
+            // Check if all text areas have content
+            answers.forEach(answer => {
+                if (!answer.value.trim()) {
+                    allFilled = false;
+                    answer.style.borderColor = '#ef4444';
+                } else {
+                    answer.style.borderColor = '#d1d5db';
+                }
+            });
+            
+            if (allFilled) {
+                completeActivity(1);
+                alert("Your analysis has been saved successfully!");
+            } else {
+                alert("Please answer all questions before saving.");
+            }
+        }
+        
+        // ==========================================
+        // ACTIVITY 2: TAX WITHHOLDING STRATEGY BUILDER
+        // ==========================================
+        
+        // Tax Withholding Strategy variables
+        let withholding = {
+            allowances: 1,
+            additionalWithholding: 0,
+            taxCredits: 0
+        };
+        
+        // Function to update withholding allowances
+        function updateWithholdingAllowances(value) {
+            document.getElementById('allowances-value').textContent = value;
+            withholding.allowances = parseInt(value);
+            updateWithholdingStrategy();
+        }
+        
+        // Function to update additional withholding
+        function updateAdditionalWithholding(value) {
+            document.getElementById('additional-value').textContent = value;
+            withholding.additionalWithholding = parseInt(value);
+            updateWithholdingStrategy();
+        }
+        
+        // Function to update tax credits
+        function updateTaxCredits(value) {
+            document.getElementById('credits-value').textContent = value;
+            withholding.taxCredits = parseInt(value);
+            updateWithholdingStrategy();
+        }
+        
+        // Function to update the withholding strategy projections
+        function updateWithholdingStrategy() {
+            // Get the selected radio button
+            let selectedGoal = document.querySelector('input[name="financial-goal"]:checked').id;
+            
+            // Base values
+            let baseTakeHome = 850.32;
+            let baselineDiff = 0;
+            let taxDue = 0;
+            let taxRefund = 0;
+            let riskLevel = "Low";
+            
+            // Calculate monthly take-home impact
+            // Allowances increase take-home (less withholding)
+            let takeHomeAdjustment = withholding.allowances * 45.25;
+            
+            // Additional withholding decreases take-home
+            takeHomeAdjustment -= withholding.additionalWithholding;
+            
+            // Calculate new take-home
+            let newTakeHome = baseTakeHome + takeHomeAdjustment;
+            baselineDiff = takeHomeAdjustment;
+            
+            // Calculate annual tax impact
+            if (withholding.allowances > 2) {
+                // Higher allowances can mean taxes due at filing
+                taxDue = 75 * (withholding.allowances - 1) - withholding.taxCredits;
+                taxRefund = 0;
+                riskLevel = "High";
+            } else if (withholding.additionalWithholding > 30) {
+                // Higher additional withholding can mean refund
+                taxDue = 0;
+                taxRefund = (withholding.additionalWithholding * 12) / 2 + withholding.taxCredits;
+                riskLevel = "Low";
+            } else {
+                // Balanced approach
+                taxDue = Math.max(0, 126 - withholding.taxCredits - (withholding.additionalWithholding * 6));
+                taxRefund = taxDue == 0 ? withholding.taxCredits / 2 : 0;
+                riskLevel = "Medium";
+            }
+            
+            // Adjust based on financial goal
+            if (selectedGoal === "goal-1") {
+                // Maximize monthly take-home
+                takeHomeAdjustment += 15; // Simulate slightly higher take-home
+                taxDue += 50; // But slightly higher year-end tax due
+            } else if (selectedGoal === "goal-2") {
+                // Ensure a tax refund
+                takeHomeAdjustment -= 25; // Lower take-home
+                taxDue = 0; // No tax due
+                taxRefund += 300; // Higher refund
+            }
+            
+            // Apply risk level styling
+            const riskElement = document.getElementById('tax-risk');
+            riskElement.className = 'font-medium';
+            if (riskLevel === "Low") {
+                riskElement.classList.add('text-green-600');
+            } else if (riskLevel === "Medium") {
+                riskElement.classList.add('text-yellow-600');
+            } else {
+                riskElement.classList.add('text-red-600');
+            }
+            
+            // Update the UI
+            document.getElementById('expected-takehome').textContent = '$' + newTakeHome.toFixed(2);
+            document.getElementById('takehome-diff').textContent = baselineDiff >= 0 ? '+$' + baselineDiff.toFixed(2) : '-$' + Math.abs(baselineDiff).toFixed(2);
+            document.getElementById('takehome-diff').className = 'font-medium ' + (baselineDiff >= 0 ? 'text-green-600' : 'text-red-600');
+            
+            document.getElementById('tax-due').textContent = '$' + taxDue.toFixed(2);
+            document.getElementById('tax-refund').textContent = (taxRefund > 0 ? '+' : '-') + '$' + taxRefund.toFixed(2);
+            document.getElementById('tax-refund').className = 'font-medium ' + (taxRefund > 0 ? 'text-green-600' : 'text-red-600');
+            document.getElementById('tax-risk').textContent = riskLevel;$' + newTakeHome.toFixed(2);
+            document.getElementById('takehome-diff').textContent = baselineDiff >= 0 ? '+$' + baselineDiff.toFixed(2) : '-$' + Math.abs(baselineDiff).toFixed(2);
+            document.getElementById('takehome-diff').className = 'font-medium ' + (baselineDiff >= 0 ? 'text-green-600' : 'text-red-600');
+            
+            document.getElementById('tax-due').textContent = '$' + taxDue.toFixed(2);
+            document.getElementById('tax-refund').textContent = (taxRefund > 0 ? '+' : '-') + '$' + taxRefund.toFixed(2);
+            document.getElementById('tax-refund').className = 'font-medium ' + (taxRefund > 0 ? 'text-green-600' : 'text-red-600');
+            document.getElementById('tax-risk').textContent = riskLevel;
+        }
+        
+        // Function to save the withholding strategy
+        function saveWithholdingStrategy() {
+            // Get the strategy and justification text
+            const strategyText = document.querySelector('#activity2 textarea[data-assessment-weight="4"]').value;
+            const justificationText = document.querySelector('#activity2 textarea[data-assessment-weight="3"]').value;
+            
+            // Check if both fields are filled
+            if (!strategyText.trim() || !justificationText.trim()) {
+                // Highlight empty fields
+                if (!strategyText.trim()) {
+                    document.querySelector('#activity2 textarea[data-assessment-weight="4"]').style.borderColor = '#ef4444';
+                } else {
+                    document.querySelector('#activity2 textarea[data-assessment-weight="4"]').style.borderColor = '#d1d5db';
+                }
+                
+                if (!justificationText.trim()) {
+                    document.querySelector('#activity2 textarea[data-assessment-weight="3"]').style.borderColor = '#ef4444';
+                } else {
+                    document.querySelector('#activity2 textarea[data-assessment-weight="3"]').style.borderColor = '#d1d5db';
+                }
+                
+                alert("Please complete both your strategy and justification before saving.");
+                return;
+            }
+            
+            // If everything is filled out, mark the activity as complete
+            completeActivity(2);
+            alert("Your withholding strategy has been saved successfully!");
+        }
+        
+        // ==========================================
+        // ACTIVITY 3: NET INCOME BUDGET CHALLENGE
+        // ==========================================
+        
+        // Budget variables
+        let budgetCategories = {
+            housing: 30,
+            food: 15,
+            transportation: 10,
+            utilities: 8,
+            savings: 15,
+            entertainment: 7,
+            other: 15
+        };
+        const netIncomeAmount = 2800;
+        
+        // Function to update budget category
+        function updateBudgetCategory(category, value) {
+            document.getElementById(`${category}-percent`).textContent = `${value}%`;
+            budgetCategories[category] = parseInt(value);
+            
+            // Calculate dollar amount
+            const amount = (netIncomeAmount * parseInt(value)) / 100;
+            document.getElementById(`${category}-amount`).textContent = `$${amount.toFixed(0)}`;
+            
+            // Update budget totals and chart
+            updateBudgetChart();
+            updateBudgetTotals();
+            updateSustainabilityScore();
+        }
+        
+        // Function to update budget chart
+        function updateBudgetChart() {
+            const chartElement = document.getElementById('budget-chart');
+            if (!chartElement) return;
+            
+            const chart = Chart.getChart(chartElement);
+            if (chart) {
+                chart.data.datasets[0].data = [
+                    budgetCategories.housing,
+                    budgetCategories.food,
+                    budgetCategories.transportation,
+                    budgetCategories.utilities,
+                    budgetCategories.savings,
+                    budgetCategories.entertainment,
+                    budgetCategories.other
+                ];
+                chart.update();
+            }
+        }
+        
+        // Function to update budget totals
+        function updateBudgetTotals() {
+            // Calculate total percentage allocated
+            const totalPercentage = Object.values(budgetCategories).reduce((total, value) => total + value, 0);
+            
+            // Calculate total amount allocated
+            const totalAllocated = (netIncomeAmount * totalPercentage) / 100;
+            
+            // Calculate remaining amount
+            const remaining = netIncomeAmount - totalAllocated;
+            
+            // Update display
+            document.getElementById('total-allocated').textContent = `$${totalAllocated.toFixed(2)}`;
+            const balanceElement = document.getElementById('balance');
+            
+            // Check if over or under budget
+            if (remaining < 0) {
+                balanceElement.textContent = `-$${Math.abs(remaining).toFixed(2)}`;
+                balanceElement.className = 'font-medium text-red-600';
+                document.getElementById('balance-row').firstElementChild.textContent = 'Overspent:';
+            } else {
+                balanceElement.textContent = `$${remaining.toFixed(2)}`;
+                balanceElement.className = 'font-medium text-green-600';
+                document.getElementById('balance-row').firstElementChild.textContent = 'Remaining:';
+            }
+        }
+        
+        // Function to update sustainability score
+        function updateSustainabilityScore() {
+            // Calculate score based on budget allocation
+            let score = 0;
+            
+            // Check if balanced (total is 100%)
+            const totalPercentage = Object.values(budgetCategories).reduce((total, value) => total + value, 0);
+            if (totalPercentage > 98 && totalPercentage < 102) score += 2;
+            
+            // Check savings rate (15% or higher is good)
+            if (budgetCategories.savings >= 15) score += 3;
+            else if (budgetCategories.savings >= 10) score += 2;
+            else if (budgetCategories.savings >= 5) score += 1;
+            
+            // Check housing cost (30% or less is recommended)
+            if (budgetCategories.housing <= 30) score += 2;
+            else if (budgetCategories.housing <= 35) score += 1;
+            
+            // Check other essential categories
+            if (budgetCategories.food >= 10 && budgetCategories.food <= 20) score += 1;
+            if (budgetCategories.transportation <= 15) score += 1;
+            if (budgetCategories.utilities <= 10) score += 1;
+            
+            // Update score display
+            const scoreElement = document.getElementById('sustainability-score');
+            if (scoreElement) {
+                scoreElement.textContent = `${score}/10`;
+            }
+            
+            // Update feedback based on score
+            const feedbackElement = document.getElementById('sustainability-feedback');
+            if (!feedbackElement) return;
+            
+            if (score >= 8) {
+                feedbackElement.textContent = 'Excellent budget! Your allocation shows good balance between essentials, savings, and discretionary spending.';
+            } else if (score >= 5) {
+                feedbackElement.textContent = 'Your budget is reasonable, but consider adjusting to increase savings and ensure housing costs don\'t exceed 30% of income.';
+            } else {
+                feedbackElement.textContent = 'Your budget needs improvement. Focus on increasing savings and reducing housing costs to below 30% of income.';
+            }
+        }
+        
+        // Function to save the budget
+        function saveBudget() {
+            // Get the reflection textarea
+            const reflectionText = document.querySelector('#activity3 textarea');
+            
+            // Check if reflection is filled
+            if (!reflectionText || !reflectionText.value.trim()) {
+                // Highlight empty field
+                if (reflectionText) {
+                    reflectionText.style.borderColor = '#ef4444';
+                    alert("Please complete your budget reflection before saving.");
+                }
+                return;
+            }
+            
+            // If everything is filled out, mark the activity as complete
+            completeActivity(3);
+            alert("Your budget has been saved successfully!");
+        }
+    </script>
+    
+    <script>
+        // Station navigation
+        let currentStation = 0;
+        const stations = document.querySelectorAll('.learning-station');
+        const stationIndicators = document.querySelectorAll('.station-indicator');
+        
+        // Initialize interactive elements
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set up station transitions
+            stations.forEach((station, index) => {
+                station.style.opacity = '0';
+                station.style.transform = 'translateY(20px)';
+                
+                // Use setTimeout to create a staggered animation effect
+                setTimeout(() => {
+                    station.style.opacity = '1';
+                    station.style.transform = 'translateY(0)';
+                    station.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                }, 100 * (index + 1));
+            });
+            
+            updateStationIndicators();
+            
+            // Connect existing save buttons to the toast notification system
+            document.querySelectorAll('button').forEach(button => {
+                if (button.textContent.includes('Save')) {
+                    button.addEventListener('click', function() {
+                        const originalText = button.textContent;
+                        const messageText = originalText.replace('Save', '').trim();
+                        
+                        showToast(`${messageText} saved successfully!`);
+                        updateProgress(this);
+                    });
+                }
+            });
+            
+            // No need for these anymore as we've properly initialized 
+            // activities in the window.onload function above
+        });
+        
+        // Station completion tracking
+        let completedStations = 0;
+        const totalStations = 4;
+        
+        function completeActivity(stationNumber) {
+            // Replace alerts with toast notifications
+            showToast(`Station ${stationNumber} completed! Your work has been saved.`);
+            completedStations++;
+            updateProgress();
+        }
+        
+        function updateProgress(button) {
+            // Try to find the parent station
+            const parentStation = button ? button.closest('.learning-station') : null;
+            if (parentStation) {
+                const stationIndex = Array.from(stations).indexOf(parentStation);
+                if (stationIndex >= 0) {
+                    // Mark this station as completed
+                    if (stationIndicators[stationIndex]) {
+                        stationIndicators[stationIndex].classList.add('active');
+                    }
+                }
+            }
+            
+            // Update the progress bar
+            const progressBar = document.querySelector('.from-indigo-600.to-purple-600.h-2\\.5');
+            const progressText = document.querySelector('.text-sm.text-indigo-800 span');
+            
+            const percentage = (completedStations / totalStations) * 100;
+            if (progressBar) progressBar.style.width = `${percentage}%`;
+            if (progressText) progressText.textContent = `${completedStations}/${totalStations} stations`;
+        }
+        
+        // Show toast notification
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            
+            if (!toast || !toastMessage) return;
+            
+            // Set message
+            toastMessage.textContent = message;
+            
+            // Set type-specific styling
+            if (type === 'warning') {
+                toast.style.backgroundColor = '#f59e0b';
+            } else {
+                toast.style.backgroundColor = '#4f46e5';
+            }
+            
+            // Show toast
+            toast.classList.add('show');
+            
+            // Hide toast after delay
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Update station indicators
+        function updateStationIndicators() {
+            stationIndicators.forEach((indicator, index) => {
+                // Add click handler to navigate to the corresponding station
+                indicator.addEventListener('click', () => {
+                    const targetStation = stations[index];
+                    if (targetStation) {
+                        targetStation.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        }
+        
+        // Initialize charts
+        // Remove this section as we'll initialize the chart elsewhere
+            
+            // Budget Chart and Budget Challenge (Activity 3)
+            // Budget category percentages and amounts
+            const netIncomeAmount = 2800; // Fixed net income for this scenario
+            let budgetCategories = {
+                housing: 30,
+                food: 15, 
+                transportation: 10,
+                utilities: 8,
+                savings: 15,
+                entertainment: 7,
+                other: 15
+            };
+            
+            // Initialize budget chart
+            const budgetCtx = document.getElementById('budget-chart').getContext('2d');
+            const budgetChart = new Chart(budgetCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Housing', 'Food', 'Transportation', 'Utilities', 'Savings', 'Entertainment', 'Other'],
+                    datasets: [{
+                        data: [30, 15, 10, 8, 15, 7, 15], // Initial values
+                        backgroundColor: [
+                            '#f87171', // red - Housing
+                            '#fb923c', // orange - Food
+                            '#fbbf24', // amber - Transportation
+                            '#34d399', // emerald - Utilities
+                            '#22d3ee', // cyan - Savings
+                            '#818cf8', // indigo - Entertainment
+                            '#c084fc', // purple - Other
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Budget Allocation'
+                        }
+                    }
+                }
+            });
+            
+            // Function to update budget categories
+            function updateBudgetCategory(category, value) {
+                // Update percentage display
+                document.getElementById(`${category}-percent`).textContent = `${value}%`;
+                
+                // Update category value
+                budgetCategories[category] = parseInt(value);
+                
+                // Calculate dollar amount
+                const amount = (netIncomeAmount * parseInt(value)) / 100;
+                document.getElementById(`${category}-amount`).textContent = `$${amount.toFixed(0)}`;
+                
+                // Update chart
+                updateBudgetChart();
+                
+                // Update totals
+                updateBudgetTotals();
+                
+                // Update sustainability score
+                updateSustainabilityScore();
+            }
+            
+            // Function to update budget chart
+            function updateBudgetChart() {
+                // Update chart data
+                budgetChart.data.datasets[0].data = [
+                    budgetCategories.housing,
+                    budgetCategories.food,
+                    budgetCategories.transportation,
+                    budgetCategories.utilities,
+                    budgetCategories.savings,
+                    budgetCategories.entertainment,
+                    budgetCategories.other
+                ];
+                budgetChart.update();
+            }
+            
+            // Function to update budget totals
+            function updateBudgetTotals() {
+                // Calculate total percentage allocated
+                const totalPercentage = Object.values(budgetCategories).reduce((total, value) => total + value, 0);
+                
+                // Calculate total amount allocated
+                const totalAllocated = (netIncomeAmount * totalPercentage) / 100;
+                
+                // Calculate remaining amount
+                const remaining = netIncomeAmount - totalAllocated;
+                
+                // Update display
+                document.getElementById('total-allocated').textContent = `$${totalAllocated.toFixed(2)}`;
+                const balanceElement = document.getElementById('balance');
+                
+                // Check if over or under budget
+                if (remaining < 0) {
+                    balanceElement.textContent = `-$${Math.abs(remaining).toFixed(2)}`;
+                    balanceElement.className = 'font-medium text-red-600';
+                    document.getElementById('balance-row').firstElementChild.textContent = 'Overspent:';
+                } else {
+                    balanceElement.textContent = `$${remaining.toFixed(2)}`;
+                    balanceElement.className = 'font-medium text-green-600';
+                    document.getElementById('balance-row').firstElementChild.textContent = 'Remaining:';
+                }
+            }
+            
+            // Function to update sustainability score
+            function updateSustainabilityScore() {
+                // Calculate score based on budget allocation
+                let score = 0;
+                
+                // Check if balanced (total is 100%)
+                const totalPercentage = Object.values(budgetCategories).reduce((total, value) => total + value, 0);
+                if (totalPercentage > 98 && totalPercentage < 102) score += 2;
+                
+                // Check savings rate (15% or higher is good)
+                if (budgetCategories.savings >= 15) score += 3;
+                else if (budgetCategories.savings >= 10) score += 2;
+                else if (budgetCategories.savings >= 5) score += 1;
+                
+                // Check housing cost (30% or less is recommended)
+                if (budgetCategories.housing <= 30) score += 2;
+                else if (budgetCategories.housing <= 35) score += 1;
+                
+                // Check other essential categories
+                if (budgetCategories.food >= 10 && budgetCategories.food <= 20) score += 1;
+                if (budgetCategories.transportation <= 15) score += 1;
+                if (budgetCategories.utilities <= 10) score += 1;
+                
+                // Update score display
+                document.getElementById('sustainability-score').textContent = `${score}/10`;
+                
+                // Update feedback based on score
+                const feedbackElement = document.getElementById('sustainability-feedback');
+                
+                if (score >= 8) {
+                    feedbackElement.textContent = 'Excellent budget! Your allocation shows good balance between essentials, savings, and discretionary spending.';
+                } else if (score >= 5) {
+                    feedbackElement.textContent = 'Your budget is reasonable, but consider adjusting to increase savings and ensure housing costs don\'t exceed 30% of income.';
+                } else {
+                    feedbackElement.textContent = 'Your budget needs improvement. Focus on increasing savings and reducing housing costs to below 30% of income.';
+                }
+            }
+            
+            // Initialize budget calculations on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                updateBudgetTotals();
+                updateSustainabilityScore();
+            });
+            
+            // Long-Term Impact Calculator (Activity 4)
+            // Initialize parameters
+            let startingSalary = 45000;
+            let retirementPercent = 5;
+            let employerMatch = 3;
+            let annualRaise = 3;
+            
+            // Initialize chart
+            const growthCtx = document.getElementById('growth-chart').getContext('2d');
+            let growthChart = new Chart(growthCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Start', '5 Years', '10 Years', '15 Years', '20 Years', '25 Years', '30 Years'],
+                    datasets: [
+                        {
+                            label: 'Baseline',
+                            data: [0, 30000, 72433, 132548, 210462, 321974, 476215],
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            tension: 0.1
+                        },
+                        {
+                            label: 'Increased Savings',
+                            data: [0, 40000, 96578, 176731, 280616, 429299, 634953],
+                            borderColor: '#10b981',
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            tension: 0.1
+                        },
+                        {
+                            label: 'Maximum Match',
+                            data: [0, 36000, 86920, 159057, 252554, 386368, 571458],
+                            borderColor: '#8b5cf6',
+                            backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                            tension: 0.1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Retirement Savings Growth Over Time'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Account Value ($)'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Add event listeners to all inputs in Activity 4
+            document.getElementById('starting-salary').addEventListener('change', updateRetirementCalculations);
+            document.getElementById('retirement-percent').addEventListener('change', updateRetirementCalculations);
+            document.getElementById('employer-match').addEventListener('change', updateRetirementCalculations);
+            document.getElementById('annual-raise').addEventListener('change', updateRetirementCalculations);
+            
+            // Function to calculate growth over time
+            function calculateGrowth(scenario) {
+                const years = [0, 5, 10, 15, 20, 25, 30];
+                const growthData = [];
+                
+                // Base parameters
+                let salary = startingSalary;
+                let employerMatchRate = employerMatch;
+                let contributionRate = retirementPercent;
+                
+                // Adjust parameters based on scenario
+                if (scenario === 'increased') {
+                    contributionRate = 10; // 10% contribution
+                } else if (scenario === 'maximum') {
+                    contributionRate = 6;  // 6% contribution
+                    employerMatchRate = 6; // 6% match
+                }
+                
+                // Calculate for each time point
+                let total = 0;
+                for (let year of years) {
+                    if (year === 0) {
+                        growthData.push(0);
+                        continue;
+                    }
+                    
+                    // Calculate balance at this year
+                    let runningTotal = total;
+                    let currentSalary = salary;
+                    
+                    // Calculate for each intervening year
+                    for (let i = 0; i < 5; i++) {
+                        // Annual contribution (employee + employer match)
+                        const employeeContribution = currentSalary * (contributionRate / 100);
+                        const employerContribution = currentSalary * Math.min(contributionRate, employerMatchRate) / 100;
+                        const yearlyContribution = employeeContribution + employerContribution;
+                        
+                        // Add to total (with 7% annual return)
+                        runningTotal = runningTotal * 1.07 + yearlyContribution;
+                        
+                        // Apply annual raise
+                        currentSalary = currentSalary * (1 + annualRaise/100);
+                    }
+                    
+                    total = runningTotal;
+                    growthData.push(Math.round(total));
+                }
+                
+                return growthData;
+            }
+            
+            // Function to update all calculations and displays
+            function updateRetirementCalculations() {
+                // Get values from inputs
+                startingSalary = parseFloat(document.getElementById('starting-salary').value);
+                retirementPercent = parseFloat(document.getElementById('retirement-percent').value);
+                employerMatch = parseFloat(document.getElementById('employer-match').value);
+                annualRaise = parseFloat(document.getElementById('annual-raise').value);
+                
+                // Calculate growth for each scenario
+                const baselineData = calculateGrowth('baseline');
+                const increasedData = calculateGrowth('increased');
+                const maximumData = calculateGrowth('maximum');
+                
+                // Update chart
+                growthChart.data.datasets[0].data = baselineData;
+                growthChart.data.datasets[1].data = increasedData;
+                growthChart.data.datasets[2].data = maximumData;
+                growthChart.update();
+                
+                // Update monthly impact values
+                const monthlyPaycheck = startingSalary / 12;
+                document.querySelectorAll('#growth-chart + div + div div p.font-medium').forEach((el, index) => {
+                    let amount;
+                    if (index === 0) amount = monthlyPaycheck * (retirementPercent / 100);
+                    else if (index === 1) amount = monthlyPaycheck * (10 / 100);
+                    else amount = monthlyPaycheck * (6 / 100);
+                    el.textContent = `-$${amount.toFixed(2)}/month`;
+                });
+            }
+            
+            // Initial calculation on page load
+            updateRetirementCalculations();
+        });
+        
+        // Make global functions available to HTML elements
+        window.updateProfession = updateProfession;
+        window.updateRetirementContribution = updateRetirementContribution;
+        window.updateHealthInsurance = updateHealthInsurance;
+        window.updateTaxWithholding = updateTaxWithholding;
+        window.updateBudgetCategory = updateBudgetCategory;
+        window.updateWithholdingAllowances = updateWithholdingAllowances;
+        window.updateAdditionalWithholding = updateAdditionalWithholding;
+        window.updateTaxCredits = updateTaxCredits;
+        
+        // Initialize paycheck calculations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the paycheck chart
+            paychartChart = initializePaycheckChart();
+            
+            // Initialize Activity 1
+            calculateAndUpdatePaycheck();
+            
+            // Initialize Activity 2
+            // First set up initial values
+            document.getElementById('allowances-value').textContent = withholding.allowances;
+            document.getElementById('additional-value').textContent = withholding.additionalWithholding;
+            document.getElementById('credits-value').textContent = withholding.taxCredits;
+            // Then update the strategy calculations
+            updateWithholdingStrategy();
+            
+            // Initialize Activity 3
+            updateBudgetTotals();
+            updateSustainabilityScore();
+        });
+        
+        // AI feedback system (simplified for demo)
+        document.querySelectorAll('[data-ai-check="true"]').forEach(element => {
+            element.addEventListener('blur', function() {
+                if (this.value.length > 10) {
+                    const randomFeedback = [
+                        "Great analysis! Your understanding of the concept is clear.",
+                        "Good job connecting the dots between income and budgeting.",
+                        "Excellent reflection on the long-term implications of these choices.",
+                        "Nice work considering both short-term and long-term impacts."
+                    ];
+                    
+                    const feedbackContainer = this.parentElement.querySelector('.feedback-container');
+                    if (feedbackContainer) {
+                        feedbackContainer.textContent = randomFeedback[Math.floor(Math.random() * randomFeedback.length)];
+                        feedbackContainer.classList.remove('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Portfolio save button
+        document.getElementById('save-to-portfolio').addEventListener('click', function() {
+            alert('Your reflection and plan have been saved to your digital portfolio!');
+        });
+    </script>
+</body>
+</html>
