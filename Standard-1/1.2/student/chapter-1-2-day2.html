@@ -1,0 +1,2254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFL Academy - Paying for Post-Secondary Education - Learning Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Core component styles */
+        .learning-objectives {
+            background-color: #e6f3ff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .learning-objectives:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .discussion-prompt {
+            background-color: #e6f0ff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #3b82f6;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .discussion-prompt:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .audio-player {
+            background-color: #f4f4f5;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        
+        /* Custom styles for specific components */
+        .activity-timer {
+            background: linear-gradient(to right, #eef2ff, #ede9fe);
+            border-left: 4px solid #4f46e5;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+        }
+        
+        .learning-station {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .learning-station:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            background-image: linear-gradient(to bottom right, rgba(79, 70, 229, 0.02), rgba(124, 58, 237, 0.02));
+        }
+        
+        .learning-station h3 {
+            color: #4f46e5;
+            margin-bottom: 0.75rem;
+        }
+        
+        .station-number {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            text-align: center;
+            line-height: 2rem;
+            background: linear-gradient(to right, #4f46e5, #6366f1);
+            color: white;
+            border-radius: 9999px;
+            margin-right: 0.5rem;
+            box-shadow: 0 2px 4px -1px rgba(79, 70, 229, 0.3);
+        }
+        
+        .important-note {
+            background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .important-note:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .progress-bar {
+            background-color: #e0e7ff;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        /* Section headers with decorative elements */
+        .section-title {
+            position: relative;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #4f46e5, #8b5cf6);
+            border-radius: 3px;
+        }
+        
+        /* Day Toggle in sidebar */
+        .day-toggle {
+            display: flex;
+            background-color: #f3f4f6;
+            border-radius: 9999px;
+            padding: 0.25rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .day-toggle-option {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .day-toggle-option.active {
+            background: linear-gradient(to right, #4f46e5, #6366f1);
+            color: white;
+            box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Station indicators */
+        .station-indicators {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .station-indicator {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background-color: #e5e7eb;
+            margin: 0 0.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        .station-indicator.active {
+            background: linear-gradient(to right, #4f46e5, #6366f1);
+            transform: scale(1.2);
+        }
+        
+        /* Toast notifications */
+        .toast-notification {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #4f46e5;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(150%);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 50;
+        }
+        
+        .toast-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Button styles */
+        .pfl-button {
+            background: linear-gradient(to right, #4f46e5, #6366f1);
+            color: white;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .pfl-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            filter: brightness(110%);
+        }
+        
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-gradient-to-r from-indigo-700 to-purple-700 text-white p-4 shadow-md fixed top-0 left-0 right-0 z-40">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="flex justify-center items-center h-10 w-10 rounded bg-white/20 text-white font-bold">
+                    PFL
+                </div>
+                <span class="ml-3 text-xl font-bold">PFL Academy</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors nav-link">Home</a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors nav-link">Curriculum</a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors nav-link">Resources</a>
+                <a href="#" class="text-white hover:text-indigo-200 transition-colors nav-link">Profile</a>
+            </nav>
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+    <div class="h-20"></div>
+
+    <div class="container mx-auto px-4 py-8 grid lg:grid-cols-10 gap-8">
+        <!-- Sidebar Navigation -->
+        <div class="lg:col-span-3 bg-white rounded-xl shadow-xl p-6 sticky top-20 h-screen overflow-y-auto border border-gray-200">
+            <div id="standard-info">
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">Standard 1: Personal Finance Foundations</h2>
+                <p class="text-gray-600 mb-4">Explore the foundations of personal finance including career planning, education financing, and income management.</p>
+            </div>
+            
+            <!-- Chapter Navigation Title -->
+            <div class="mb-4 font-semibold text-gray-500 text-sm px-1">
+                CHAPTER NAVIGATION
+            </div>
+            
+            <ul class="space-y-2" id="chapter-navigation">
+                <!-- Chapter 1.1 -->
+                <li>
+                    <a href="/chapter-1-1-demo.html" class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-lg bg-green-50 text-green-700">
+                        <span class="mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </span>
+                        <span class="text-left">1.1: Jobs vs. Careers</span>
+                    </a>
+                </li>
+                
+                <!-- Chapter 1.2 header -->
+                <li class="mb-1">
+                    <div class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-t-lg bg-indigo-50 text-indigo-700">
+                        <span class="mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                        </span>
+                        <span class="text-left">1.2: Paying for Education</span>
+                    </div>
+                </li>
+                
+                <!-- Chapter 1.2 Day 1 (collapsed) -->
+                <li class="ml-6 mb-1">
+                    <a href="/chapter-1-2-day1.html" class="w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-700 hover:bg-gray-50 hover:text-indigo-700 transition-colors">
+                        <span class="mr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </span>
+                        <span>Day 1: Content Guide</span>
+                    </a>
+                </li>
+                
+                <!-- Chapter 1.2 Day 2 (expanded, current) -->
+                <li class="ml-6">
+                    <div class="w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-indigo-50 text-indigo-700 border-l-4 border-indigo-700">
+                        <span class="mr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span>
+                        <span>Day 2: Learning Lab</span>
+                    </div>
+                    
+                    <!-- Section Navigation for Current Chapter -->
+                    <ul class="ml-6 mt-2 space-y-1" id="section-navigation">
+                        <li>
+                            <a href="#learning-objectives" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> Learning Objectives
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#intro" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> Introduction
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#station1" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> 1: Education Funding Calculator
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#station2" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> 2: Loan Repayment Simulator
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#station3" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> 3: Education Financing Plan
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#station4" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> 4: Scholarship Search Strategy
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#station5" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> 5: Reflection and Feedback
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> Portfolio Integration
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#reflection" class="text-gray-600 hover:text-indigo-700 flex items-center transition-colors text-xs">
+                                <span class="mr-2">•</span> Final Reflection
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                        <span class="mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                        </span>
+                        <span class="text-left">1.3: Income and Taxes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                        <span class="mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                        </span>
+                        <span class="text-left">1.4: Financial Goal Setting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                        <span class="mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                        </span>
+                        <span class="text-left">1.5: Managing Your Income Effectively</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Progress Tracker -->
+            <div class="mt-8 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-xl p-4 shadow-lg">
+                <h3 class="text-lg font-semibold text-indigo-800 mb-2">Your Progress</h3>
+                <div class="w-full bg-white/50 rounded-full h-2.5 mb-4">
+                    <div id="progress-bar" class="bg-gradient-to-r from-indigo-600 to-purple-600 h-2.5 rounded-full" style="width: 0%"></div>
+                </div>
+                <p class="text-sm text-indigo-800">Completed: <span id="progress-text" class="font-medium">0/5 stations</span></p>
+                
+                <!-- Station Indicators -->
+                <div class="station-indicators mt-3">
+                    <div class="station-indicator" data-station="1"></div>
+                    <div class="station-indicator" data-station="2"></div>
+                    <div class="station-indicator" data-station="3"></div>
+                    <div class="station-indicator" data-station="4"></div>
+                    <div class="station-indicator" data-station="5"></div>
+                </div>
+            </div>
+            
+            <!-- Chapter Progress -->
+            <div class="mt-6 bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <h4 class="text-sm font-medium text-gray-700 mb-2">Chapter Progress</h4>
+                <div class="flex items-center space-x-2 text-xs text-gray-600">
+                    <span class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        Day 1
+                    </span>
+                    <span class="font-medium">→</span>
+                    <span class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-500 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                        </svg>
+                        Day 2
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="lg:col-span-7 bg-white rounded-xl shadow-xl p-6 border border-gray-200">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Chapter 1.2: Paying for Post-Secondary Education - Learning Lab</h1>
+            <p class="text-xl text-gray-600 mb-6">Welcome to the Learning Lab! Today, we'll build on yesterday's exploration of education financing options, creating a personalized education financing strategy.</p>
+            
+            <!-- Learning Objectives Section -->
+            <div id="learning-objectives" class="learning-objectives">
+                <h2 class="text-xl font-semibold text-gray-900 mb-3">Learning Objectives</h2>
+                <p class="mb-2">By the end of this Learning Lab, you will be able to:</p>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>Create a comprehensive education financing strategy based on your educational goals</li>
+                    <li>Analyze different loan scenarios to understand potential debt and repayment implications</li>
+                    <li>Develop a financial aid application timeline</li>
+                    <li>Formulate a concrete action plan that includes specific funding sources and strategies to minimize debt</li>
+                    <li>Build a scholarship search strategy tailored to your strengths and background</li>
+                </ul>
+            </div>
+            
+            <!-- Introduction Section -->
+            <section id="intro">
+                <h2 class="text-2xl font-bold text-gray-900 section-title">Introduction</h2>
+                <p class="text-gray-700 mb-4">Financing post-secondary education is a complex and personal decision that requires careful planning. Today's Learning Lab will guide you through creating a comprehensive financing strategy tailored to your specific educational goals and financial situation.</p>
+                
+                <p class="text-gray-700 mb-4">We'll start by using interactive tools to explore different funding options and their long-term implications. Then you'll develop a concrete action plan, including a timeline for financial aid applications, scholarship search strategies, and debt minimization techniques.</p>
+                
+                <!-- Important Note -->
+                <div class="important-note">
+                    <h3 class="font-semibold text-yellow-800">Important Note</h3>
+                    <p class="text-gray-700">The education financing strategy you create today is for learning purposes. As you approach actual post-secondary education decisions, please consult with financial aid advisors, guidance counselors, and your family to make informed choices based on your specific circumstances.</p>
+                </div>
+                
+                <!-- Day 1 Connection -->
+                <div class="mt-4 bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
+                    <h3 class="text-lg font-semibold text-indigo-800 mb-2">Connection to Day 1</h3>
+                    <p class="text-gray-700">In Day 1, we explored different financial aid options (scholarships, grants, loans, work-study) and the FAFSA process. We also looked at how to prioritize funding sources to minimize debt through the funding pyramid. Today, we'll use that knowledge to create a personalized education financing strategy with specific action steps.</p>
+                </div>
+                
+                <!-- Podcast Review Section -->
+                <div class="bg-indigo-50 p-5 rounded-lg my-5">
+                    <h3 class="font-bold text-gray-900 mb-2">Podcast Review: Key Concepts in Education Financing</h3>
+                    <p class="text-gray-700 mb-4">Listen to this podcast to review key concepts from Day 1 before you begin today's activities.</p>
+                    
+                    <div class="bg-white rounded-lg p-4">
+                        <audio controls class="w-full mb-2">
+                            <source src="/Users/justin/pfl-academy/finished LM recordings/1.2 - Paying for Post-Secondary.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="text-sm text-gray-500">
+                            <p>Topics covered: Financial aid types, FAFSA process, loan considerations, and debt minimization strategies.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Learning Stations -->
+            <!-- Station 1: Education Funding Calculator -->
+            <section id="station1" class="learning-station mb-12" data-section-id="calculator">
+                <div class="flex items-center mb-4">
+                    <span class="station-number">1</span>
+                    <h3 class="text-xl font-bold text-indigo-700">Education Funding Calculator</h3>
+                </div>
+                
+                <div class="activity-timer mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2 text-amber-600" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="font-medium">Estimated time: 15 minutes</span>
+                </div>
+                
+                <p class="text-gray-700 mb-6">Use this interactive calculator to explore different combinations of funding sources to cover your educational expenses.</p>
+                
+                <div class="mb-8">
+                    <h4 class="font-medium text-gray-900 mb-4">Educational Goals Assessment</h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Type of Post-Secondary Education</label>
+                            <select id="education-type" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                <option value="">Select education type</option>
+                                <option value="4-year">4-Year University/College</option>
+                                <option value="2-year">2-Year Community College</option>
+                                <option value="trade">Trade/Technical School</option>
+                                <option value="certificate">Certificate Program</option>
+                                <option value="graduate">Graduate School</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Intended Field of Study</label>
+                            <input type="text" id="field-of-study" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your intended major or field">
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-medium text-gray-900 mb-2">Estimated Program Costs (per year)</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Tuition & Fees</label>
+                            <select id="tuition-cost" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                <option value="">Select amount</option>
+                                <option value="5000">$5,000</option>
+                                <option value="10000">$10,000</option>
+                                <option value="15000">$15,000</option>
+                                <option value="20000">$20,000</option>
+                                <option value="25000">$25,000</option>
+                                <option value="30000">$30,000</option>
+                                <option value="35000">$35,000</option>
+                                <option value="40000">$40,000</option>
+                                <option value="45000">$45,000</option>
+                                <option value="50000">$50,000</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Room & Board</label>
+                            <select id="room-board-cost" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                <option value="">Select amount</option>
+                                <option value="0">$0 (Living at home)</option>
+                                <option value="2500">$2,500</option>
+                                <option value="5000">$5,000</option>
+                                <option value="7500">$7,500</option>
+                                <option value="10000">$10,000</option>
+                                <option value="12500">$12,500</option>
+                                <option value="15000">$15,000</option>
+                                <option value="17500">$17,500</option>
+                                <option value="20000">$20,000</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Books & Supplies</label>
+                            <input type="number" id="books-cost" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter amount" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Total Estimated Program Cost</label>
+                        <div class="p-3 bg-gray-100 rounded-md">
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">Total:</span>
+                                <span id="program-total-cost" class="font-bold text-lg">$0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h4 class="font-medium text-gray-900 mb-4">Funding Sources</h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Expected Family Contribution (EFC)</label>
+                            <input type="number" id="family-contribution" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter amount" min="0">
+                            <p class="text-xs text-gray-500 mt-1">This is typically determined by the FAFSA.</p>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Work-Study/Employment Income</label>
+                            <input type="number" id="work-income" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter amount" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h4 class="font-medium text-gray-900 mb-2">Scholarships</h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <input type="number" id="scholarship-1" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Scholarship #1 Amount" min="0">
+                                </div>
+                                <div>
+                                    <input type="number" id="scholarship-2" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Scholarship #2 Amount" min="0">
+                                </div>
+                                <div>
+                                    <input type="number" id="scholarship-3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Scholarship #3 Amount" min="0">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-gray-900 mb-2">Grants</h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <input type="number" id="grant-1" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Grant #1 Amount" min="0">
+                                </div>
+                                <div>
+                                    <input type="number" id="grant-2" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Grant #2 Amount" min="0">
+                                </div>
+                                <div>
+                                    <input type="number" id="grant-3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Grant #3 Amount" min="0">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Total Funding Sources</label>
+                        <div class="p-3 bg-gray-100 rounded-md">
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">Total:</span>
+                                <span id="funding-sources-total" class="font-bold text-lg">$0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-medium text-gray-900 mb-2">Student Loan Consideration</h4>
+                        <p class="text-sm text-gray-700 mb-2">Adjust the slider to explore different loan amounts.</p>
+                        <input type="range" id="loan-slider" min="0" max="50000" step="500" value="0" class="range-slider w-full h-6">
+                        <div class="flex justify-between mt-2">
+                            <span class="text-sm text-gray-600">$0</span>
+                            <span id="loan-value" class="range-value">$0</span>
+                            <span class="text-sm text-gray-600">$50,000</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h4 class="font-medium text-gray-900 mb-4">Funding Breakdown</h4>
+                    
+                    <div class="relative h-64 mb-6">
+                        <canvas id="funding-chart"></canvas>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-medium text-gray-900 mb-2">Summary</h4>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Total Annual Cost:</span>
+                                    <span id="total-cost" class="font-semibold">$0</span>
+                                </div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Total Funding:</span>
+                                    <span id="total-funding" class="font-semibold">$0</span>
+                                </div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Funding Gap/Surplus:</span>
+                                    <span id="funding-gap" class="font-semibold">$0</span>
+                                </div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Percentage from Non-Repayable Sources:</span>
+                                    <span id="non-repayable-percentage" class="font-semibold">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-gray-900 mb-2">Monthly Loan Repayment Estimate</h4>
+                            <div id="loan-estimate" class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 text-center">Move the loan slider to see monthly payment estimates.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between mt-6">
+                    <button id="reset-calculator" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors font-medium">Reset Calculator</button>
+                    <button id="save-calculator" class="pfl-button px-6 py-2 rounded-lg transition hover:shadow-xl hover:-translate-y-1">Save Funding Plan</button>
+                </div>
+            </section>
+            
+            <!-- Station 2: Loan Repayment Simulator -->
+            <section id="station2" class="learning-station mb-12" data-section-id="loan-simulator">
+                <div class="flex items-center mb-4">
+                    <span class="station-number">2</span>
+                    <h3 class="text-xl font-bold text-indigo-700">Loan Repayment Simulator</h3>
+                </div>
+                
+                <div class="activity-timer mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2 text-amber-600" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="font-medium">Estimated time: 12 minutes</span>
+                </div>
+                
+                <p class="text-gray-700 mb-6">Use this simulator to understand the long-term implications of student loan borrowing decisions.</p>
+                
+                <div class="bg-indigo-50 p-6 rounded-lg mb-8">
+                    <h4 class="font-medium text-gray-900 mb-4">Loan Parameters</h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Total Loan Amount</label>
+                            <div class="mb-2">
+                                <input type="range" id="loan-amount-slider" min="5000" max="100000" step="5000" value="30000" class="range-slider">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">$5,000</span>
+                                    <span id="loan-amount-value" class="range-value">$30,000</span>
+                                    <span class="text-sm text-gray-600">$100,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Interest Rate</label>
+                            <div class="mb-2">
+                                <input type="range" id="interest-rate-slider" min="2" max="12" step="0.25" value="5" class="range-slider">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">2%</span>
+                                    <span id="interest-rate-value" class="range-value">5%</span>
+                                    <span class="text-sm text-gray-600">12%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Repayment Term</label>
+                            <select id="repayment-term" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                <option value="10">10 Years</option>
+                                <option value="15">15 Years</option>
+                                <option value="20">20 Years</option>
+                                <option value="25">25 Years</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Expected Starting Salary</label>
+                            <select id="starting-salary" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                <option value="30000">Less than $30,000</option>
+                                <option value="40000">$30,000 - $50,000</option>
+                                <option value="60000">$50,000 - $70,000</option>
+                                <option value="80000">$70,000 - $90,000</option>
+                                <option value="100000">More than $90,000</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button id="calculate-loan" class="pfl-button px-6 py-2 rounded-lg transition hover:shadow-lg hover:-translate-y-1">Calculate Repayment</button>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h4 class="font-medium text-gray-900 mb-4">Loan Repayment Analysis</h4>
+                    
+                    <div class="relative h-64 mb-6">
+                        <canvas id="repayment-chart"></canvas>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                        <div class="bg-white p-4 border border-gray-200 rounded-lg">
+                            <h4 class="font-medium text-gray-900 mb-2">Monthly Payment</h4>
+                            <p id="monthly-payment" class="text-2xl font-bold text-indigo-600">$0</p>
+                            <p class="text-sm text-gray-600 mt-1">Fixed monthly payment amount</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 border border-gray-200 rounded-lg">
+                            <h4 class="font-medium text-gray-900 mb-2">Total Interest Paid</h4>
+                            <p id="total-interest" class="text-2xl font-bold text-indigo-600">$0</p>
+                            <p class="text-sm text-gray-600 mt-1">Total interest over loan term</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 border border-gray-200 rounded-lg">
+                            <h4 class="font-medium text-gray-900 mb-2">Debt-to-Income Ratio</h4>
+                            <p id="debt-to-income" class="text-2xl font-bold text-indigo-600">0%</p>
+                            <p class="text-sm text-gray-600 mt-1">Percentage of monthly income</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h4 class="font-medium text-gray-900 mb-4">Repayment Plan Comparison</h4>
+                    
+                    <div class="tab-list">
+                        <div class="tab active" data-tab="standard">Standard</div>
+                        <div class="tab" data-tab="graduated">Graduated</div>
+                        <div class="tab" data-tab="extended">Extended</div>
+                        <div class="tab" data-tab="income-driven">Income-Driven</div>
+                    </div>
+                    
+                    <div class="tab-content active" id="standard-tab">
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-900 mb-2">Standard Repayment Plan</h4>
+                            <p class="text-gray-700 mb-4">Fixed monthly payments over a 10-year term.</p>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li>Fixed payment amount for the entire repayment period</li>
+                                <li>Pays off the loan in the shortest time</li>
+                                <li>Results in paying the least interest overall</li>
+                                <li>Higher monthly payments than other plans</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="graduated-tab">
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-900 mb-2">Graduated Repayment Plan</h4>
+                            <p class="text-gray-700 mb-4">Payments start low and increase every two years.</p>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li>Lower payments at the beginning of your career</li>
+                                <li>Payments increase as your income is expected to rise</li>
+                                <li>Still pays off the loan in 10 years</li>
+                                <li>Pay slightly more interest than the Standard plan</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="extended-tab">
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-900 mb-2">Extended Repayment Plan</h4>
+                            <p class="text-gray-700 mb-4">Extends repayment term up to 25 years.</p>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li>Lower monthly payments than Standard or Graduated plans</li>
+                                <li>Available for borrowers with more than $30,000 in loans</li>
+                                <li>Can have fixed or graduated payments</li>
+                                <li>Significantly higher total interest paid over the life of the loan</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="income-driven-tab">
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-900 mb-2">Income-Driven Repayment Plans</h4>
+                            <p class="text-gray-700 mb-4">Monthly payments based on income and family size.</p>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li>Several options: IBR, PAYE, REPAYE, ICR</li>
+                                <li>Monthly payments typically 10-20% of discretionary income</li>
+                                <li>Loan forgiveness after 20-25 years of qualifying payments</li>
+                                <li>Must recertify income and family size annually</li>
+                                <li>May result in paying more interest over time</li>
+                                <li>Forgiven amount may be taxable as income</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="discussion-prompt">
+                    <h3 class="font-bold text-gray-900 mb-2">Analysis Questions</h3>
+                    <p class="text-gray-700 mb-4">Based on the loan calculations above, answer the following questions:</p>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">How would different loan amounts affect your post-graduation financial situation?</label>
+                            <textarea id="loan-analysis-1" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" data-ai-check="true" data-assessment-weight="4"></textarea>
+                            <div id="loan-analysis-1-feedback" class="hidden mt-2 p-3 border-l-4 border-yellow-400 bg-yellow-50 text-sm text-yellow-800"></div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Which repayment plan would be most suitable for your career path and why?</label>
+                            <textarea id="loan-analysis-2" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" data-ai-check="true" data-assessment-weight="4"></textarea>
+                            <div id="loan-analysis-2-feedback" class="hidden mt-2 p-3 border-l-4 border-yellow-400 bg-yellow-50 text-sm text-yellow-800"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end mt-6">
+                    <button id="save-loan-analysis" class="pfl-button px-6 py-2 rounded-lg transition hover:shadow-xl hover:-translate-y-1">Save Analysis</button>
+                </div>
+            </section>
+            
+            <!-- Station 3: Education Financing Plan -->
+            <section id="station3" class="learning-station mb-12" data-section-id="financing-plan">
+                <div class="flex items-center mb-4">
+                    <span class="station-number">3</span>
+                    <h3 class="text-xl font-bold text-indigo-700">Education Financing Plan</h3>
+                </div>
+                
+                <div class="activity-timer mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2 text-amber-600" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="font-medium">Estimated time: 20 minutes</span>
+                </div>
+                
+                <p class="text-gray-700 mb-6">Create a comprehensive financing strategy for your education, including a timeline for applications and concrete action steps.</p>
+                
+                <div class="mb-8">
+                    <h4 class="font-medium text-gray-900 mb-4">Target Schools & Estimated Costs</h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+                        <div class="bg-white p-5 rounded-lg shadow-md">
+                            <h4 class="font-medium text-gray-900 mb-2">School Option 1</h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Institution Name</label>
+                                    <input type="text" id="school-1-name" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter institution name">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Total Annual Cost (Estimate)</label>
+                                    <input type="number" id="school-1-cost" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter total cost" min="0">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Financial Aid Strengths</label>
+                                    <textarea id="school-1-strengths" rows="2" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="List financial aid strengths for this institution"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-5 rounded-lg shadow-md">
+                            <h4 class="font-medium text-gray-900 mb-2">School Option 2</h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Institution Name</label>
+                                    <input type="text" id="school-2-name" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter institution name">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Total Annual Cost (Estimate)</label>
+                                    <input type="number" id="school-2-cost" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter total cost" min="0">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Financial Aid Strengths</label>
+                                    <textarea id="school-2-strengths" rows="2" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="List financial aid strengths for this institution"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h4 class="font-medium text-gray-900 mb-4">Financial Aid Application Timeline</h4>
+                    
+                    <div class="bg-white p-5 rounded-lg shadow-md mb-5">
+                        <div class="timeline-container">
+                            <div class="timeline">
+                                <div class="timeline-item px-2">
+                                    <h4 class="font-medium text-gray-900 mb-1">October-December</h4>
+                                    <div class="mb-4">
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Tasks & Deadlines</label>
+                                        <textarea id="timeline-oct-dec" rows="4" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="List your financial aid tasks during this period"></textarea>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item px-2">
+                                    <h4 class="font-medium text-gray-900 mb-1">January-March</h4>
+                                    <div class="mb-4">
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Tasks & Deadlines</label>
+                                        <textarea id="timeline-jan-mar" rows="4" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="List your financial aid tasks during this period"></textarea>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item px-2">
+                                    <h4 class="font-medium text-gray-900 mb-1">April-June</h4>
+                                    <div class="mb-4">
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Tasks & Deadlines</label>
+                                        <textarea id="timeline-apr-jun" rows="4" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="List your financial aid tasks during this period"></textarea>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item px-2">
+                                    <h4 class="font-medium text-gray-900 mb-1">July-September</h4>
+                                    <div class="mb-4">
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Tasks & Deadlines</label>
+                                        <textarea id="timeline-jul-sep" rows="4" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="List your financial aid tasks during this period"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500 mt-4">
+                        <p class="text-sm text-yellow-800">
+                            <strong>Tip:</strong> Be specific with dates for key deadlines like FAFSA submission, institution-specific financial aid applications, scholarship applications, etc.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h4 class="font-medium text-gray-900 mb-4">Financing Action Plan</h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h4 class="font-medium text-gray-900 mb-2">Preferred Funding Strategy</h4>
+                            <div class="bg-indigo-50 p-4 rounded-lg mb-4">
+                                <div class="space-y-2">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">
+                                            <span class="inline-block w-6 h-6 bg-green-500 text-white text-center rounded-full mr-2">1</span>
+                                            Primary Funding Source
+                                        </label>
+                                        <input type="text" id="funding-primary" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="e.g., Scholarships, Grants">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">
+                                            <span class="inline-block w-6 h-6 bg-blue-500 text-white text-center rounded-full mr-2">2</span>
+                                            Secondary Funding Source
+                                        </label>
+                                        <input type="text" id="funding-secondary" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="e.g., Work-Study, Savings">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">
+                                            <span class="inline-block w-6 h-6 bg-yellow-500 text-white text-center rounded-full mr-2">3</span>
+                                            Tertiary Funding Source
+                                        </label>
+                                        <input type="text" id="funding-tertiary" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="e.g., Federal Loans">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">
+                                            <span class="inline-block w-6 h-6 bg-red-500 text-white text-center rounded-full mr-2">4</span>
+                                            Last Resort Funding
+                                        </label>
+                                        <input type="text" id="funding-last-resort" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="e.g., Private Loans">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-gray-900 mb-2">Target Scholarships</h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Scholarship #1</label>
+                                    <input type="text" id="target-scholarship-1" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Scholarship name or type">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Scholarship #2</label>
+                                    <input type="text" id="target-scholarship-2" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Scholarship name or type">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Scholarship #3</label>
+                                    <input type="text" id="target-scholarship-3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Scholarship name or type">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-medium text-gray-900 mb-2">Debt Minimization Strategies</h4>
+                        <textarea id="debt-minimization" rows="4" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="List specific strategies you'll use to minimize student loan debt" data-ai-check="true" data-assessment-weight="5"></textarea>
+                        <div id="debt-minimization-feedback" class="hidden mt-2 p-3 border-l-4 border-yellow-400 bg-yellow-50 text-sm text-yellow-800"></div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-medium text-gray-900 mb-2">Next Steps (Immediate Actions)</h4>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="next-step-1-check" class="mr-2">
+                                <input type="text" id="next-step-1" class="flex-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Action step 1">
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="next-step-2-check" class="mr-2">
+                                <input type="text" id="next-step-2" class="flex-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Action step 2">
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="next-step-3-check" class="mr-2">
+                                <input type="text" id="next-step-3" class="flex-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Action step 3">
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="next-step-4-check" class="mr-2">
+                                <input type="text" id="next-step-4" class="flex-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Action step 4">
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="next-step-5-check" class="mr-2">
+                                <input type="text" id="next-step-5" class="flex-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Action step 5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end">
+                    <button id="save-financing-plan" class="pfl-button px-6 py-2 rounded-lg transition hover:shadow-xl hover:-translate-y-1">Save Plan</button>
+                </div>
+            </section>
+            
+            <!-- Station 4: Scholarship Search Strategy -->
+            <section id="station4" class="learning-station mb-12" data-section-id="scholarship-search">
+                <div class="flex items-center mb-4">
+                    <span class="station-number">4</span>
+                    <h3 class="text-xl font-bold text-indigo-700">Scholarship Search Strategy Builder</h3>
+                </div>
+                
+                <div class="activity-timer mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2 text-amber-600" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="font-medium">Estimated time: 15 minutes</span>
+                </div>
+                
+                <p class="text-gray-700 mb-6">Develop a systematic approach to finding and applying for scholarships that match your profile.</p>
+                
+                <div class="mb-8 bg-gray-50 p-5 rounded-lg">
+                    <h4 class="font-medium text-gray-900 mb-4">Personal Scholarship Profile</h4>
+                    
+                    <div class="mb-6">
+                        <h5 class="font-medium text-gray-900 mb-2">Academic Achievements</h5>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">GPA Range</label>
+                                <select id="gpa-range" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                    <option value="">Select GPA range</option>
+                                    <option value="4.0+">4.0+</option>
+                                    <option value="3.5-3.99">3.5-3.99</option>
+                                    <option value="3.0-3.49">3.0-3.49</option>
+                                    <option value="2.5-2.99">2.5-2.99</option>
+                                    <option value="Below 2.5">Below 2.5</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Academic Strengths</label>
+                                <textarea id="academic-strengths" rows="2" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="List your academic strengths, awards, and achievements"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Standardized Test Scores (if applicable)</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <input type="text" id="test-name" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Test name (e.g., SAT, ACT)">
+                                    </div>
+                                    <div>
+                                        <input type="text" id="test-score" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Score">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h5 class="font-medium text-gray-900 mb-2">Extracurricular Activities & Community Involvement</h5>
+                        <div class="space-y-3">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Activity #1</label>
+                                    <input type="text" id="activity-1" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Describe activity and role">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Activity #2</label>
+                                    <input type="text" id="activity-2" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Describe activity and role">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Activity #3</label>
+                                    <input type="text" id="activity-3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Describe activity and role">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Activity #4</label>
+                                    <input type="text" id="activity-4" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Describe activity and role">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Leadership Positions</label>
+                                <textarea id="leadership" rows="2" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Describe any leadership roles you've held"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h5 class="font-medium text-gray-900 mb-2">Special Eligibility Factors</h5>
+                        <p class="text-sm text-gray-600 mb-3">Many scholarships target specific demographics or backgrounds. Check all that apply to you:</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="first-generation" class="mr-2">
+                                <label for="first-generation" class="text-sm text-gray-700">First-generation college student</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="low-income" class="mr-2">
+                                <label for="low-income" class="text-sm text-gray-700">Low-income background</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="underrepresented" class="mr-2">
+                                <label for="underrepresented" class="text-sm text-gray-700">Underrepresented in your field</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="rural" class="mr-2">
+                                <label for="rural" class="text-sm text-gray-700">Rural background</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="military" class="mr-2">
+                                <label for="military" class="text-sm text-gray-700">Military connection</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="disability" class="mr-2">
+                                <label for="disability" class="text-sm text-gray-700">Student with disability</label>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Other Special Circumstances</label>
+                            <textarea id="special-circumstances" rows="2" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Describe any other unique circumstances or qualifications"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h4 class="font-medium text-gray-900 mb-4">Scholarship Search Plan</h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Time Available for Scholarship Applications (Weekly)</label>
+                            <select id="time-available" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                <option value="">Select time commitment</option>
+                                <option value="1-2">1-2 hours per week</option>
+                                <option value="3-5">3-5 hours per week</option>
+                                <option value="6-10">6-10 hours per week</option>
+                                <option value="10+">More than 10 hours per week</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Target Number of Applications (Monthly)</label>
+                            <select id="application-target" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                <option value="">Select target</option>
+                                <option value="1-3">1-3 applications per month</option>
+                                <option value="4-6">4-6 applications per month</option>
+                                <option value="7-10">7-10 applications per month</option>
+                                <option value="10+">More than 10 applications per month</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-indigo-50 p-5 rounded-lg mb-6">
+                        <h4 class="font-medium text-gray-900 mb-3">Recommended Scholarship Categories</h4>
+                        <p class="text-sm text-gray-700 mb-3">Based on your profile above, these scholarship categories may be the most relevant to you:</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Category #1</label>
+                                <select id="scholarship-category-1" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                    <option value="">Select category</option>
+                                    <option value="merit">Merit-based scholarships</option>
+                                    <option value="need">Need-based scholarships</option>
+                                    <option value="field">Field of study scholarships</option>
+                                    <option value="demographic">Demographic-specific scholarships</option>
+                                    <option value="athletic">Athletic scholarships</option>
+                                    <option value="creative">Creative/artistic scholarships</option>
+                                    <option value="community">Community service scholarships</option>
+                                    <option value="employer">Employer/organization scholarships</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Category #2</label>
+                                <select id="scholarship-category-2" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                    <option value="">Select category</option>
+                                    <option value="merit">Merit-based scholarships</option>
+                                    <option value="need">Need-based scholarships</option>
+                                    <option value="field">Field of study scholarships</option>
+                                    <option value="demographic">Demographic-specific scholarships</option>
+                                    <option value="athletic">Athletic scholarships</option>
+                                    <option value="creative">Creative/artistic scholarships</option>
+                                    <option value="community">Community service scholarships</option>
+                                    <option value="employer">Employer/organization scholarships</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h4 class="font-medium text-gray-900 mb-4">Scholarship Search Resources</h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                            <h5 class="font-medium text-gray-900 mb-2">National Databases</h5>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700">
+                                <li><a href="https://www.fastweb.com/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800">Fastweb.com</a></li>
+                                <li><a href="https://www.scholarships.com/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800">Scholarships.com</a></li>
+                                <li><a href="https://bigfuture.collegeboard.org/pay-for-college/scholarship-search" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800">CollegeBoard.org</a></li>
+                                <li><a href="https://www.chegg.com/scholarships" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800">Chegg.com/scholarships</a></li>
+                                <li><a href="https://www.petersons.com/scholarship-search.aspx" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800">Peterson's Scholarship Search</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                            <h5 class="font-medium text-gray-900 mb-2">State & Local Resources</h5>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700">
+                                <li><a href="https://www2.ed.gov/about/contacts/state/index.html" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800">State Higher Education Agency</a></li>
+                                <li><a href="https://www.cof.org/community-foundation-locator" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800">Local Community Foundation</a></li>
+                                <li><a href="https://www.rotary.org/en/our-programs/scholarships" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800">Local Businesses & Rotary Clubs</a></li>
+                                <li><a href="https://studentaid.gov/resources/prepare-for-college/students/choosing-schools/types/community" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800">School Guidance Office</a></li>
+                                <li><a href="https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-type/religious-scholarships/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800">Religious Organizations</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                            <h5 class="font-medium text-gray-900 mb-2">Field-Specific Scholarships</h5>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700">
+                                <li><a href="https://www.careeronestop.org/toolkit/training/find-scholarships.aspx" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800">Professional Associations</a></li>
+                                <li><a href="https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-major/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800">Major Companies in Your Field</a></li>
+                                <li><a href="https://www.unigo.com/scholarships/by-major" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800">College Department Websites</a></li>
+                                <li><a href="https://www.trade-schools.net/financial-aid/scholarships" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800">Trade Organizations</a></li>
+                                <li><a href="https://www.myscholly.com/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800">Specific Academic Journals</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h4 class="font-medium text-gray-900 mb-4">Application Templates</h4>
+                    
+                    <div class="mb-6">
+                        <h5 class="font-medium text-gray-900 mb-2">Personal Statement Starter</h5>
+                        <p class="text-sm text-gray-700 mb-3">Use this template to begin drafting a personal statement that can be customized for different scholarship applications:</p>
+                        <textarea id="personal-statement" rows="5" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Begin drafting your personal statement here..." data-ai-check="true" data-assessment-weight="5"></textarea>
+                        <div id="personal-statement-feedback" class="hidden mt-2 p-3 border-l-4 border-yellow-400 bg-yellow-50 text-sm text-yellow-800"></div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end">
+                    <button id="save-scholarship-strategy" class="pfl-button px-6 py-2 rounded-lg transition hover:shadow-xl hover:-translate-y-1">Save Strategy</button>
+                </div>
+            </section>
+            
+            <!-- Station 5: Reflection and Peer Feedback -->
+            <section id="station5" class="learning-station mb-12" data-section-id="reflection-station">
+                <div class="flex items-center mb-4">
+                    <span class="station-number">5</span>
+                    <h3 class="text-xl font-bold text-indigo-700">Reflection and Peer Feedback</h3>
+                </div>
+                
+                <div class="activity-timer mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2 text-amber-600" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="font-medium">Estimated time: 15 minutes</span>
+                </div>
+                
+                <p class="text-gray-700 mb-6">Share your education financing strategy and provide feedback on your peers' strategies. This collaborative process will help you refine your approach.</p>
+                
+                <div class="mb-8">
+                    <h4 class="font-medium text-gray-900 mb-4">Strategy Summary</h4>
+                    
+                    <div class="bg-gray-50 p-5 rounded-lg mb-6">
+                        <p class="text-gray-700 mb-4">Summarize your education financing strategy in a concise manner, highlighting the key components:</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Educational Goal & Estimated Cost</label>
+                                <textarea id="summary-goal" rows="2" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Briefly describe your educational goal and estimated cost"></textarea>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Primary Funding Sources</label>
+                                <textarea id="summary-funding" rows="2" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="List your primary funding sources in priority order"></textarea>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Debt Minimization Approach</label>
+                                <textarea id="summary-debt" rows="2" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Describe your approach to minimizing debt"></textarea>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Key Action Steps</label>
+                                <textarea id="summary-actions" rows="2" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="List 3-5 key action steps in your plan"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h4 class="font-medium text-gray-900 mb-4">Peer Feedback Exchange</h4>
+                    
+                    <div class="discussion-prompt">
+                        <p class="mb-2">After sharing your strategy summary with a classmate, provide thoughtful feedback on each other's plans.</p>
+                        <p class="mb-4">Consider these questions when reviewing your peer's strategy:</p>
+                        <ul class="list-disc pl-6 text-gray-700 space-y-1 mb-4">
+                            <li>Is the plan realistic and comprehensive?</li>
+                            <li>Are there additional funding sources they might consider?</li>
+                            <li>How could the plan be optimized to minimize debt?</li>
+                            <li>Are there any important deadlines or opportunities they might have missed?</li>
+                            <li>What are the strongest aspects of their plan?</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                        <div>
+                            <h4 class="font-medium text-gray-900 mb-2">Feedback Received From Peer</h4>
+                            <textarea id="feedback-received" rows="6" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Record the feedback you received from your peer here"></textarea>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-gray-900 mb-2">Feedback Provided To Peer</h4>
+                            <textarea id="feedback-provided" rows="6" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Record the feedback you provided to your peer here"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h4 class="font-medium text-gray-900 mb-4">Plan Refinement</h4>
+                    
+                    <div class="bg-indigo-50 p-5 rounded-lg">
+                        <p class="text-gray-700 mb-4">Based on the feedback received and any new insights gained, what adjustments will you make to your education financing strategy?</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Strategy Adjustments</label>
+                                <textarea id="strategy-adjustments" rows="4" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Describe the adjustments you'll make based on feedback" data-ai-check="true" data-assessment-weight="4"></textarea>
+                                <div id="strategy-adjustments-feedback" class="hidden mt-2 p-3 border-l-4 border-yellow-400 bg-yellow-50 text-sm text-yellow-800"></div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Additional Resources to Explore</label>
+                                <textarea id="additional-resources" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="List any additional resources you need to research"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end">
+                    <button id="save-reflection" class="pfl-button px-6 py-2 rounded-lg transition hover:shadow-xl hover:-translate-y-1">Save Reflection</button>
+                </div>
+            </section>
+            
+            <!-- Portfolio Integration Section -->
+            <section id="portfolio" class="mt-12">
+                <h2 class="text-2xl font-bold text-gray-900 section-title">Portfolio Integration</h2>
+                <p class="text-gray-700 mb-4">Now that you've completed all stations, it's time to integrate your work into a comprehensive portfolio.</p>
+                
+                <div class="bg-indigo-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-indigo-900 mb-4">Education Financing Portfolio</h3>
+                    <p class="text-gray-700 mb-4">Your portfolio combines all elements from today's Learning Lab into a cohesive plan:</p>
+                    
+                    <ul class="list-disc list-inside mb-4 text-gray-700">
+                        <li>Education funding breakdown from the calculator</li>
+                        <li>Loan repayment analysis and selected repayment plan</li>
+                        <li>Comprehensive financing strategy with timeline</li>
+                        <li>Scholarship search strategy and personal statement</li>
+                        <li>Refined plan based on peer feedback</li>
+                    </ul>
+                    
+                    <p class="text-gray-700 mb-4">Review each section to ensure alignment across your entire education financing strategy.</p>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Portfolio Summary (What have you learned from this Learning Lab?)</label>
+                        <textarea class="w-full p-2 border border-gray-300 rounded-md" rows="4" data-ai-check="true" data-assessment-weight="4" placeholder="Summarize key insights about financing your education and how this plan will guide your decisions..."></textarea>
+                        <div class="mt-2 hidden feedback-container text-green-600 text-sm"></div>
+                    </div>
+                    
+                    <button id="complete-portfolio" class="pfl-button px-6 py-2 rounded-lg mt-2 transition duration-200 hover:shadow-xl hover:-translate-y-1">Complete Portfolio</button>
+                </div>
+            </section>
+            
+            <!-- Reflection Section -->
+            <section id="reflection" class="mt-12">
+                <h2 class="text-2xl font-bold text-gray-900 section-title">Reflection</h2>
+                
+                <div class="discussion-prompt">
+                    <h3 class="text-lg font-semibold text-indigo-800 mb-2">Final Reflection</h3>
+                    <p class="text-gray-700 mb-3">How has this learning lab changed your perspective on financing your post-secondary education? What strategies do you think will be most valuable for your specific situation?</p>
+                    <textarea class="w-full p-2 border border-gray-300 rounded-md" rows="4" data-ai-check="true" data-assessment-weight="5" placeholder="Share your thoughts and reflections here..."></textarea>
+                    <div class="mt-2 hidden feedback-container text-green-600 text-sm"></div>
+                </div>
+                
+                <div class="flex justify-end mt-8">
+                    <a href="/Standard 1/chapter-1-3-day1.html" class="pfl-button px-4 py-2 rounded-md font-medium transition flex items-center hover:shadow-xl hover:-translate-y-1">
+                        Continue to 1.3: Income and Taxes
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Reflection Section -->
+            <section id="reflection" class="mt-12">
+                <h2 class="text-2xl font-bold text-gray-900 section-title">Reflection</h2>
+                
+                <div class="discussion-prompt">
+                    <h3 class="text-lg font-semibold text-indigo-800 mb-2">Final Reflection</h3>
+                    <p class="text-gray-700 mb-3">How has this learning lab changed your perspective on financing your post-secondary education? What strategies do you think will be most valuable for your specific situation?</p>
+                    <textarea class="w-full p-2 border border-gray-300 rounded-md" rows="4" data-ai-check="true" data-assessment-weight="5" placeholder="Share your thoughts and reflections here..."></textarea>
+                    <div class="mt-2 hidden feedback-container text-green-600 text-sm"></div>
+                </div>
+                
+                <div class="flex justify-end mt-8">
+                    <a href="{{NEXT_CHAPTER_URL}}" class="pfl-button px-4 py-2 rounded-md font-medium transition flex items-center hover:shadow-xl hover:-translate-y-1">
+                        Continue to {{NEXT_CHAPTER_TITLE}}
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div id="toast" class="toast-notification">
+        <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span id="toast-message">Your progress has been saved!</span>
+        </div>
+    </div>
+    
+    <footer class="bg-gradient-to-r from-indigo-900 to-purple-900 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="flex justify-center items-center h-10 w-10 rounded bg-white/20 text-white font-bold">
+                            PFL
+                        </div>
+                        <span class="ml-3 text-xl font-bold">PFL Academy</span>
+                    </div>
+                    <p class="text-indigo-200">Empowering students with financial literacy skills for life.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-indigo-200 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white transition-colors">Curriculum</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white transition-colors">Resources</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white transition-colors">Help Center</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-indigo-200">If you need assistance, please contact your instructor or email support.</p>
+                </div>
+            </div>
+            <div class="border-t border-indigo-800 mt-8 pt-6 text-center text-indigo-200">
+                <p>&copy; 2025 PFL Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize charts and interactive elements
+        let fundingChart;
+        let repaymentChart;
+        
+        // Station navigation
+        let currentStation = 0;
+        const stations = document.querySelectorAll('.learning-station');
+        const stationIndicators = document.querySelectorAll('.station-indicator');
+        
+        // Initialize interactive elements
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize the funding chart
+            initializeFundingChart();
+            
+            // Add smooth transitions between stations
+            stations.forEach((station, index) => {
+                station.style.opacity = '0';
+                station.style.transform = 'translateY(20px)';
+                
+                // Ensure each station has an ID for tracking
+                if (!station.id) {
+                    station.id = `station${index + 1}`;
+                }
+                
+                // Use setTimeout to create a staggered animation effect
+                setTimeout(() => {
+                    station.style.opacity = '1';
+                    station.style.transform = 'translateY(0)';
+                    station.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                }, 100 * (index + 1));
+            });
+            
+            // Load and display saved progress
+            loadSavedProgress();
+            
+            // Set up Education Funding Calculator
+            setupFundingCalculator();
+            
+            // Set up Loan Repayment Simulator
+            setupLoanSimulator();
+            
+            // Set up all button event listeners
+            setupButtonListeners();
+            
+            // Set up AI feedback system
+            setupAIFeedback();
+            
+            // Add event listeners to track changes in form inputs
+            setupProgressTracking();
+        });
+        
+        // Load saved progress from localStorage
+        function loadSavedProgress() {
+            const chapterId = '1.2'; // This should be dynamic based on the current chapter
+            const progressKey = `pfl-progress-${chapterId}-day2`;
+            
+            // TEMPORARY: Reset progress for testing - uncomment to reset progress
+            // localStorage.removeItem(progressKey);
+            
+            try {
+                const savedProgress = localStorage.getItem(progressKey);
+                if (savedProgress) {
+                    const completedStations = JSON.parse(savedProgress);
+                    
+                    // Validate the saved data - ensure each ID actually exists in the DOM
+                    const validStationIds = [];
+                    const stations = document.querySelectorAll('.learning-station');
+                    
+                    // Get all valid station IDs
+                    stations.forEach((station, index) => {
+                        const stationId = station.id || `station${index + 1}`;
+                        if (completedStations.includes(stationId)) {
+                            validStationIds.push(stationId);
+                        }
+                    });
+                    
+                    // Only use validated station IDs
+                    const progressBar = document.getElementById('progress-bar');
+                    const progressText = document.getElementById('progress-text');
+                    
+                    if (progressBar && progressText) {
+                        const percentage = Math.round((validStationIds.length / stations.length) * 100);
+                        progressBar.style.width = `${percentage}%`;
+                        progressText.textContent = `${validStationIds.length}/${stations.length} stations`;
+                    }
+                    
+                    // Update localStorage with validated IDs
+                    localStorage.setItem(progressKey, JSON.stringify(validStationIds));
+                    
+                    // Update station indicators
+                    updateStationIndicators(validStationIds);
+                } else {
+                    // Initialize with empty progress
+                    const progressBar = document.getElementById('progress-bar');
+                    const progressText = document.getElementById('progress-text');
+                    
+                    if (progressBar && progressText) {
+                        progressBar.style.width = '0%';
+                        progressText.textContent = `0/5 stations`;
+                    }
+                    
+                    // Clear any station indicators
+                    document.querySelectorAll('.station-indicator').forEach(indicator => {
+                        indicator.classList.remove('active');
+                    });
+                }
+            } catch (e) {
+                console.error('Error loading saved progress', e);
+                // Reset to zero on error
+                const progressBar = document.getElementById('progress-bar');
+                const progressText = document.getElementById('progress-text');
+                
+                if (progressBar && progressText) {
+                    progressBar.style.width = '0%';
+                    progressText.textContent = `0/5 stations`;
+                }
+            }
+        }
+        
+        // Set up event listeners to track only when save buttons are clicked
+        function setupProgressTracking() {
+            // Find all save buttons in the stations
+            const saveButtons = document.querySelectorAll('.learning-station .pfl-button');
+            
+            // Add event listeners to each save button
+            saveButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Find the parent station element
+                    const parentStation = this.closest('.learning-station');
+                    if (parentStation) {
+                        // Mark this station as completed in localStorage
+                        markStationAsCompleted(parentStation.id || parentStation.getAttribute('id'));
+                    }
+                });
+            });
+        }
+        
+        // Mark a specific station as completed
+        function markStationAsCompleted(stationId) {
+            if (!stationId) return;
+            
+            const chapterId = '1.2'; // This should be dynamic based on the current chapter
+            const progressKey = `pfl-progress-${chapterId}-day2`;
+            let completedStations = [];
+            
+            // Load existing progress
+            try {
+                const savedProgress = localStorage.getItem(progressKey);
+                if (savedProgress) {
+                    completedStations = JSON.parse(savedProgress);
+                }
+            } catch (e) {
+                console.error('Error loading progress data', e);
+            }
+            
+            // Add this station to completed list if not already there
+            if (!completedStations.includes(stationId)) {
+                completedStations.push(stationId);
+                
+                // Save updated progress
+                try {
+                    localStorage.setItem(progressKey, JSON.stringify(completedStations));
+                } catch (e) {
+                    console.error('Error saving progress data', e);
+                }
+                
+                // Update the UI
+                updateProgressDisplay(completedStations);
+            }
+        }
+        
+        // Update the progress display elements without checking inputs
+        function updateProgressDisplay(completedStations) {
+            const stations = document.querySelectorAll('.learning-station');
+            
+            // Update progress bar
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            
+            if (progressBar && progressText) {
+                const percentage = Math.round((completedStations.length / stations.length) * 100);
+                progressBar.style.width = `${percentage}%`;
+                progressText.textContent = `${completedStations.length}/${stations.length} stations`;
+            }
+            
+            // Update station indicators
+            updateStationIndicators(completedStations);
+        }
+        
+        // Initialize the funding chart
+        function initializeFundingChart() {
+            const ctx = document.getElementById('funding-chart').getContext('2d');
+            fundingChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Scholarships', 'Grants', 'Work Income', 'Family Contribution', 'Student Loans'],
+                    datasets: [{
+                        data: [0, 0, 0, 0, 0],
+                        backgroundColor: [
+                            '#10B981', // green for scholarships
+                            '#3B82F6', // blue for grants
+                            '#F59E0B', // amber for work income
+                            '#8B5CF6', // purple for family contribution
+                            '#EF4444'  // red for loans
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right'
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Setup Education Funding Calculator
+        function setupFundingCalculator() {
+            // Add event listeners to all inputs for live updating
+            const calculatorInputs = document.querySelectorAll('#station1 input, #station1 select');
+            calculatorInputs.forEach(input => {
+                input.addEventListener('change', updateFundingChart);
+                input.addEventListener('input', updateFundingChart);
+            });
+            
+            // Loan slider functionality
+            const loanSlider = document.getElementById('loan-slider');
+            const loanValue = document.getElementById('loan-value');
+            
+            if (loanSlider && loanValue) {
+                loanSlider.addEventListener('input', function() {
+                    loanValue.textContent = '$' + parseInt(this.value).toLocaleString();
+                    this.setAttribute('data-user-adjusted', 'true');
+                    updateFundingChart();
+                });
+            }
+            
+            // Reset calculator button
+            const resetCalculatorBtn = document.getElementById('reset-calculator');
+            if (resetCalculatorBtn) {
+                resetCalculatorBtn.addEventListener('click', function() {
+                    const inputs = document.querySelectorAll('#station1 input, #station1 select');
+                    inputs.forEach(input => {
+                        if (input.type === 'number' || input.type === 'text') {
+                            input.value = '';
+                        } else if (input.type === 'range') {
+                            input.value = input.min;
+                            if (input.id === 'loan-slider') {
+                                loanValue.textContent = '$0';
+                                loanSlider.removeAttribute('data-user-adjusted');
+                            }
+                        } else if (input.tagName === 'SELECT') {
+                            input.selectedIndex = 0;
+                        }
+                    });
+                    updateFundingChart();
+                });
+            }
+        }
+        
+        // Calculate funding function
+        function updateFundingChart() {
+            // Get values from form
+            const tuition = parseInt(document.getElementById('tuition-cost')?.value || 0);
+            const roomBoard = parseInt(document.getElementById('room-board-cost')?.value || 0);
+            const books = parseInt(document.getElementById('books-cost')?.value || 0);
+            
+            const familyContribution = parseInt(document.getElementById('family-contribution')?.value || 0);
+            const workIncome = parseInt(document.getElementById('work-income')?.value || 0);
+            
+            const scholarship1 = parseInt(document.getElementById('scholarship-1')?.value || 0);
+            const scholarship2 = parseInt(document.getElementById('scholarship-2')?.value || 0);
+            const scholarship3 = parseInt(document.getElementById('scholarship-3')?.value || 0);
+            
+            const grant1 = parseInt(document.getElementById('grant-1')?.value || 0);
+            const grant2 = parseInt(document.getElementById('grant-2')?.value || 0);
+            const grant3 = parseInt(document.getElementById('grant-3')?.value || 0);
+            
+            const loanAmount = parseInt(document.getElementById('loan-slider')?.value || 0);
+            
+            // Calculate totals
+            const totalCost = tuition + roomBoard + books;
+            const totalScholarships = scholarship1 + scholarship2 + scholarship3;
+            const totalGrants = grant1 + grant2 + grant3;
+            const totalNonLoanFunding = totalScholarships + totalGrants + workIncome + familyContribution;
+            const totalFunding = totalNonLoanFunding + loanAmount;
+            const fundingGap = totalFunding - totalCost;
+            
+            // Calculate percentage from non-repayable sources
+            const nonRepayablePercentage = totalFunding > 0 ? Math.round((totalNonLoanFunding / totalFunding) * 100) : 0;
+            
+            // Update program total cost
+            const programTotalCostElement = document.getElementById('program-total-cost');
+            if (programTotalCostElement) {
+                programTotalCostElement.textContent = '$' + totalCost.toLocaleString();
+            }
+            
+            // Update funding sources total
+            const fundingSourcesTotalElement = document.getElementById('funding-sources-total');
+            if (fundingSourcesTotalElement) {
+                fundingSourcesTotalElement.textContent = '$' + totalNonLoanFunding.toLocaleString();
+            }
+            
+            // Auto-adjust the loan amount slider based on the gap if the slider hasn't been moved yet
+            const loanSlider = document.getElementById('loan-slider');
+            if (loanSlider && loanSlider.getAttribute('data-user-adjusted') !== 'true') {
+                const neededLoan = Math.max(0, totalCost - totalNonLoanFunding);
+                if (neededLoan <= 50000) { // Make sure it's within the slider range
+                    loanSlider.value = neededLoan;
+                    document.getElementById('loan-value').textContent = '$' + neededLoan.toLocaleString();
+                }
+            }
+            
+            // Update summary
+            document.getElementById('total-cost').textContent = '$' + totalCost.toLocaleString();
+            document.getElementById('total-funding').textContent = '$' + totalFunding.toLocaleString();
+            document.getElementById('funding-gap').textContent = fundingGap >= 0 ? 
+                '+$' + fundingGap.toLocaleString() + ' (Surplus)' : 
+                '-$' + Math.abs(fundingGap).toLocaleString() + ' (Gap)';
+            document.getElementById('non-repayable-percentage').textContent = nonRepayablePercentage + '%';
+            
+            // Style the funding gap
+            const fundingGapElement = document.getElementById('funding-gap');
+            if (fundingGapElement) {
+                fundingGapElement.className = fundingGap >= 0 ? 'font-semibold text-green-600' : 'font-semibold text-red-600';
+            }
+            
+            // Update loan estimate
+            const loanEstimateElement = document.getElementById('loan-estimate');
+            if (loanEstimateElement && loanAmount > 0) {
+                // Simple loan calculation (10-year term, 5% interest)
+                const monthlyPayment = (loanAmount * 0.00833 * Math.pow(1.00833, 120)) / (Math.pow(1.00833, 120) - 1);
+                loanEstimateElement.innerHTML = `
+                    <div class="text-center">
+                        <p class="text-2xl font-bold text-indigo-600">$${Math.round(monthlyPayment).toLocaleString()}/month</p>
+                        <p class="text-sm text-gray-600 mt-1">Estimated payment on a 10-year term at 5% interest</p>
+                    </div>
+                `;
+            } else if (loanEstimateElement) {
+                loanEstimateElement.innerHTML = `
+                    <p class="text-gray-700 text-center">Move the loan slider to see monthly payment estimates.</p>
+                `;
+            }
+            
+            // Update chart
+            fundingChart.data.datasets[0].data = [
+                totalScholarships,
+                totalGrants,
+                workIncome,
+                familyContribution,
+                loanAmount
+            ];
+            fundingChart.update();
+        }
+        
+        // Setup Loan Repayment Simulator
+        function setupLoanSimulator() {
+            // Initialize loan repayment chart
+            const ctx = document.getElementById('repayment-chart').getContext('2d');
+            repaymentChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Principal', 'Interest'],
+                    datasets: [{
+                        label: 'Loan Repayment Breakdown',
+                        data: [30000, 0],
+                        backgroundColor: [
+                            '#3B82F6', // blue for principal
+                            '#EF4444'  // red for interest
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        }
+                    }
+                }
+            });
+            
+            // Loan amount slider functionality
+            const loanAmountSlider = document.getElementById('loan-amount-slider');
+            const loanAmountValue = document.getElementById('loan-amount-value');
+            
+            if (loanAmountSlider && loanAmountValue) {
+                loanAmountSlider.addEventListener('input', function() {
+                    loanAmountValue.textContent = '$' + parseInt(this.value).toLocaleString();
+                });
+            }
+            
+            // Interest rate slider functionality
+            const interestRateSlider = document.getElementById('interest-rate-slider');
+            const interestRateValue = document.getElementById('interest-rate-value');
+            
+            if (interestRateSlider && interestRateValue) {
+                interestRateSlider.addEventListener('input', function() {
+                    interestRateValue.textContent = parseFloat(this.value).toFixed(2) + '%';
+                });
+            }
+            
+            // Calculate loan repayment button
+            const calculateLoanBtn = document.getElementById('calculate-loan');
+            if (calculateLoanBtn) {
+                calculateLoanBtn.addEventListener('click', function() {
+                    // Get values from inputs
+                    const loanAmount = parseFloat(document.getElementById('loan-amount-slider').value);
+                    const interestRate = parseFloat(document.getElementById('interest-rate-slider').value) / 100;
+                    const term = parseInt(document.getElementById('repayment-term').value);
+                    const salary = parseInt(document.getElementById('starting-salary').value);
+                    
+                    // Calculate monthly payment
+                    const monthlyRate = interestRate / 12;
+                    const totalPayments = term * 12;
+                    const monthlyPayment = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) / (Math.pow(1 + monthlyRate, totalPayments) - 1);
+                    
+                    // Calculate total interest
+                    const totalPaid = monthlyPayment * totalPayments;
+                    const totalInterest = totalPaid - loanAmount;
+                    
+                    // Calculate debt-to-income ratio
+                    const monthlySalary = salary / 12;
+                    const debtToIncome = (monthlyPayment / monthlySalary) * 100;
+                    
+                    // Update results
+                    document.getElementById('monthly-payment').textContent = '$' + Math.round(monthlyPayment).toLocaleString();
+                    document.getElementById('total-interest').textContent = '$' + Math.round(totalInterest).toLocaleString();
+                    document.getElementById('debt-to-income').textContent = debtToIncome.toFixed(1) + '%';
+                    
+                    // Update chart
+                    repaymentChart.data.datasets[0].data = [loanAmount, Math.round(totalInterest)];
+                    repaymentChart.update();
+                    
+                    // Add class to indicate debt-to-income level
+                    const debtToIncomeElement = document.getElementById('debt-to-income');
+                    debtToIncomeElement.className = 'text-2xl font-bold';
+                    if (debtToIncome <= 10) {
+                        debtToIncomeElement.classList.add('text-green-600');
+                    } else if (debtToIncome <= 20) {
+                        debtToIncomeElement.classList.add('text-yellow-600');
+                    } else {
+                        debtToIncomeElement.classList.add('text-red-600');
+                    }
+                });
+            }
+            
+            // Repayment plan tabs
+            const repaymentTabs = document.querySelectorAll('.tab');
+            repaymentTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    repaymentTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Show corresponding tab content
+                    const tabId = this.getAttribute('data-tab');
+                    const tabContents = document.querySelectorAll('.tab-content');
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    document.getElementById(tabId + '-tab').classList.add('active');
+                });
+            });
+        }
+        
+        // Set up all button event listeners
+        function setupButtonListeners() {
+            // Save button functionality with toast notifications
+            document.querySelectorAll('.pfl-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Get the parent station if this is a station save button
+                    const parentStation = this.closest('.learning-station');
+                    
+                    if (parentStation) {
+                        // Check if any inputs in this station have content
+                        const inputs = parentStation.querySelectorAll('input, textarea');
+                        let hasContent = false;
+                        
+                        inputs.forEach(input => {
+                            if (input.value.trim().length > 0) {
+                                hasContent = true;
+                            }
+                        });
+                        
+                        if (hasContent) {
+                            // Find station number and mark it as completed
+                            const stationIndex = Array.from(stations).indexOf(parentStation);
+                            const stationId = parentStation.id || `station${stationIndex + 1}`;
+                            
+                            // Only mark as complete if it has content
+                            markStationAsCompleted(stationId);
+                            
+                            showToast(`Station ${stationIndex + 1} saved successfully!`);
+                        } else {
+                            showToast('Please complete the station before saving.', 'warning');
+                        }
+                    } else {
+                        // Handle non-station buttons (e.g., portfolio complete button)
+                        showToast('Your portfolio has been saved!');
+                    }
+                });
+            });
+        }
+        
+        // Set up AI feedback system
+        function setupAIFeedback() {
+            document.querySelectorAll('[data-ai-check="true"]').forEach(element => {
+                element.addEventListener('blur', function() {
+                    if (this.value.length > 10) {
+                        const feedback = this.nextElementSibling;
+                        if (feedback && feedback.classList.contains('feedback-container')) {
+                            feedback.textContent = "Thank you for your thoughtful response! Your answer shows good understanding of the concepts.";
+                            feedback.classList.remove('hidden');
+                        }
+                    }
+                });
+            });
+        }
+        
+        // Show toast notification
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            
+            // Set message
+            toastMessage.textContent = message;
+            
+            // Set type-specific styling
+            if (type === 'warning') {
+                toast.style.backgroundColor = '#f59e0b';
+            } else {
+                toast.style.backgroundColor = '#4f46e5';
+            }
+            
+            // Show toast
+            toast.classList.add('show');
+            
+            // Hide toast after delay
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Load and check progress (but don't update based on inputs)
+        function updateProgress() {
+            const chapterId = '1.2'; // This should be dynamic based on the current chapter
+            const progressKey = `pfl-progress-${chapterId}-day2`;
+            let completedStations = [];
+            
+            // Try to load existing progress data from localStorage
+            try {
+                const savedProgress = localStorage.getItem(progressKey);
+                if (savedProgress) {
+                    completedStations = JSON.parse(savedProgress);
+                }
+            } catch (e) {
+                console.error('Error loading progress data', e);
+                completedStations = [];
+            }
+            
+            // Just update the display with current saved progress
+            updateProgressDisplay(completedStations);
+        }
+        
+        // Update station indicators
+        function updateStationIndicators(completedStations = null) {
+            const chapterId = '1.2'; // This should be dynamic based on the current chapter
+            const progressKey = `pfl-progress-${chapterId}-day2`;
+            const stations = document.querySelectorAll('.learning-station');
+            const stationIndicators = document.querySelectorAll('.station-indicator');
+            
+            // If completedStations not provided, load from localStorage
+            if (!completedStations) {
+                try {
+                    const savedProgress = localStorage.getItem(progressKey);
+                    if (savedProgress) {
+                        completedStations = JSON.parse(savedProgress);
+                    } else {
+                        completedStations = [];
+                    }
+                } catch (e) {
+                    console.error('Error loading progress data', e);
+                    completedStations = [];
+                }
+            }
+            
+            // Reset all indicators first
+            stationIndicators.forEach(indicator => {
+                indicator.classList.remove('active');
+            });
+            
+            // Update indicators based on completed stations
+            stations.forEach((station, index) => {
+                const stationId = station.id || `station${index + 1}`;
+                if (completedStations && completedStations.includes(stationId)) {
+                    if (stationIndicators[index]) {
+                        stationIndicators[index].classList.add('active');
+                    }
+                }
+            });
+            
+            // Determine current station based on scroll position
+            updateCurrentStationByScroll();
+        }
+        
+        // Update current station based on scroll position
+        function updateCurrentStationByScroll() {
+            const scrollPosition = window.scrollY;
+            const stations = document.querySelectorAll('.learning-station');
+            const stationIndicators = document.querySelectorAll('.station-indicator');
+            
+            let foundCurrent = false;
+            
+            stations.forEach((station, index) => {
+                const stationTop = station.offsetTop - 150;
+                const stationBottom = stationTop + station.offsetHeight;
+                
+                if (scrollPosition >= stationTop && scrollPosition < stationBottom && !foundCurrent) {
+                    // This is the current visible station
+                    currentStation = index;
+                    foundCurrent = true;
+                    
+                    // Update the indicators to show which one is current
+                    stationIndicators.forEach((indicator, i) => {
+                        if (i === index) {
+                            indicator.classList.add('active');
+                            indicator.style.transform = 'scale(1.3)';
+                        } else if (indicator.classList.contains('active')) {
+                            indicator.style.transform = 'scale(1.0)';
+                        }
+                    });
+                }
+            });
+        }
+        
+        // Highlight active section in navigation based on scroll position
+        window.addEventListener('DOMContentLoaded', () => {
+            const objectives = document.querySelector('#learning-objectives');
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('#section-navigation a');
+            
+            function updateActiveSection() {
+                const scrollPosition = window.scrollY;
+                
+                // First reset all links
+                navLinks.forEach(link => {
+                    link.classList.remove('text-indigo-700', 'font-medium');
+                    link.classList.add('text-gray-700');
+                });
+                
+                // Check Learning Objectives first
+                if (objectives) {
+                    const objectivesTop = objectives.offsetTop - 100;
+                    const objectivesBottom = objectivesTop + objectives.offsetHeight;
+                    
+                    if (scrollPosition >= objectivesTop && scrollPosition < objectivesBottom) {
+                        const objectivesLink = document.querySelector('#section-navigation a[href="#learning-objectives"]');
+                        if (objectivesLink) {
+                            objectivesLink.classList.remove('text-gray-700');
+                            objectivesLink.classList.add('text-indigo-700', 'font-medium');
+                        }
+                        return;
+                    }
+                }
+                
+                // Then check all other sections
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        // Add active class to corresponding link
+                        const correspondingLink = document.querySelector(`#section-navigation a[href="#${section.id}"]`);
+                        if (correspondingLink) {
+                            correspondingLink.classList.remove('text-gray-700');
+                            correspondingLink.classList.add('text-indigo-700', 'font-medium');
+                        }
+                    }
+                });
+                
+                // Also update station indicators based on scroll
+                updateCurrentStationByScroll();
+            }
+            
+            // Update active section when scrolling
+            window.addEventListener('scroll', updateActiveSection);
+            
+            // Update active section on page load
+            updateActiveSection();
+        });
+    </script>
+</body>
+</html>
